@@ -1,48 +1,47 @@
 CLERK: Command-Line Executor for Rapid Knowledge
 ================================================
 
-The CLERK project is a key component of the PHOTON platform, a suite of tools
-dedicated to the mission of gathering, processing, and publishing knowledge.
-CLERK is a powerful command-line tool, inspired by Douglas Engelbart's vision
-of a computer as a "clerk" - an administrative assistant that aids in every
-step of your work. It is designed to provide situational awareness within the
-terminal, offering relevant operations based on the context of the current
-working directory (CWD) and the information at hand.
+The CLERK project is a pivotal component of the PHOTON platform, a suite of
+tools committed to gathering, processing, and publishing knowledge. Inspired by
+Douglas Engelbart's vision of the computer as a "clerk" in his seminal paper,
+`Augmenting Human Intellect`_, CLERK is a powerful command-line tool, designed
+to provide situational awareness and context-sensitive operations based on the
+current working directory (CWD) and the information it contains.
 
-CLERK is designed to augment human capabilities, particularly in managing
-knowledge. Its role encompasses several key functions, each serving as a vital
-link in the chain of managing, executing, and keeping records of tasks.
+Here are the roles of CLERK, each fulfilling a unique function within the
+knowledge management process:
 
-The roles of CLERK:
+- `Progenitor`_: Sparking life into Python projects.
+- `Modulator`_: Shaping Python modules and packages.
+- `Projector`_: Illuminating project documentation.
+- `Executor`_: Structuring to-dos for efficiency.
+- `Formulator`_: Blueprinting dialogs on Textual.
+- `Curator`_: Organizing git/archive management.
+- `Condensor`_: Summarizing content with AI assistance.
+- `Memorator`_: Preserving project milestones.
 
-- **Progenitor**: Gives birth to new Python projects, serving as a springboard
-  for fresh ideas.
-- **Modulator**: Handles the creation, management, and publication of Python
-  modules and packages, ensuring the seamless flow of Python projects.
-- **Projector**: Manages project documentation, keeping your project's
-  knowledge base organized and up-to-date.
-- **Executor**: Manages to-do lists, ensuring tasks are carried out efficiently.
-- **Curator**: Manages git/archive, maintaining the record of your projects
-  over time.
-- **Condensor**: Provides AI-assisted summaries of content at URLs, offering
-  quick insight into web content.
-- **Memorator**: Records important facts in a project as they occur, ensuring
-  that no critical information falls through the cracks.
-- **Formulator**: Provides blueprint-driven dialogs on Textual, streamlining
-  your command-line interactions.
-
-By being aware of the context of your current working directory, CLERK can
-suggest relevant operations, facilitating smooth and efficient workflows. This
-context-sensitive approach makes it more than just an assistant; it's an
-enabler of smarter workflows and a partner in your intellectual journey.
+By being context-aware, CLERK can suggest relevant operations based on the CWD,
+making workflows smoother and more efficient. This context-sensitive approach
+elevates CLERK from a mere assistant to an enhancer of smarter workflows and a
+partner in intellectual work.
 
 As a part of the PHOTON platform, CLERK contributes to the overarching mission
-of gathering, processing, and publishing knowledge. It's a testament to the
-platform's vision of making work more efficient, productive, and insightful
-through the powerful leveraging of technology. In the spirit of Engelbart's
-vision, CLERK is designed to augment your intellect, extending your
-capabilities, and enabling you to focus on what matters most: creating and
-sharing knowledge.
+of knowledge gathering, processing, and publishing. It embodies the platform's
+vision of enhancing work efficiency, productivity, and insight through
+leveraging technology. In the spirit of Engelbart's vision, CLERK is designed
+to augment your intellect, enabling you to focus on what matters most: creating
+and sharing knowledge.
+
+.. _`Augmenting Human Intellect`: https://www.dougengelbart.org/pubs/augment-3906.html
+.. _`Progenitor`: https://github.com/photon-platform/progenitor
+.. _`Modulator`: https://github.com/photon-platform/modulator
+.. _`Projector`: https://github.com/photon-platform/projector
+.. _`Executor`: https://github.com/photon-platform/executor
+.. _`Formulator`: https://github.com/photon-platform/formulator
+.. _`Curator`: https://github.com/photon-platform/curator
+.. _`Condensor`: https://github.com/photon-platform/condensor
+.. _`Memorator`: https://github.com/photon-platform/memorator
+
 
 About PHOTON Platform
 ---------------------
