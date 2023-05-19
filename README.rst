@@ -1,7 +1,7 @@
 CLERK: Command-Line Executor for Rapid Knowledge
 ================================================
 
-The CLERK project is a pivotal component of the PHOTON platform, a suite of
+The CLERK project is a pivotal component of the `PHOTON platform`_, a suite of
 tools committed to gathering, processing, and publishing knowledge. Inspired by
 Douglas Engelbart's vision of the computer as a "clerk" in his seminal paper,
 `Augmenting Human Intellect`_, CLERK is a powerful command-line tool, designed
@@ -11,21 +11,21 @@ current working directory (CWD) and the information it contains.
 Here are the roles of CLERK, each fulfilling a unique function within the
 knowledge management process:
 
-- `Progenitor`_: Sparking life into Python projects.
-- `Modulator`_: Shaping Python modules and packages.
-- `Projector`_: Illuminating project documentation.
-- `Executor`_: Structuring to-dos for efficiency.
-- `Formulator`_: Blueprinting dialogs on Textual.
-- `Curator`_: Organizing git/archive management.
-- `Condensor`_: Summarizing content with AI assistance.
-- `Memorator`_: Preserving project milestones.
+- `Progenitor`_: Sparks life into Python projects.
+- `Modulator`_: Shapes Python modules and packages.
+- `Projector`_: Illuminates project documentation.
+- `Executor`_: Structures to-dos for efficiency.
+- `Formulator`_: Blueprints dialogs on Textual.
+- `Curator`_: Organizes git/archive management.
+- `Condensor`_: Summarizes content with AI assistance.
+- `Memorator`_: Preserves project milestones.
 
 By being context-aware, CLERK can suggest relevant operations based on the CWD,
 making workflows smoother and more efficient. This context-sensitive approach
 elevates CLERK from a mere assistant to an enhancer of smarter workflows and a
 partner in intellectual work.
 
-As a part of the PHOTON platform, CLERK contributes to the overarching mission
+As a part of the `PHOTON platform`_, CLERK contributes to the overarching mission
 of knowledge gathering, processing, and publishing. It embodies the platform's
 vision of enhancing work efficiency, productivity, and insight through
 leveraging technology. In the spirit of Engelbart's vision, CLERK is designed
@@ -46,7 +46,7 @@ and sharing knowledge.
 About PHOTON Platform
 ---------------------
 
-The PHOTON platform is part of a comprehensive vision by `phi ARCHITECT`_ to
+The `PHOTON platform`_ is part of a comprehensive vision by `phi ARCHITECT`_ to
 establish a system architecture for gathering, processing, and publishing
 living digital archives. It is an integrated suite of open-source tools,
 curated and customized for efficient and effective knowledge management.
@@ -55,10 +55,10 @@ Gather • Process • Publish
 --------------------------
 *Tools to shine brighter*
 
-The PHOTON platform, along with sister organizations `GEOMETOR`_ and `HARMONIC
+The `PHOTON platform`_, along with sister organizations `GEOMETOR`_ and `HARMONIC
 resonance`_, works under the guiding principle of transforming complex
 hierarchical content into accessible knowledge. With the aim of making order
-and organization integral to the framework, the PHOTON platform thrives on
+and organization integral to the framework, the `PHOTON platform`_ thrives on
 achieving mastery in all practices required for the mission.
 
 For more details on the platform and its various projects, please visit our
