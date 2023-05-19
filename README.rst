@@ -68,16 +68,20 @@ For more details on the platform and its various projects, please visit our
 The `PHOTON platform`_ is one of three orgs that `phi ARCHITECT`_ manages:
 
 `GEOMETOR`_
+-----------
+
 Model • Reveal • Render
------------------------
+~~~~~~~~~~~~~~~~~~~~~~~
 
 *Exploring the architecture of all that is*
 
 - `GitHub <https://github.com/geometor>`_
 
 `HARMONIC resonance`_
+---------------------
+
 Generate • Resonate • Orchestrate
----------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 *Tools to vibrate pixels and speakers*
 
