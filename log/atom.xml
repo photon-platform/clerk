@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
   <id>https://photon-platform.github.io/clerk</id>
   <title>photon-platform • clerk</title>
-  <updated>2024-05-05T21:33:20.317761+00:00</updated>
+  <updated>2024-06-01T15:32:02.853645+00:00</updated>
   <link href="https://photon-platform.github.io/clerk"/>
   <link href="https://photon-platform.github.io/clerk/log/atom.xml" rel="self"/>
   <generator uri="https://ablog.readthedocs.org/" version="unknown.dev">ABlog</generator>
