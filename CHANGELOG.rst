@@ -1,6 +1,14 @@
 changelog
 =========
 
+0.0.3
+-----
+*2025-11-04*
+
+**changed**
+
+.. + Updated ``GEMINI.md`` with integration details.
+
 0.0.2
 -----
 *2025-11-04*

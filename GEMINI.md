@@ -4,7 +4,9 @@ A command-line tool for situational awareness and context-sensitive operations.
 
 ## Overview
 
-CLERK (Command-Line Executor for Rapid Knowledge) is a pivotal component of the PHOTON platform. It provides context-sensitive operations based on the current working directory and its contents.
+CLERK (Command-Line Executor for Rapid Knowledge) provides context-sensitive operations based on the current working directory and its contents.
+
+We are currently working towards tighter integration with the Gemini CLI.
 
 ## Index
 
