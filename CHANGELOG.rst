@@ -1,6 +1,15 @@
 changelog
 =========
 
+0.0.2
+-----
+*2025-11-04*
+
+**added**
+
+.. + ``rollup`` script to automate the release process.
+.. + ``status_diff`` script to show git status and diff since branching from main.
+
 0.1.0 
 -----
 *2023-11-15*

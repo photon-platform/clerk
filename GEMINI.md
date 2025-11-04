@@ -10,3 +10,5 @@ CLERK (Command-Line Executor for Rapid Knowledge) is a pivotal component of the 
 
 -   `app.py`: The main Textual application setup.
 -   `clerk.py`: Core logic and role definitions for the CLERK tool.
+-   `rollup.py`: Automates the release process.
+-   `status_diff.py`: Shows git status and diff since branching from main.
