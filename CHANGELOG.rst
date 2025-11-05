@@ -1,6 +1,15 @@
 changelog
 =========
 
+0.0.4
+-----
+*2025-11-05*
+
+**added**
+
+.. + Integrated progenitor, modulator, curator, logger, and summarizer into clerk as subcommands.
+.. + Converted the application from a Textual app to a Click-based CLI.
+
 0.0.3
 -----
 *2025-11-04*

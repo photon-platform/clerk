@@ -1,0 +1,17 @@
+form:
+  title: Create Submodule
+  id: create_submodule
+  fields:
+    module-name:
+      label: Module Name
+      placeholder: Enter Parent Module Name
+      type: Input
+      validate:
+        required: true
+    submodule-name:
+      label: Submodule Name
+      placeholder: Enter Submodule Name
+      type: Input
+      validate:
+        required: true
+

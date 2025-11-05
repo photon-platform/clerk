@@ -1,0 +1,25 @@
+form:
+  title: Create Function
+  id: create_function
+  fields:
+    module-name:
+      label: Module Name
+      placeholder: Enter Module Name
+      type: Input
+      validate:
+        required: true
+    function-name:
+      label: Function Name
+      placeholder: Enter Function Name
+      type: Input
+      validate:
+        required: true
+    function-args:
+      label: Function Arguments
+      placeholder: Enter Arguments
+      type: Input
+    function-return:
+      label: Function Return Type
+      placeholder: Enter Return Type
+      type: Input
+

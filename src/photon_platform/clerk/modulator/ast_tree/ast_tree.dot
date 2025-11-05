@@ -1,0 +1,18 @@
+digraph {
+	rankdir=TB
+	<ast.Module object at 0x7b2bae779310> [label=Module]
+	<ast.FunctionDef object at 0x7b2bae779b50> [label=FunctionDef]
+	<ast.Module object at 0x7b2bae779310> -> <ast.FunctionDef object at 0x7b2bae779b50>
+	<ast.arguments object at 0x7b2bae779910> [label=arguments]
+	<ast.FunctionDef object at 0x7b2bae779b50> -> <ast.arguments object at 0x7b2bae779910>
+	<ast.Return object at 0x7b2bae779820> [label=Return]
+	<ast.FunctionDef object at 0x7b2bae779b50> -> <ast.Return object at 0x7b2bae779820>
+	<ast.BinOp object at 0x7b2bae779190> [label=BinOp]
+	<ast.Return object at 0x7b2bae779820> -> <ast.BinOp object at 0x7b2bae779190>
+	<ast.Constant object at 0x7b2bae779640> [label=Constant]
+	<ast.BinOp object at 0x7b2bae779190> -> <ast.Constant object at 0x7b2bae779640>
+	<ast.Add object at 0x7b2bae781820> [label=Add]
+	<ast.BinOp object at 0x7b2bae779190> -> <ast.Add object at 0x7b2bae781820>
+	<ast.Constant object at 0x7b2bae56d310> [label=Constant]
+	<ast.BinOp object at 0x7b2bae779190> -> <ast.Constant object at 0x7b2bae56d310>
+}

@@ -11,14 +11,11 @@ current working directory (CWD) and the information it contains.
 Here are the roles of CLERK, each fulfilling a unique function within the
 knowledge management process:
 
-- `Progenitor`_: Sparks life into Python projects.
-- `Modulator`_: Shapes Python modules and packages.
-- `Projector`_: Illuminates project documentation.
-- `Executor`_: Structures to-dos for efficiency.
-- `Formulator`_: Blueprints dialogs on Textual.
-- `Curator`_: Organizes git/archive management.
-- `Condensor`_: Summarizes content with AI assistance.
-- `Memorator`_: Preserves project milestones.
+- `progenitor`: Sparks life into Python projects.
+- `modulator`: Shapes Python modules and packages.
+- `curator`: Organizes git/archive management.
+- `logger`: Creates log entries.
+- `summarizer`: Summarizes web pages.
 
 By being context-aware, CLERK can suggest relevant operations based on the CWD,
 making workflows smoother and more efficient. This context-sensitive approach
@@ -33,15 +30,6 @@ to augment your intellect, enabling you to focus on what matters most: creating
 and sharing knowledge.
 
 .. _`Augmenting Human Intellect`: https://www.dougengelbart.org/pubs/augment-3906.html
-.. _`Progenitor`: https://github.com/photon-platform/progenitor
-.. _`Modulator`: https://github.com/photon-platform/modulator
-.. _`Projector`: https://github.com/photon-platform/projector
-.. _`Executor`: https://github.com/photon-platform/executor
-.. _`Formulator`: https://github.com/photon-platform/formulator
-.. _`Curator`: https://github.com/photon-platform/curator
-.. _`Condensor`: https://github.com/photon-platform/condensor
-.. _`Memorator`: https://github.com/photon-platform/memorator
-
 
 About PHOTON Platform
 ---------------------
@@ -92,5 +80,3 @@ Generate • Resonate • Orchestrate
 .. _`website`: https://photon-platform.github.io/
 .. _`GitHub organization`: https://github.com/photon-platform
 .. _`PHOTON platform`: https://github.com/photon-platform
-
-

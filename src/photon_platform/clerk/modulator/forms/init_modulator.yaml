@@ -1,0 +1,17 @@
+form:
+  title: Initialize Modulator
+  id: initialize_modulator
+  fields:
+    project-path:
+      label: Project Path
+      placeholder: Enter Project Path
+      type: Input
+      validate:
+        required: true
+    namespace-name:
+      label: Namespace Name
+      placeholder: Enter Namespace Name
+      type: Input
+      validate:
+        required: true
+

@@ -1,0 +1,105 @@
+digraph {
+	rankdir=TB
+	<ast.Import object at 0x787dee9f9970> [label="import warnings"]
+	<ast.Module object at 0x787dee9f9a30> -> <ast.Import object at 0x787dee9f9970>
+	<ast.Import object at 0x787dee9f98b0> [label="import urllib3"]
+	<ast.Module object at 0x787dee9f9a30> -> <ast.Import object at 0x787dee9f98b0>
+	<ast.ImportFrom object at 0x787dee9f97f0> [label="from exceptions import RequestsDependencyWarning"]
+	<ast.Module object at 0x787dee9f9a30> -> <ast.ImportFrom object at 0x787dee9f97f0>
+	<ast.ImportFrom object at 0x787dee9f9730> [label="from charset_normalizer import __version__"]
+	<ast.Try object at 0x787dee9f97c0> -> <ast.ImportFrom object at 0x787dee9f9730>
+	<ast.ImportFrom object at 0x787dee9f9610> [label="from chardet import __version__"]
+	<ast.Try object at 0x787dee9f96a0> -> <ast.ImportFrom object at 0x787dee9f9610>
+	<ast.FunctionDef object at 0x787dee9f9400> [label="def check_compatibility"]
+	<ast.Module object at 0x787dee9f9a30> -> <ast.FunctionDef object at 0x787dee9f9400>
+	<ast.Call object at 0x787dee9f9280> [label="call urllib3_version.split"]
+	<ast.Assign object at 0x787dee9f9370> -> <ast.Call object at 0x787dee9f9280>
+	<ast.Call object at 0x787dee9f9070> [label="call len"]
+	<ast.Compare object at 0x787dee9f90a0> -> <ast.Call object at 0x787dee9f9070>
+	<ast.Call object at 0x787dee9f2f10> [label="call urllib3_version.append"]
+	<ast.Expr object at 0x787dee9f2f40> -> <ast.Call object at 0x787dee9f2f10>
+	<ast.Call object at 0x787dee9f2c10> [label="call int"]
+	<ast.Tuple object at 0x787dee9f2c40> -> <ast.Call object at 0x787dee9f2c10>
+	<ast.Call object at 0x787dee9f2b80> [label="call int"]
+	<ast.Tuple object at 0x787dee9f2c40> -> <ast.Call object at 0x787dee9f2b80>
+	<ast.Call object at 0x787dee9f2af0> [label="call int"]
+	<ast.Tuple object at 0x787dee9f2c40> -> <ast.Call object at 0x787dee9f2af0>
+	<ast.Call object at 0x787dee9f1700> [label="call chardet_version.split"]
+	<ast.Subscript object at 0x787dee9f1730> -> <ast.Call object at 0x787dee9f1700>
+	<ast.Call object at 0x787dee9f14c0> [label="call int"]
+	<ast.Tuple object at 0x787dee9f14f0> -> <ast.Call object at 0x787dee9f14c0>
+	<ast.Call object at 0x787dee9f1430> [label="call int"]
+	<ast.Tuple object at 0x787dee9f14f0> -> <ast.Call object at 0x787dee9f1430>
+	<ast.Call object at 0x787dee9f13a0> [label="call int"]
+	<ast.Tuple object at 0x787dee9f14f0> -> <ast.Call object at 0x787dee9f13a0>
+	<ast.Call object at 0x787dee9eeeb0> [label="call charset_normalizer_version.split"]
+	<ast.Subscript object at 0x787dee9eeee0> -> <ast.Call object at 0x787dee9eeeb0>
+	<ast.Call object at 0x787dee9eec70> [label="call int"]
+	<ast.Tuple object at 0x787dee9eeca0> -> <ast.Call object at 0x787dee9eec70>
+	<ast.Call object at 0x787dee9eebe0> [label="call int"]
+	<ast.Tuple object at 0x787dee9eeca0> -> <ast.Call object at 0x787dee9eebe0>
+	<ast.Call object at 0x787dee9eeb50> [label="call int"]
+	<ast.Tuple object at 0x787dee9eeca0> -> <ast.Call object at 0x787dee9eeb50>
+	<ast.Call object at 0x787dee9ede20> [label="call Exception"]
+	<ast.Raise object at 0x787dee9ede50> -> <ast.Call object at 0x787dee9ede20>
+	<ast.FunctionDef object at 0x787dee9f93d0> [label="def _check_cryptography"]
+	<ast.Module object at 0x787dee9f9a30> -> <ast.FunctionDef object at 0x787dee9f93d0>
+	<ast.Call object at 0x787dee9edca0> [label="call list"]
+	<ast.Assign object at 0x787dee9edd00> -> <ast.Call object at 0x787dee9edca0>
+	<ast.Call object at 0x787dee9edc40> [label="call map"]
+	<ast.Call object at 0x787dee9edca0> -> <ast.Call object at 0x787dee9edc40>
+	<ast.Call object at 0x787dee9edbb0> [label="call cryptography_version.split"]
+	<ast.Call object at 0x787dee9edc40> -> <ast.Call object at 0x787dee9edbb0>
+	<ast.Call object at 0x787dee9ed880> [label="call 'Old version of cryptography ({}) may cause slowdown.'.format"]
+	<ast.Assign object at 0x787dee9ed8e0> -> <ast.Call object at 0x787dee9ed880>
+	<ast.Call object at 0x787dee9ed790> [label="call warnings.warn"]
+	<ast.Expr object at 0x787dee9ed7c0> -> <ast.Call object at 0x787dee9ed790>
+	<ast.Call object at 0x787dee9ed610> [label="call check_compatibility"]
+	<ast.Expr object at 0x787dee9ed640> -> <ast.Call object at 0x787dee9ed610>
+	<ast.Call object at 0x787dee9ed3d0> [label="call warnings.warn"]
+	<ast.Expr object at 0x787dee9ed400> -> <ast.Call object at 0x787dee9ed3d0>
+	<ast.Call object at 0x787dee9ed340> [label="call \"urllib3 ({}) or chardet ({})/charset_normalizer ({}) doesn't match a supported version!\".format"]
+	<ast.Call object at 0x787dee9ed3d0> -> <ast.Call object at 0x787dee9ed340>
+	<ast.Import object at 0x787dee9ed130> [label="import ssl"]
+	<ast.Try object at 0x787dee9ed160> -> <ast.Import object at 0x787dee9ed130>
+	<ast.Call object at 0x787dee9eceb0> [label="call getattr"]
+	<ast.UnaryOp object at 0x787dee9ecf10> -> <ast.Call object at 0x787dee9eceb0>
+	<ast.ImportFrom object at 0x787dee9ecee0> [label="from urllib3.contrib import pyopenssl"]
+	<ast.If object at 0x787dee9ecf40> -> <ast.ImportFrom object at 0x787dee9ecee0>
+	<ast.Call object at 0x787dee9ecd30> [label="call pyopenssl.inject_into_urllib3"]
+	<ast.Expr object at 0x787dee9ecd60> -> <ast.Call object at 0x787dee9ecd30>
+	<ast.ImportFrom object at 0x787dee9ecc70> [label="from cryptography import __version__"]
+	<ast.If object at 0x787dee9ecf40> -> <ast.ImportFrom object at 0x787dee9ecc70>
+	<ast.Call object at 0x787dee9ecbb0> [label="call _check_cryptography"]
+	<ast.Expr object at 0x787dee9ecbe0> -> <ast.Call object at 0x787dee9ecbb0>
+	<ast.ImportFrom object at 0x787dee9eca30> [label="from urllib3.exceptions import DependencyWarning"]
+	<ast.Module object at 0x787dee9f9a30> -> <ast.ImportFrom object at 0x787dee9eca30>
+	<ast.Call object at 0x787dee9ec970> [label="call warnings.simplefilter"]
+	<ast.Expr object at 0x787dee9ec9a0> -> <ast.Call object at 0x787dee9ec970>
+	<ast.Import object at 0x787dee9ec850> [label="import logging"]
+	<ast.Module object at 0x787dee9f9a30> -> <ast.Import object at 0x787dee9ec850>
+	<ast.ImportFrom object at 0x787dee9ec790> [label="from logging import NullHandler"]
+	<ast.Module object at 0x787dee9f9a30> -> <ast.ImportFrom object at 0x787dee9ec790>
+	<ast.ImportFrom object at 0x787dee9ec700> [label="from None import packages, utils"]
+	<ast.Module object at 0x787dee9f9a30> -> <ast.ImportFrom object at 0x787dee9ec700>
+	<ast.ImportFrom object at 0x787dee9ec0d0> [label="from __version__ import __author__, __author_email__, __build__, __cake__, __copyright__, __description__, __license__, __title__, __url__, __version__"]
+	<ast.Module object at 0x787dee9f9a30> -> <ast.ImportFrom object at 0x787dee9ec0d0>
+	<ast.ImportFrom object at 0x787dee9ebca0> [label="from api import delete, get, head, options, patch, post, put, request"]
+	<ast.Module object at 0x787dee9f9a30> -> <ast.ImportFrom object at 0x787dee9ebca0>
+	<ast.ImportFrom object at 0x787dee9eb970> [label="from exceptions import ConnectionError, ConnectTimeout, FileModeWarning, HTTPError, JSONDecodeError, ReadTimeout, RequestException, Timeout, TooManyRedirects, URLRequired"]
+	<ast.Module object at 0x787dee9f9a30> -> <ast.ImportFrom object at 0x787dee9eb970>
+	<ast.ImportFrom object at 0x787dee9eb580> [label="from models import PreparedRequest, Request, Response"]
+	<ast.Module object at 0x787dee9f9a30> -> <ast.ImportFrom object at 0x787dee9eb580>
+	<ast.ImportFrom object at 0x787dee9eb160> [label="from sessions import Session, session"]
+	<ast.Module object at 0x787dee9f9a30> -> <ast.ImportFrom object at 0x787dee9eb160>
+	<ast.ImportFrom object at 0x787dee9eb070> [label="from status_codes import codes"]
+	<ast.Module object at 0x787dee9f9a30> -> <ast.ImportFrom object at 0x787dee9eb070>
+	<ast.Call object at 0x787dee9d9f70> [label="call logging.getLogger(__name__).addHandler"]
+	<ast.Expr object at 0x787dee9d9fa0> -> <ast.Call object at 0x787dee9d9f70>
+	<ast.Call object at 0x787dee9d9f10> [label="call logging.getLogger"]
+	<ast.Attribute object at 0x787dee9d9f40> -> <ast.Call object at 0x787dee9d9f10>
+	<ast.Call object at 0x787dee9d9e50> [label="call NullHandler"]
+	<ast.Call object at 0x787dee9d9f70> -> <ast.Call object at 0x787dee9d9e50>
+	<ast.Call object at 0x787dee9d9d90> [label="call warnings.simplefilter"]
+	<ast.Expr object at 0x787dee9d9dc0> -> <ast.Call object at 0x787dee9d9d90>
+}

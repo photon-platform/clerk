@@ -1,0 +1,11 @@
+form:
+  title: Create Module
+  id: create_module
+  fields:
+    module-name:
+      label: Module Name
+      placeholder: Enter Module Name
+      type: Input
+      validate:
+        required: true
+

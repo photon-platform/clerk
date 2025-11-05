@@ -16,6 +16,11 @@ dependencies = [
     "textual",
     "rich",
     "jinja2",
+    "click",
+    "requests",
+    "beautifulsoup4",
+    "openai",
+    "python-slugify",
 ]
 
 [project.scripts]

@@ -1,0 +1,58 @@
+- target: CHANGELOG.rst
+  template: CHANGELOG.rst.j2
+- target: LICENSE
+  template: LICENSE.j2
+- target: pyproject.toml
+  template: pyproject.toml.j2
+- target: README.rst
+  template: README.rst.j2
+- target: .gitignore
+  template: .gitignore.j2
+- target: .ctags
+  template: .ctags.j2
+
+- target: demos/demo.py
+  template: demos/demo.py.j2
+
+- target: docsrc/_static/css/custom.css
+  template: docsrc/_static/css/custom.css.j2
+- target: docsrc/_static/css/rtd-dark.css
+  template: docsrc/_static/css/rtd-dark.css.j2
+
+- target: docsrc/conf.py
+  template: docsrc/conf.py.j2
+
+- target: docsrc/index.rst
+  template: docsrc/index.rst.j2
+- target: docsrc/intro.rst
+  template: docsrc/intro.rst.j2
+- target: docsrc/glossary.rst
+  template: docsrc/glossary.rst.j2
+- target: docsrc/changelog.rst
+  template: docsrc/changelog.rst.j2
+- target: docsrc/todos.rst
+  template: docsrc/todos.rst.j2
+- target: docsrc/logs.rst
+  template: docsrc/logs.rst.j2
+- target: docsrc/connect.rst
+  template: docsrc/connect.rst.j2
+- target: docsrc/about.rst
+  template: docsrc/about.rst.j2
+
+- target: docsrc/demos/index.rst
+  template: docsrc/demos/index.rst.j2
+- target: docsrc/demos/demo.rst
+  template: docsrc/demos/demo.rst.j2
+
+- target: docsrc/mission/index.rst
+  template: docsrc/mission/index.rst.j2
+- target: docsrc/refs/index.rst
+  template: docsrc/refs/index.rst.j2
+- target: docsrc/modules/index.rst
+  template: docsrc/modules/index.rst.j2
+- target: docsrc/usage/index.rst
+  template: docsrc/usage/index.rst.j2
+
+- target: .github/workflows/action.yml
+  template: action.yml.j2
+

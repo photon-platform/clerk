@@ -1,0 +1,31 @@
+form:
+  title: Create Class Method
+  id: create_class_method
+  fields:
+    module-name:
+      label: Module Name
+      placeholder: Enter Module Name
+      type: Input
+      validate:
+        required: true
+    class-name:
+      label: Class Name
+      placeholder: Enter Class Name
+      type: Input
+      validate:
+        required: true
+    method-name:
+      label: Method Name
+      placeholder: Enter Method Name
+      type: Input
+      validate:
+        required: true
+    method-args:
+      label: Method Arguments
+      placeholder: Enter Arguments
+      type: Input
+    method-return:
+      label: Method Return Type
+      placeholder: Enter Return Type
+      type: Input
+
