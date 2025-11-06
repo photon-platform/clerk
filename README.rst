@@ -15,7 +15,66 @@ knowledge management process:
 - `modulator`: Shapes Python modules and packages.
 - `curator`: Organizes git/archive management.
 - `logger`: Creates log entries.
-- `summarizer`: Summarizes web pages.
+- `gather`: Downloads and organizes information from the web. It can handle various sources like URLs, GitHub repositories, arXiv papers, and YouTube videos.
+
+Usage
+-----
+
+Here is a summary of the CLERK CLI interface:
+
+Top-Level Commands
+~~~~~~~~~~~~~~~~~~
+
+- `clerk gather`: Gathers content from various sources.
+- `clerk logger`: Creates a new log entry.
+- `clerk progenitor`: Creates a new Python project.
+- `clerk modulator`: Shapes Python modules and packages.
+- `clerk curator`: Organizes git/archive management.
+
+`gather` Commands
+~~~~~~~~~~~~~~~~~
+
+- `clerk gather url <url_string>`: Gathers content from a URL. It intelligently handles sources like Wikipedia, arXiv, YouTube, GitHub, and general web pages.
+- `clerk gather repo <repo_string>`: Gathers information about a GitHub repository (e.g., `owner/repo`).
+
+`logger` Command
+~~~~~~~~~~~~~~~~
+
+- `clerk logger`: This command takes no arguments and opens an interactive prompt to create a new log entry.
+
+`progenitor` Command
+~~~~~~~~~~~~~~~~~~~~
+
+- `clerk progenitor`: Creates a new Python project. It prompts for the following information:
+    - `--github-id`: Your GitHub username or organization.
+    - `--package-namespace`: The namespace for the package.
+    - `--github-repo-id`: The name of the GitHub repository.
+    - `--package-name`: The name of the Python package.
+    - `--author`: The name of the author.
+    - `--description`: A short description of the project.
+    - `--path`: The path to create the project in.
+
+`modulator` Commands
+~~~~~~~~~~~~~~~~~~~~
+
+- `clerk modulator create-module`: Creates a new Python module.
+- `clerk modulator create-submodule`: Creates a new Python submodule.
+- `clerk modulator create-class`: Creates a new Python class.
+- `clerk modulator create-function`: Creates a new Python function.
+- `clerk modulator create-class-method`: Creates a new Python class method.
+
+(Each `modulator` command prompts for necessary information like project path, namespace, module name, etc.)
+
+`curator` Commands
+~~~~~~~~~~~~~~~~~~
+
+- `clerk curator branches`: Lists the branches in the repository.
+- `clerk curator create-release-branch`: Creates a new release branch.
+- `clerk curator merge-to-main`: Merges a branch to main.
+- `clerk curator create-tag`: Creates a new tag.
+
+(Each `curator` command can take a `--repo-path` and will prompt for other necessary information.)
+
 
 By being context-aware, CLERK can suggest relevant operations based on the CWD,
 making workflows smoother and more efficient. This context-sensitive approach
@@ -57,18 +116,12 @@ The `PHOTON platform`_ is one of three orgs that `phi ARCHITECT`_ manages:
 `GEOMETOR`_
 -----------
 
-Model • Reveal • Render
-~~~~~~~~~~~~~~~~~~~~~~~
-
 *Exploring the architecture of all that is*
 
 - `GitHub <https://github.com/geometor>`_
 
 `HARMONIC resonance`_
 ---------------------
-
-Generate • Resonate • Orchestrate
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 *Tools to vibrate pixels and speakers*
 

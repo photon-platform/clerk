@@ -146,7 +146,7 @@ def fetch_and_save_readme(data: dict, repo_dir: Path) -> tuple[bool, str]:
             return False, ""
 
 
-def save_reference(repo: str, output_dir: str = ".") -> Path:
+def action_gather_repo(repo: str, output_dir: str = ".") -> Path:
     """Save repository metadata as RST."""
     data = get_repo_data(repo)
 
@@ -179,29 +179,3 @@ def save_reference(repo: str, output_dir: str = ".") -> Path:
     print(f"Created RST file: {index_path}")
 
     return index_path
-
-
-def main():
-    """Main entry point for command line usage."""
-    import sys
-
-    if len(sys.argv) == 2:
-        repo = sys.argv[1]
-    else:
-        repo = input("Please enter the GitHub repository (e.g. owner/repo): ").strip()
-
-    if not repo or "/" not in repo:
-        print("[red]Invalid repository format. Use owner/repo format.[/red]")
-        sys.exit(1)
-
-    try:
-        index_path = save_reference(repo)
-        print("\n[green]✓ Successfully saved reference:[/green]")
-        print(f"  RST: {index_path}")
-    except Exception as e:
-        print(f"[red]Error processing GitHub repository:[/red] {e}")
-        sys.exit(1)
-
-
-if __name__ == "__main__":
-    main()

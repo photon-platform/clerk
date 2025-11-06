@@ -89,7 +89,7 @@ abstract
 """
     return rst.strip()
 
-def save_reference(paper_id: str, output_dir: str = '.') -> tuple[Path, Path]:
+def action_gather_arxiv(paper_id: str, output_dir: str = '.') -> tuple[Path, Path]:
     """Save paper metadata as RST and download PDF."""
     data = get_paper_data(paper_id)
     rst_content = format_rst(data)
@@ -114,28 +114,3 @@ def save_reference(paper_id: str, output_dir: str = '.') -> tuple[Path, Path]:
     print(f"Downloaded PDF: {pdf_path}")
     
     return index_path, pdf_path
-
-def main():
-    """Main entry point for command line usage."""
-    import sys
-    
-    if len(sys.argv) == 2:
-        paper_id = sys.argv[1]
-    else:
-        paper_id = input("Please enter the arXiv ID (e.g. 2208.04202): ").strip()
-        
-    if not paper_id:
-        print("No arXiv ID provided")
-        sys.exit(1)
-        
-    try:
-        index_path, pdf_path = save_reference(paper_id)
-        print("\n[green]✓ Successfully saved reference:[/green]")
-        print(f"  RST: {index_path}")
-        print(f"  PDF: {pdf_path}")
-    except Exception as e:
-        print(f"[red]Error processing arXiv ID:[/red] {e}")
-        sys.exit(1)
-
-if __name__ == '__main__':
-    main()

@@ -1,6 +1,17 @@
 changelog
 =========
 
+0.0.5
+-----
+*2025-11-05*
+
+**refactored**
+
+.. + Consolidated summarizer and other web scraping functions into a unified `gather` module.
+.. + Reorganized `curator` module to use standalone, action-oriented functions.
+.. + Updated the main `clerk` CLI to reflect the new module structure and commands.
+.. + Removed the `projector` module as its functionality is covered by other tools.
+
 0.0.4
 -----
 *2025-11-05*

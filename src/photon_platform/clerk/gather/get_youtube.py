@@ -73,7 +73,7 @@ def format_rst(data: dict) -> str:
 """
     return rst.strip()
 
-def save_reference(video_id: str, output_dir: str = ".") -> Path:
+def action_gather_youtube(video_id: str, output_dir: str = ".") -> Path:
     """Save video metadata as RST."""
     output_path = Path(output_dir)
     output_path.mkdir(parents=True, exist_ok=True)
@@ -117,27 +117,3 @@ def save_reference(video_id: str, output_dir: str = ".") -> Path:
     print(f"Created RST file: {index_path}")
     
     return index_path
-
-def main():
-    """Main entry point for command line usage."""
-    import sys
-    
-    if len(sys.argv) == 2:
-        video_id = sys.argv[1]
-    else:
-        video_id = input("Please enter the YouTube video ID: ").strip()
-        
-    if not video_id:
-        print("[red]No video ID provided[/red]")
-        sys.exit(1)
-        
-    try:
-        index_path = save_reference(video_id)
-        print("\n[green]✓ Successfully saved reference:[/green]")
-        print(f"  RST: {index_path}")
-    except Exception as e:
-        print(f"[red]Error processing YouTube video:[/red] {e}")
-        sys.exit(1)
-
-if __name__ == "__main__":
-    main()

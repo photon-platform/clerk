@@ -4,20 +4,32 @@ clerk
 import click
 from pathlib import Path
 from .modulator.modulator import Modulator
-from .curator.curator import Curator
+from .curator import curator as curator_actions
+from .gather import gather as gather_actions
 from .logger.logger import Logger
-from .summarizer.summarizer import download_and_summarize
 
 @click.group()
 def cli():
     """A command-line tool for situational awareness and context-sensitive operations."""
     pass
 
-@cli.command()
-@click.argument('url')
-def summarize(url):
-    """Summarizes a web page."""
-    download_and_summarize(url)
+@cli.group()
+def gather():
+    """Gathers content from various sources."""
+    pass
+
+@gather.command('url')
+@click.argument('url_string')
+def gather_url(url_string):
+    """Gathers content from a URL, intelligently handling the source."""
+    gather_actions.action_gather_url(url_string)
+
+@gather.command('repo')
+@click.argument('repo_string')
+def gather_repo(repo_string):
+    """Gathers information about a GitHub repository."""
+    gather_actions.action_gather_repo(repo_string)
+
 
 @cli.command()
 def logger():
@@ -115,30 +127,13 @@ def curator():
 @click.option('--repo-path', default='.', help='The path to the repository.')
 def branches(repo_path):
     """Lists the branches in the repository."""
-    curator = Curator(repo_path)
-    branches = curator.branches()
+    repo = curator_actions.action_get_repo(repo_path)
+    branches = curator_actions.action_get_branches(repo)
     for branch, is_active in branches.items():
         if is_active:
             click.echo(f"* {branch}")
         else:
             click.echo(f"  {branch}")
-
-@curator.command('discover')
-@click.option('--repo-path', default='.', help='The path to the repository.')
-def discover(repo_path):
-    """Discovers the source directory and main module path."""
-    curator = Curator(repo_path)
-    namespace, module = curator.discover()
-    click.echo(f"Namespace: {namespace}")
-    click.echo(f"Module: {module}")
-
-@curator.command('current-version')
-@click.option('--repo-path', default='.', help='The path to the repository.')
-def current_version(repo_path):
-    """Gets the current version of the project."""
-    curator = Curator(repo_path)
-    version = curator.current_version()
-    click.echo(f"Current version: {version}")
 
 @curator.command('create-release-branch')
 @click.option('--repo-path', default='.', help='The path to the repository.')
@@ -146,8 +141,8 @@ def current_version(repo_path):
 @click.option('--description', prompt='Description', help='A short description of the release.')
 def create_release_branch(repo_path, release_version, description):
     """Creates a new release branch."""
-    curator = Curator(repo_path)
-    success, message = curator.create_release_branch(release_version, description)
+    repo = curator_actions.action_get_repo(repo_path)
+    success, message = curator_actions.action_create_release_branch(repo, release_version, description)
     if success:
         click.echo(message)
     else:
@@ -159,8 +154,8 @@ def create_release_branch(repo_path, release_version, description):
 @click.option('--commit-message', prompt='Commit Message', help='The commit message.')
 def merge_to_main(repo_path, branch_name, commit_message):
     """Merges a branch to main."""
-    curator = Curator(repo_path)
-    success, message = curator.merge_to_main(branch_name, commit_message)
+    repo = curator_actions.action_get_repo(repo_path)
+    success, message = curator_actions.action_merge_to_main(repo, branch_name, commit_message)
     if success:
         click.echo(message)
     else:
@@ -172,8 +167,8 @@ def merge_to_main(repo_path, branch_name, commit_message):
 @click.option('--message', prompt='Message', help='The message for the tag.')
 def create_tag(repo_path, tag_name, message):
     """Creates a new tag."""
-    curator = Curator(repo_path)
-    success, message = curator.create_tag(tag_name, message)
+    repo = curator_actions.action_get_repo(repo_path)
+    success, message = curator_actions.action_create_tag(repo, tag_name, message)
     if success:
         click.echo(message)
     else:
