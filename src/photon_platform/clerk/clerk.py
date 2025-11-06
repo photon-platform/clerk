@@ -39,17 +39,24 @@ def logger():
     print(reply)
 
 @cli.command()
-@click.option('--github-id', prompt='GitHub ID', help='Your GitHub username or organization.')
-@click.option('--package-namespace', prompt='Package Namespace', help='The namespace for the package.')
-@click.option('--github-repo-id', prompt='GitHub Repo ID', help='The name of the GitHub repository.')
-@click.option('--package-name', prompt='Package Name', help='The name of the Python package.')
-@click.option('--author', prompt='Author', help='The name of the author.')
+@click.option('--project-name', prompt='Project Name', help='The name of the project.')
 @click.option('--description', prompt='Description', help='A short description of the project.')
-@click.option('--path', prompt='Path', help='The path to create the project in.')
-def progenitor(github_id, package_namespace, github_repo_id, package_name, author, description, path):
+def progenitor(project_name, description):
     """Creates a new Python project."""
     from .progenitor.progenitor import create_project
-    create_project(github_id, package_namespace, github_repo_id, package_name, author, description, path)
+    import os
+    import subprocess
+
+    path = Path(os.getcwd())
+    github_id = path.name
+    package_namespace = github_id.replace('-', '_')
+    
+    try:
+        author = subprocess.check_output(['git', 'config', 'user.name']).decode('utf-8').strip()
+    except (subprocess.CalledProcessError, FileNotFoundError):
+        author = "phi ARCHITECT"
+
+    create_project(github_id, package_namespace, project_name, project_name, author, description, str(path))
 
 @cli.group()
 def modulator():
@@ -173,6 +180,12 @@ def create_tag(repo_path, tag_name, message):
         click.echo(message)
     else:
         click.echo(f"Error: {message}")
+
+@curator.command('init')
+def init_repo():
+    """Initializes a new git repository."""
+    from .curator import git_init
+    git_init.main()
 
 cli.add_command(curator)
 

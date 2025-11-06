@@ -9,7 +9,7 @@ tools for creating and initializing Python projects
 
 """
 
-from photon_platform.progenitor.progenitor import create_project
+from .progenitor import create_project
 
 __author__ = "phiarchitect"
 __maintainer__ = "PHOTON platform"

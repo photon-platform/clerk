@@ -2,7 +2,7 @@ import yaml
 from pathlib import Path
 from jinja2 import Environment, PackageLoader
 from datetime import date
-from photon_platform.modulator import Modulator
+from photon_platform.clerk.modulator import Modulator
 
 
 def create_project(
@@ -29,7 +29,7 @@ def create_project(
 
     # generate templates
     env = Environment(
-        loader=PackageLoader("photon_platform.progenitor"),
+        loader=PackageLoader("photon_platform.clerk.progenitor"),
     )
     template_variables = {
         "author": author,

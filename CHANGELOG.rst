@@ -1,6 +1,16 @@
 changelog
 =========
 
+0.0.6
+-----
+*2025-11-06*
+
+**refactored**
+
+.. + Made `progenitor` command context-aware, inferring GitHub ID and package namespace from the current path.
+.. + Moved `git_init` functionality from `progenitor` to `curator` under a new `init` command.
+.. + Fixed various import errors related to the recent refactoring of modules under `clerk`.
+
 0.0.5
 -----
 *2025-11-05*

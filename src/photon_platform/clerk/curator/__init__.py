@@ -7,7 +7,7 @@ PHOTON platform
 
 
 """
-from photon_platform.curator.curator import Curator
+
 
 __author__ = "PHOTON platform"
 __maintainer__ = "PHOTON platform"
