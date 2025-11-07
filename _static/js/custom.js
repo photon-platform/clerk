@@ -1,4 +1,4 @@
-// Custom navigation logic for the Sphinxilator theme
+// Custom navigation logic for the Publish theme
 
 window.addEventListener('DOMContentLoaded', (event) => {
     // --- Mobile Nav Toggle ---
