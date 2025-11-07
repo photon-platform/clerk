@@ -1,5 +1,5 @@
 from ablog.conf import *
-from photon_platform.sphinxilator.global_conf import *
+from photon_platform.publish.global_conf import *
 import photon_platform.clerk as module
 
 version = module.__version__
