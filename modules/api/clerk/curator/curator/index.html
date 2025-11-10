@@ -1,0 +1,206 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>clerk.curator.curator &mdash; Project name not set  documentation</title>
+  <link rel="stylesheet" type="text/css" href="../../../../../_static/pygments.css?v=ea5fcf70" />
+  <link rel="stylesheet" type="text/css" href="../../../../../_static/css/styles.css?v=d4fd7cae" />
+  <link rel="stylesheet" type="text/css" href="../../../../../_static/graphviz.css?v=4ae1632d" />
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <a href="../../../../../index.html">
+        <h1>Project name not set</h1>
+      </a>
+      <div class="org-repo">
+        <span class="org">photon-platform</span>
+        •
+        <span class="repo">clerk</span>
+      </div>
+    </div>
+    <nav aria-label="Header">
+      <input type="checkbox" id="nav-Header-toggle" >
+      <label for="nav-Header-toggle" >Header</label>
+      <ul>
+      </ul>
+    </nav>
+    <div class="motto"></div>
+  </header>
+  <main>
+
+    <article>
+      <nav class="context">
+        <div class="prev">
+           <a href="../branch/index.html" class="prev" title="clerk.curator.branch" >Prev</a>
+        </div>
+        <div class="next">
+          <a href="../get_stat/index.html" class="next" title="clerk.curator.get_stat" >Next</a>
+        </div>
+      </nav>
+      <nav class="breadcrumbs">
+        <span><a href="../../../../../index.html">Home</a></span>
+          <span>/</span>
+        <span><a href="../../../index.html">API Reference</a></span>
+          <span>/</span>
+        <span><a href="../../index.html">clerk</a></span>
+          <span>/</span>
+        <span><a href="../index.html">clerk.curator</a></span>
+        <span>/</span>
+        <span>clerk.curator.curator</span>
+      </nav>
+      <div class="content">
+          <section id="module-clerk.curator.curator">
+<span id="clerk-curator-curator"></span><h1>clerk.curator.curator<a class="headerlink" href="#module-clerk.curator.curator" title="Link to this heading">¶</a></h1>
+<blockquote>
+<div><p># Example usage
+curator = Curator(‘.’)
+curator.create_release_branch(‘1.0.0’, ‘release-1.0.0’)
+curator.merge_to_main(‘release-1.0.0’, ‘Release 1.0.0’)</p>
+</div></blockquote>
+<section id="functions">
+<h2>Functions<a class="headerlink" href="#functions" title="Link to this heading">¶</a></h2>
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#clerk.curator.curator.action_get_repo" title="clerk.curator.curator.action_get_repo"><code class="xref py py-obj docutils literal notranslate"><span class="pre">action_get_repo</span></code></a>([repo_path])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#clerk.curator.curator.action_get_root_path" title="clerk.curator.curator.action_get_root_path"><code class="xref py py-obj docutils literal notranslate"><span class="pre">action_get_root_path</span></code></a>(repo)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#clerk.curator.curator.action_load_pyproject_toml" title="clerk.curator.curator.action_load_pyproject_toml"><code class="xref py py-obj docutils literal notranslate"><span class="pre">action_load_pyproject_toml</span></code></a>(root_path)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#clerk.curator.curator.action_get_branches" title="clerk.curator.curator.action_get_branches"><code class="xref py py-obj docutils literal notranslate"><span class="pre">action_get_branches</span></code></a>(→ dict)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#clerk.curator.curator.action_discover_module" title="clerk.curator.curator.action_discover_module"><code class="xref py py-obj docutils literal notranslate"><span class="pre">action_discover_module</span></code></a>(→ tuple[pathlib.Path | None, ...)</p></td>
+<td><p>Discovers the source directory and main module path based on pyproject.toml,</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#clerk.curator.curator.action_get_version" title="clerk.curator.curator.action_get_version"><code class="xref py py-obj docutils literal notranslate"><span class="pre">action_get_version</span></code></a>(→ str | None)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#clerk.curator.curator.action_set_version" title="clerk.curator.curator.action_set_version"><code class="xref py py-obj docutils literal notranslate"><span class="pre">action_set_version</span></code></a>(→ None)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#clerk.curator.curator.action_update_changelog" title="clerk.curator.curator.action_update_changelog"><code class="xref py py-obj docutils literal notranslate"><span class="pre">action_update_changelog</span></code></a>(→ None)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#clerk.curator.curator.action_merge_to_main" title="clerk.curator.curator.action_merge_to_main"><code class="xref py py-obj docutils literal notranslate"><span class="pre">action_merge_to_main</span></code></a>(→ None)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#clerk.curator.curator.action_create_release_branch" title="clerk.curator.curator.action_create_release_branch"><code class="xref py py-obj docutils literal notranslate"><span class="pre">action_create_release_branch</span></code></a>(→ None)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#clerk.curator.curator.action_create_tag" title="clerk.curator.curator.action_create_tag"><code class="xref py py-obj docutils literal notranslate"><span class="pre">action_create_tag</span></code></a>(→ tuple[bool, str])</p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="module-contents">
+<h2>Module Contents<a class="headerlink" href="#module-contents" title="Link to this heading">¶</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="clerk.curator.curator.action_get_repo">
+<span class="sig-prename descclassname"><span class="pre">clerk.curator.curator.</span></span><span class="sig-name descname"><span class="pre">action_get_repo</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">repo_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3.9/library/stdtypes.html#str" title="(in Python v3.9)"><span class="pre">str</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'.'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../../../_modules/clerk/curator/curator.html#action_get_repo"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#clerk.curator.curator.action_get_repo" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="clerk.curator.curator.action_get_root_path">
+<span class="sig-prename descclassname"><span class="pre">clerk.curator.curator.</span></span><span class="sig-name descname"><span class="pre">action_get_root_path</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">repo</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../../../_modules/clerk/curator/curator.html#action_get_root_path"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#clerk.curator.curator.action_get_root_path" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="clerk.curator.curator.action_load_pyproject_toml">
+<span class="sig-prename descclassname"><span class="pre">clerk.curator.curator.</span></span><span class="sig-name descname"><span class="pre">action_load_pyproject_toml</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">root_path</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../../../_modules/clerk/curator/curator.html#action_load_pyproject_toml"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#clerk.curator.curator.action_load_pyproject_toml" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="clerk.curator.curator.action_get_branches">
+<span class="sig-prename descclassname"><span class="pre">clerk.curator.curator.</span></span><span class="sig-name descname"><span class="pre">action_get_branches</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">repo</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3.9/library/stdtypes.html#dict" title="(in Python v3.9)"><span class="pre">dict</span></a></span></span><a class="reference internal" href="../../../../../_modules/clerk/curator/curator.html#action_get_branches"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#clerk.curator.curator.action_get_branches" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="clerk.curator.curator.action_discover_module">
+<span class="sig-prename descclassname"><span class="pre">clerk.curator.curator.</span></span><span class="sig-name descname"><span class="pre">action_discover_module</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pyproject_toml</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">root_path</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3.9/library/stdtypes.html#tuple" title="(in Python v3.9)"><span class="pre">tuple</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3.9/library/pathlib.html#pathlib.Path" title="(in Python v3.9)"><span class="pre">pathlib.Path</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3.9/library/constants.html#None" title="(in Python v3.9)"><span class="pre">None</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3.9/library/pathlib.html#pathlib.Path" title="(in Python v3.9)"><span class="pre">pathlib.Path</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3.9/library/constants.html#None" title="(in Python v3.9)"><span class="pre">None</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="../../../../../_modules/clerk/curator/curator.html#action_discover_module"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#clerk.curator.curator.action_discover_module" title="Link to this definition">¶</a></dt>
+<dd><p>Discovers the source directory and main module path based on pyproject.toml,
+prioritizing [tool.setuptools.dynamic].version.attr.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="clerk.curator.curator.action_get_version">
+<span class="sig-prename descclassname"><span class="pre">clerk.curator.curator.</span></span><span class="sig-name descname"><span class="pre">action_get_version</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">module</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3.9/library/pathlib.html#pathlib.Path" title="(in Python v3.9)"><span class="pre">pathlib.Path</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3.9/library/stdtypes.html#str" title="(in Python v3.9)"><span class="pre">str</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3.9/library/constants.html#None" title="(in Python v3.9)"><span class="pre">None</span></a></span></span><a class="reference internal" href="../../../../../_modules/clerk/curator/curator.html#action_get_version"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#clerk.curator.curator.action_get_version" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="clerk.curator.curator.action_set_version">
+<span class="sig-prename descclassname"><span class="pre">clerk.curator.curator.</span></span><span class="sig-name descname"><span class="pre">action_set_version</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">module</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3.9/library/pathlib.html#pathlib.Path" title="(in Python v3.9)"><span class="pre">pathlib.Path</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">version</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3.9/library/stdtypes.html#str" title="(in Python v3.9)"><span class="pre">str</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3.9/library/constants.html#None" title="(in Python v3.9)"><span class="pre">None</span></a></span></span><a class="reference internal" href="../../../../../_modules/clerk/curator/curator.html#action_set_version"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#clerk.curator.curator.action_set_version" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="clerk.curator.curator.action_update_changelog">
+<span class="sig-prename descclassname"><span class="pre">clerk.curator.curator.</span></span><span class="sig-name descname"><span class="pre">action_update_changelog</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">root_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">version</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3.9/library/stdtypes.html#str" title="(in Python v3.9)"><span class="pre">str</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">description</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3.9/library/stdtypes.html#str" title="(in Python v3.9)"><span class="pre">str</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3.9/library/constants.html#None" title="(in Python v3.9)"><span class="pre">None</span></a></span></span><a class="reference internal" href="../../../../../_modules/clerk/curator/curator.html#action_update_changelog"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#clerk.curator.curator.action_update_changelog" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="clerk.curator.curator.action_merge_to_main">
+<span class="sig-prename descclassname"><span class="pre">clerk.curator.curator.</span></span><span class="sig-name descname"><span class="pre">action_merge_to_main</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">repo</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">branch_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3.9/library/stdtypes.html#str" title="(in Python v3.9)"><span class="pre">str</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">commit_message</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3.9/library/stdtypes.html#str" title="(in Python v3.9)"><span class="pre">str</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3.9/library/constants.html#None" title="(in Python v3.9)"><span class="pre">None</span></a></span></span><a class="reference internal" href="../../../../../_modules/clerk/curator/curator.html#action_merge_to_main"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#clerk.curator.curator.action_merge_to_main" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="clerk.curator.curator.action_create_release_branch">
+<span class="sig-prename descclassname"><span class="pre">clerk.curator.curator.</span></span><span class="sig-name descname"><span class="pre">action_create_release_branch</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">repo</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">release_version</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3.9/library/stdtypes.html#str" title="(in Python v3.9)"><span class="pre">str</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">description</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3.9/library/stdtypes.html#str" title="(in Python v3.9)"><span class="pre">str</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3.9/library/constants.html#None" title="(in Python v3.9)"><span class="pre">None</span></a></span></span><a class="reference internal" href="../../../../../_modules/clerk/curator/curator.html#action_create_release_branch"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#clerk.curator.curator.action_create_release_branch" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="clerk.curator.curator.action_create_tag">
+<span class="sig-prename descclassname"><span class="pre">clerk.curator.curator.</span></span><span class="sig-name descname"><span class="pre">action_create_tag</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">repo</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tag_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3.9/library/stdtypes.html#str" title="(in Python v3.9)"><span class="pre">str</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">message</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3.9/library/stdtypes.html#str" title="(in Python v3.9)"><span class="pre">str</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3.9/library/stdtypes.html#tuple" title="(in Python v3.9)"><span class="pre">tuple</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3.9/library/functions.html#bool" title="(in Python v3.9)"><span class="pre">bool</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3.9/library/stdtypes.html#str" title="(in Python v3.9)"><span class="pre">str</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="../../../../../_modules/clerk/curator/curator.html#action_create_tag"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#clerk.curator.curator.action_create_tag" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</section>
+</section>
+
+      </div>
+      <footer></footer>
+    </article>
+
+  </main>
+
+<div class="asides">
+    <aside>
+        <h3>Search</h3>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+    </aside>
+    
+</div>
+<footer>
+      <div class="rst-footer-buttons" role="navigation" aria-label="Footer Nav">
+          <a href="../branch/index.html" class="btn btn-neutral float-left" title="clerk.curator.branch" accesskey="p" rel="prev"> Previous</a>
+          <a href="../get_stat/index.html" class="btn btn-neutral float-right" title="clerk.curator.get_stat" accesskey="n" rel="next">Next </a>
+      </div>
+    <hr/>
+    <div role="contentinfo">
+        <p>
+                &copy; Copyright .
+        </p>
+    </div>
+</footer>
+
+  <script src="../../../../../_static/jquery.js?v=5d32c60e"></script>
+  <script src="../../../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+  <script src="../../../../../_static/documentation_options.js?v=5929fcd5"></script>
+  <script src="../../../../../_static/doctools.js?v=9bcbadda"></script>
+  <script src="../../../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+
+
+</body>
+</html>

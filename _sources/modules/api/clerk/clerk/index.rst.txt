@@ -1,0 +1,129 @@
+clerk.clerk
+===========
+
+.. py:module:: clerk.clerk
+
+.. autoapi-nested-parse::
+
+   clerk
+
+
+
+Functions
+---------
+
+.. autoapisummary::
+
+   clerk.clerk.cli
+   clerk.clerk.gather
+   clerk.clerk.gather_url
+   clerk.clerk.gather_repo
+   clerk.clerk.logger
+   clerk.clerk.progenitor
+   clerk.clerk.modulator
+   clerk.clerk.create_module
+   clerk.clerk.create_submodule
+   clerk.clerk.create_class
+   clerk.clerk.create_function
+   clerk.clerk.create_class_method
+   clerk.clerk.curator
+   clerk.clerk.branches
+   clerk.clerk.create_release_branch
+   clerk.clerk.merge_to_main
+   clerk.clerk.create_tag
+   clerk.clerk.init_repo
+
+
+Module Contents
+---------------
+
+.. py:function:: cli()
+
+   A command-line tool for situational awareness and context-sensitive operations.
+
+
+.. py:function:: gather()
+
+   Gathers content from various sources.
+
+
+.. py:function:: gather_url(url_string)
+
+   Gathers content from a URL, intelligently handling the source.
+
+
+.. py:function:: gather_repo(repo_string)
+
+   Gathers information about a GitHub repository.
+
+
+.. py:function:: logger()
+
+   Creates a new log entry.
+
+
+.. py:function:: progenitor(project_name, description)
+
+   Creates a new Python project.
+
+
+.. py:function:: modulator()
+
+   Shapes Python modules and packages.
+
+
+.. py:function:: create_module(project_path, namespace, module_name)
+
+   Creates a new Python module.
+
+
+.. py:function:: create_submodule(project_path, namespace, module_name, submodule_name)
+
+   Creates a new Python submodule.
+
+
+.. py:function:: create_class(project_path, namespace, module_name, class_name)
+
+   Creates a new Python class.
+
+
+.. py:function:: create_function(project_path, namespace, module_name, function_name, args, return_type)
+
+   Creates a new Python function.
+
+
+.. py:function:: create_class_method(project_path, namespace, module_name, class_name, method_name, args, return_type)
+
+   Creates a new Python class method.
+
+
+.. py:function:: curator()
+
+   Organizes git/archive management.
+
+
+.. py:function:: branches(repo_path)
+
+   Lists the branches in the repository.
+
+
+.. py:function:: create_release_branch(repo_path, release_version, description)
+
+   Creates a new release branch.
+
+
+.. py:function:: merge_to_main(repo_path, branch_name, commit_message)
+
+   Merges a branch to main.
+
+
+.. py:function:: create_tag(repo_path, tag_name, message)
+
+   Creates a new tag.
+
+
+.. py:function:: init_repo()
+
+   Initializes a new git repository.
+
+

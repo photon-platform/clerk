@@ -1,0 +1,86 @@
+gather
+======
+
+.. py:module:: gather
+
+
+Functions
+---------
+
+.. autoapisummary::
+
+   gather.get_git_root
+   gather.get_project_name
+   gather.create_clerk_directory
+   gather.ensure_parent_path_exists
+   gather.gen_tree
+   gather.run_sphinx_build
+   gather.remove_header_links
+   gather.clean_directory_except_index_html
+   gather.gather_source_code
+   gather.extract_div_convert_to_markdown
+   gather.main
+
+
+Module Contents
+---------------
+
+.. py:function:: get_git_root(path='.')
+
+   Find the root directory of the git repository.
+
+
+.. py:function:: get_project_name(git_root)
+
+   Get the project name from pyproject.toml file.
+
+
+.. py:function:: create_clerk_directory(directory)
+
+   Create the .clerk directory if it doesn't exist.
+
+
+.. py:function:: ensure_parent_path_exists(file_path)
+
+   Ensure that the parent path of the given file exists. If not, create it.
+
+
+.. py:function:: gen_tree(path, dest)
+
+   Generate a tree structure of the given path and output to destination file.
+
+
+.. py:function:: run_sphinx_build(src, dest)
+
+   Run sphinx-build to generate singlehtml documentation.
+
+
+.. py:function:: remove_header_links(html_content) -> str
+
+   Removes all <a> tags with class 'headerlink' from the HTML content.
+
+   returns:
+   str: Modified HTML content with header links removed.
+
+
+.. py:function:: clean_directory_except_index_html(directory)
+
+   Remove all files except index.html in the given directory.
+
+
+.. py:function:: gather_source_code(src_directory, output_file)
+
+   Gathers all the source code from the src directory into a single markdown file.
+
+
+.. py:function:: extract_div_convert_to_markdown(html_file_path, output_markdown_file)
+
+   Extracts the div with class 'document' from an HTML file and converts it to Markdown.
+
+   Args:
+   html_file_path (str): Path to the HTML file.
+   output_markdown_file (str): Path for the output Markdown file.
+
+
+.. py:function:: main()
+

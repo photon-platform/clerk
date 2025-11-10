@@ -1,0 +1,337 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>clerk.clerk &mdash; Project name not set  documentation</title>
+  <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=ea5fcf70" />
+  <link rel="stylesheet" type="text/css" href="../../_static/css/styles.css?v=d4fd7cae" />
+  <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css?v=4ae1632d" />
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <a href="../../index.html">
+        <h1>Project name not set</h1>
+      </a>
+      <div class="org-repo">
+        <span class="org">photon-platform</span>
+        •
+        <span class="repo">clerk</span>
+      </div>
+    </div>
+    <nav aria-label="Header">
+      <input type="checkbox" id="nav-Header-toggle" >
+      <label for="nav-Header-toggle" >Header</label>
+      <ul>
+      </ul>
+    </nav>
+    <div class="motto"></div>
+  </header>
+  <main>
+
+    <article>
+      <nav class="context">
+        <div class="prev">
+        </div>
+        <div class="next">
+        </div>
+      </nav>
+      <nav class="breadcrumbs">
+        <span><a href="../../index.html">Home</a></span>
+          <span>/</span>
+        <span><a href="../index.html">Module code</a></span>
+          <span>/</span>
+        <span><a href="../clerk.html">clerk</a></span>
+        <span>/</span>
+        <span>clerk.clerk</span>
+      </nav>
+      <div class="content">
+          <h1>Source code for clerk.clerk</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">clerk</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">click</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pathlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">Path</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.modulator.modulator</span><span class="w"> </span><span class="kn">import</span> <span class="n">Modulator</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.curator</span><span class="w"> </span><span class="kn">import</span> <span class="n">curator</span> <span class="k">as</span> <span class="n">curator_actions</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.gather</span><span class="w"> </span><span class="kn">import</span> <span class="n">gather</span> <span class="k">as</span> <span class="n">gather_actions</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.logger.logger</span><span class="w"> </span><span class="kn">import</span> <span class="n">Logger</span>
+
+<span class="nd">@click</span><span class="o">.</span><span class="n">group</span><span class="p">()</span>
+<div class="viewcode-block" id="cli">
+<a class="viewcode-back" href="../../modules/api/clerk/clerk/index.html#clerk.clerk.cli">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">cli</span><span class="p">():</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;A command-line tool for situational awareness and context-sensitive operations.&quot;&quot;&quot;</span>
+    <span class="k">pass</span></div>
+
+
+<span class="nd">@cli</span><span class="o">.</span><span class="n">group</span><span class="p">()</span>
+<div class="viewcode-block" id="gather">
+<a class="viewcode-back" href="../../modules/api/clerk/clerk/index.html#clerk.clerk.gather">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">gather</span><span class="p">():</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Gathers content from various sources.&quot;&quot;&quot;</span>
+    <span class="k">pass</span></div>
+
+
+<span class="nd">@gather</span><span class="o">.</span><span class="n">command</span><span class="p">(</span><span class="s1">&#39;url&#39;</span><span class="p">)</span>
+<span class="nd">@click</span><span class="o">.</span><span class="n">argument</span><span class="p">(</span><span class="s1">&#39;url_string&#39;</span><span class="p">)</span>
+<div class="viewcode-block" id="gather_url">
+<a class="viewcode-back" href="../../modules/api/clerk/clerk/index.html#clerk.clerk.gather_url">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">gather_url</span><span class="p">(</span><span class="n">url_string</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Gathers content from a URL, intelligently handling the source.&quot;&quot;&quot;</span>
+    <span class="n">gather_actions</span><span class="o">.</span><span class="n">action_gather_url</span><span class="p">(</span><span class="n">url_string</span><span class="p">)</span></div>
+
+
+<span class="nd">@gather</span><span class="o">.</span><span class="n">command</span><span class="p">(</span><span class="s1">&#39;repo&#39;</span><span class="p">)</span>
+<span class="nd">@click</span><span class="o">.</span><span class="n">argument</span><span class="p">(</span><span class="s1">&#39;repo_string&#39;</span><span class="p">)</span>
+<div class="viewcode-block" id="gather_repo">
+<a class="viewcode-back" href="../../modules/api/clerk/clerk/index.html#clerk.clerk.gather_repo">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">gather_repo</span><span class="p">(</span><span class="n">repo_string</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Gathers information about a GitHub repository.&quot;&quot;&quot;</span>
+    <span class="n">gather_actions</span><span class="o">.</span><span class="n">action_gather_repo</span><span class="p">(</span><span class="n">repo_string</span><span class="p">)</span></div>
+
+
+
+<span class="nd">@cli</span><span class="o">.</span><span class="n">command</span><span class="p">()</span>
+<div class="viewcode-block" id="logger">
+<a class="viewcode-back" href="../../modules/api/clerk/clerk/index.html#clerk.clerk.logger">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">logger</span><span class="p">():</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Creates a new log entry.&quot;&quot;&quot;</span>
+    <span class="n">app</span> <span class="o">=</span> <span class="n">Logger</span><span class="p">()</span>
+    <span class="n">reply</span> <span class="o">=</span> <span class="n">app</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">reply</span><span class="p">)</span></div>
+
+
+<span class="nd">@cli</span><span class="o">.</span><span class="n">command</span><span class="p">()</span>
+<span class="nd">@click</span><span class="o">.</span><span class="n">option</span><span class="p">(</span><span class="s1">&#39;--project-name&#39;</span><span class="p">,</span> <span class="n">prompt</span><span class="o">=</span><span class="s1">&#39;Project Name&#39;</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s1">&#39;The name of the project.&#39;</span><span class="p">)</span>
+<span class="nd">@click</span><span class="o">.</span><span class="n">option</span><span class="p">(</span><span class="s1">&#39;--description&#39;</span><span class="p">,</span> <span class="n">prompt</span><span class="o">=</span><span class="s1">&#39;Description&#39;</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s1">&#39;A short description of the project.&#39;</span><span class="p">)</span>
+<div class="viewcode-block" id="progenitor">
+<a class="viewcode-back" href="../../modules/api/clerk/clerk/index.html#clerk.clerk.progenitor">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">progenitor</span><span class="p">(</span><span class="n">project_name</span><span class="p">,</span> <span class="n">description</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Creates a new Python project.&quot;&quot;&quot;</span>
+    <span class="kn">from</span><span class="w"> </span><span class="nn">.progenitor.progenitor</span><span class="w"> </span><span class="kn">import</span> <span class="n">create_project</span>
+    <span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+    <span class="kn">import</span><span class="w"> </span><span class="nn">subprocess</span>
+
+    <span class="n">path</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">())</span>
+    <span class="n">github_id</span> <span class="o">=</span> <span class="n">path</span><span class="o">.</span><span class="n">name</span>
+    <span class="n">package_namespace</span> <span class="o">=</span> <span class="n">github_id</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;-&#39;</span><span class="p">,</span> <span class="s1">&#39;_&#39;</span><span class="p">)</span>
+    
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">author</span> <span class="o">=</span> <span class="n">subprocess</span><span class="o">.</span><span class="n">check_output</span><span class="p">([</span><span class="s1">&#39;git&#39;</span><span class="p">,</span> <span class="s1">&#39;config&#39;</span><span class="p">,</span> <span class="s1">&#39;user.name&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+    <span class="k">except</span> <span class="p">(</span><span class="n">subprocess</span><span class="o">.</span><span class="n">CalledProcessError</span><span class="p">,</span> <span class="ne">FileNotFoundError</span><span class="p">):</span>
+        <span class="n">author</span> <span class="o">=</span> <span class="s2">&quot;phi ARCHITECT&quot;</span>
+
+    <span class="n">create_project</span><span class="p">(</span><span class="n">github_id</span><span class="p">,</span> <span class="n">package_namespace</span><span class="p">,</span> <span class="n">project_name</span><span class="p">,</span> <span class="n">project_name</span><span class="p">,</span> <span class="n">author</span><span class="p">,</span> <span class="n">description</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">path</span><span class="p">))</span></div>
+
+
+<span class="nd">@cli</span><span class="o">.</span><span class="n">group</span><span class="p">()</span>
+<div class="viewcode-block" id="modulator">
+<a class="viewcode-back" href="../../modules/api/clerk/clerk/index.html#clerk.clerk.modulator">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">modulator</span><span class="p">():</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Shapes Python modules and packages.&quot;&quot;&quot;</span>
+    <span class="k">pass</span></div>
+
+
+<span class="nd">@modulator</span><span class="o">.</span><span class="n">command</span><span class="p">(</span><span class="s1">&#39;create-module&#39;</span><span class="p">)</span>
+<span class="nd">@click</span><span class="o">.</span><span class="n">option</span><span class="p">(</span><span class="s1">&#39;--project-path&#39;</span><span class="p">,</span> <span class="n">prompt</span><span class="o">=</span><span class="s1">&#39;Project Path&#39;</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s1">&#39;The path to the project.&#39;</span><span class="p">)</span>
+<span class="nd">@click</span><span class="o">.</span><span class="n">option</span><span class="p">(</span><span class="s1">&#39;--namespace&#39;</span><span class="p">,</span> <span class="n">prompt</span><span class="o">=</span><span class="s1">&#39;Namespace&#39;</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s1">&#39;The namespace for the module.&#39;</span><span class="p">)</span>
+<span class="nd">@click</span><span class="o">.</span><span class="n">option</span><span class="p">(</span><span class="s1">&#39;--module-name&#39;</span><span class="p">,</span> <span class="n">prompt</span><span class="o">=</span><span class="s1">&#39;Module Name&#39;</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s1">&#39;The name of the module.&#39;</span><span class="p">)</span>
+<div class="viewcode-block" id="create_module">
+<a class="viewcode-back" href="../../modules/api/clerk/clerk/index.html#clerk.clerk.create_module">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">create_module</span><span class="p">(</span><span class="n">project_path</span><span class="p">,</span> <span class="n">namespace</span><span class="p">,</span> <span class="n">module_name</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Creates a new Python module.&quot;&quot;&quot;</span>
+    <span class="n">modulator</span> <span class="o">=</span> <span class="n">Modulator</span><span class="p">(</span><span class="n">Path</span><span class="p">(</span><span class="n">project_path</span><span class="p">),</span> <span class="n">namespace</span><span class="p">)</span>
+    <span class="n">modulator</span><span class="o">.</span><span class="n">create_module</span><span class="p">(</span><span class="n">module_name</span><span class="p">)</span>
+    <span class="n">click</span><span class="o">.</span><span class="n">echo</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Module </span><span class="si">{</span><span class="n">module_name</span><span class="si">}</span><span class="s2"> created successfully.&quot;</span><span class="p">)</span></div>
+
+
+<span class="nd">@modulator</span><span class="o">.</span><span class="n">command</span><span class="p">(</span><span class="s1">&#39;create-submodule&#39;</span><span class="p">)</span>
+<span class="nd">@click</span><span class="o">.</span><span class="n">option</span><span class="p">(</span><span class="s1">&#39;--project-path&#39;</span><span class="p">,</span> <span class="n">prompt</span><span class="o">=</span><span class="s1">&#39;Project Path&#39;</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s1">&#39;The path to the project.&#39;</span><span class="p">)</span>
+<span class="nd">@click</span><span class="o">.</span><span class="n">option</span><span class="p">(</span><span class="s1">&#39;--namespace&#39;</span><span class="p">,</span> <span class="n">prompt</span><span class="o">=</span><span class="s1">&#39;Namespace&#39;</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s1">&#39;The namespace for the module.&#39;</span><span class="p">)</span>
+<span class="nd">@click</span><span class="o">.</span><span class="n">option</span><span class="p">(</span><span class="s1">&#39;--module-name&#39;</span><span class="p">,</span> <span class="n">prompt</span><span class="o">=</span><span class="s1">&#39;Module Name&#39;</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s1">&#39;The name of the parent module.&#39;</span><span class="p">)</span>
+<span class="nd">@click</span><span class="o">.</span><span class="n">option</span><span class="p">(</span><span class="s1">&#39;--submodule-name&#39;</span><span class="p">,</span> <span class="n">prompt</span><span class="o">=</span><span class="s1">&#39;Submodule Name&#39;</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s1">&#39;The name of the submodule.&#39;</span><span class="p">)</span>
+<div class="viewcode-block" id="create_submodule">
+<a class="viewcode-back" href="../../modules/api/clerk/clerk/index.html#clerk.clerk.create_submodule">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">create_submodule</span><span class="p">(</span><span class="n">project_path</span><span class="p">,</span> <span class="n">namespace</span><span class="p">,</span> <span class="n">module_name</span><span class="p">,</span> <span class="n">submodule_name</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Creates a new Python submodule.&quot;&quot;&quot;</span>
+    <span class="n">modulator</span> <span class="o">=</span> <span class="n">Modulator</span><span class="p">(</span><span class="n">Path</span><span class="p">(</span><span class="n">project_path</span><span class="p">),</span> <span class="n">namespace</span><span class="p">)</span>
+    <span class="n">modulator</span><span class="o">.</span><span class="n">create_submodule</span><span class="p">(</span><span class="n">module_name</span><span class="p">,</span> <span class="n">submodule_name</span><span class="p">)</span>
+    <span class="n">click</span><span class="o">.</span><span class="n">echo</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Submodule </span><span class="si">{</span><span class="n">submodule_name</span><span class="si">}</span><span class="s2"> created successfully in </span><span class="si">{</span><span class="n">module_name</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span></div>
+
+
+<span class="nd">@modulator</span><span class="o">.</span><span class="n">command</span><span class="p">(</span><span class="s1">&#39;create-class&#39;</span><span class="p">)</span>
+<span class="nd">@click</span><span class="o">.</span><span class="n">option</span><span class="p">(</span><span class="s1">&#39;--project-path&#39;</span><span class="p">,</span> <span class="n">prompt</span><span class="o">=</span><span class="s1">&#39;Project Path&#39;</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s1">&#39;The path to the project.&#39;</span><span class="p">)</span>
+<span class="nd">@click</span><span class="o">.</span><span class="n">option</span><span class="p">(</span><span class="s1">&#39;--namespace&#39;</span><span class="p">,</span> <span class="n">prompt</span><span class="o">=</span><span class="s1">&#39;Namespace&#39;</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s1">&#39;The namespace for the module.&#39;</span><span class="p">)</span>
+<span class="nd">@click</span><span class="o">.</span><span class="n">option</span><span class="p">(</span><span class="s1">&#39;--module-name&#39;</span><span class="p">,</span> <span class="n">prompt</span><span class="o">=</span><span class="s1">&#39;Module Name&#39;</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s1">&#39;The name of the module.&#39;</span><span class="p">)</span>
+<span class="nd">@click</span><span class="o">.</span><span class="n">option</span><span class="p">(</span><span class="s1">&#39;--class-name&#39;</span><span class="p">,</span> <span class="n">prompt</span><span class="o">=</span><span class="s1">&#39;Class Name&#39;</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s1">&#39;The name of the class.&#39;</span><span class="p">)</span>
+<div class="viewcode-block" id="create_class">
+<a class="viewcode-back" href="../../modules/api/clerk/clerk/index.html#clerk.clerk.create_class">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">create_class</span><span class="p">(</span><span class="n">project_path</span><span class="p">,</span> <span class="n">namespace</span><span class="p">,</span> <span class="n">module_name</span><span class="p">,</span> <span class="n">class_name</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Creates a new Python class.&quot;&quot;&quot;</span>
+    <span class="n">modulator</span> <span class="o">=</span> <span class="n">Modulator</span><span class="p">(</span><span class="n">Path</span><span class="p">(</span><span class="n">project_path</span><span class="p">),</span> <span class="n">namespace</span><span class="p">)</span>
+    <span class="n">modulator</span><span class="o">.</span><span class="n">create_class</span><span class="p">(</span><span class="n">module_name</span><span class="p">,</span> <span class="n">class_name</span><span class="p">)</span>
+    <span class="n">click</span><span class="o">.</span><span class="n">echo</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Class </span><span class="si">{</span><span class="n">class_name</span><span class="si">}</span><span class="s2"> created successfully in </span><span class="si">{</span><span class="n">module_name</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span></div>
+
+
+<span class="nd">@modulator</span><span class="o">.</span><span class="n">command</span><span class="p">(</span><span class="s1">&#39;create-function&#39;</span><span class="p">)</span>
+<span class="nd">@click</span><span class="o">.</span><span class="n">option</span><span class="p">(</span><span class="s1">&#39;--project-path&#39;</span><span class="p">,</span> <span class="n">prompt</span><span class="o">=</span><span class="s1">&#39;Project Path&#39;</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s1">&#39;The path to the project.&#39;</span><span class="p">)</span>
+<span class="nd">@click</span><span class="o">.</span><span class="n">option</span><span class="p">(</span><span class="s1">&#39;--namespace&#39;</span><span class="p">,</span> <span class="n">prompt</span><span class="o">=</span><span class="s1">&#39;Namespace&#39;</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s1">&#39;The namespace for the module.&#39;</span><span class="p">)</span>
+<span class="nd">@click</span><span class="o">.</span><span class="n">option</span><span class="p">(</span><span class="s1">&#39;--module-name&#39;</span><span class="p">,</span> <span class="n">prompt</span><span class="o">=</span><span class="s1">&#39;Module Name&#39;</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s1">&#39;The name of the module.&#39;</span><span class="p">)</span>
+<span class="nd">@click</span><span class="o">.</span><span class="n">option</span><span class="p">(</span><span class="s1">&#39;--function-name&#39;</span><span class="p">,</span> <span class="n">prompt</span><span class="o">=</span><span class="s1">&#39;Function Name&#39;</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s1">&#39;The name of the function.&#39;</span><span class="p">)</span>
+<span class="nd">@click</span><span class="o">.</span><span class="n">option</span><span class="p">(</span><span class="s1">&#39;--args&#39;</span><span class="p">,</span> <span class="n">prompt</span><span class="o">=</span><span class="s1">&#39;Arguments&#39;</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s1">&#39;The arguments for the function.&#39;</span><span class="p">)</span>
+<span class="nd">@click</span><span class="o">.</span><span class="n">option</span><span class="p">(</span><span class="s1">&#39;--return-type&#39;</span><span class="p">,</span> <span class="n">prompt</span><span class="o">=</span><span class="s1">&#39;Return Type&#39;</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s1">&#39;The return type of the function.&#39;</span><span class="p">)</span>
+<div class="viewcode-block" id="create_function">
+<a class="viewcode-back" href="../../modules/api/clerk/clerk/index.html#clerk.clerk.create_function">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">create_function</span><span class="p">(</span><span class="n">project_path</span><span class="p">,</span> <span class="n">namespace</span><span class="p">,</span> <span class="n">module_name</span><span class="p">,</span> <span class="n">function_name</span><span class="p">,</span> <span class="n">args</span><span class="p">,</span> <span class="n">return_type</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Creates a new Python function.&quot;&quot;&quot;</span>
+    <span class="n">modulator</span> <span class="o">=</span> <span class="n">Modulator</span><span class="p">(</span><span class="n">Path</span><span class="p">(</span><span class="n">project_path</span><span class="p">),</span> <span class="n">namespace</span><span class="p">)</span>
+    <span class="n">modulator</span><span class="o">.</span><span class="n">create_function</span><span class="p">(</span><span class="n">module_name</span><span class="p">,</span> <span class="n">function_name</span><span class="p">,</span> <span class="n">args</span><span class="p">,</span> <span class="n">return_type</span><span class="p">)</span>
+    <span class="n">click</span><span class="o">.</span><span class="n">echo</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Function </span><span class="si">{</span><span class="n">function_name</span><span class="si">}</span><span class="s2"> created successfully in </span><span class="si">{</span><span class="n">module_name</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span></div>
+
+
+<span class="nd">@modulator</span><span class="o">.</span><span class="n">command</span><span class="p">(</span><span class="s1">&#39;create-class-method&#39;</span><span class="p">)</span>
+<span class="nd">@click</span><span class="o">.</span><span class="n">option</span><span class="p">(</span><span class="s1">&#39;--project-path&#39;</span><span class="p">,</span> <span class="n">prompt</span><span class="o">=</span><span class="s1">&#39;Project Path&#39;</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s1">&#39;The path to the project.&#39;</span><span class="p">)</span>
+<span class="nd">@click</span><span class="o">.</span><span class="n">option</span><span class="p">(</span><span class="s1">&#39;--namespace&#39;</span><span class="p">,</span> <span class="n">prompt</span><span class="o">=</span><span class="s1">&#39;Namespace&#39;</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s1">&#39;The namespace for the module.&#39;</span><span class="p">)</span>
+<span class="nd">@click</span><span class="o">.</span><span class="n">option</span><span class="p">(</span><span class="s1">&#39;--module-name&#39;</span><span class="p">,</span> <span class="n">prompt</span><span class="o">=</span><span class="s1">&#39;Module Name&#39;</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s1">&#39;The name of the module.&#39;</span><span class="p">)</span>
+<span class="nd">@click</span><span class="o">.</span><span class="n">option</span><span class="p">(</span><span class="s1">&#39;--class-name&#39;</span><span class="p">,</span> <span class="n">prompt</span><span class="o">=</span><span class="s1">&#39;Class Name&#39;</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s1">&#39;The name of the class.&#39;</span><span class="p">)</span>
+<span class="nd">@click</span><span class="o">.</span><span class="n">option</span><span class="p">(</span><span class="s1">&#39;--method-name&#39;</span><span class="p">,</span> <span class="n">prompt</span><span class="o">=</span><span class="s1">&#39;Method Name&#39;</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s1">&#39;The name of the method.&#39;</span><span class="p">)</span>
+<span class="nd">@click</span><span class="o">.</span><span class="n">option</span><span class="p">(</span><span class="s1">&#39;--args&#39;</span><span class="p">,</span> <span class="n">prompt</span><span class="o">=</span><span class="s1">&#39;Arguments&#39;</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s1">&#39;The arguments for the method.&#39;</span><span class="p">)</span>
+<span class="nd">@click</span><span class="o">.</span><span class="n">option</span><span class="p">(</span><span class="s1">&#39;--return-type&#39;</span><span class="p">,</span> <span class="n">prompt</span><span class="o">=</span><span class="s1">&#39;Return Type&#39;</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s1">&#39;The return type of the method.&#39;</span><span class="p">)</span>
+<div class="viewcode-block" id="create_class_method">
+<a class="viewcode-back" href="../../modules/api/clerk/clerk/index.html#clerk.clerk.create_class_method">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">create_class_method</span><span class="p">(</span><span class="n">project_path</span><span class="p">,</span> <span class="n">namespace</span><span class="p">,</span> <span class="n">module_name</span><span class="p">,</span> <span class="n">class_name</span><span class="p">,</span> <span class="n">method_name</span><span class="p">,</span> <span class="n">args</span><span class="p">,</span> <span class="n">return_type</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Creates a new Python class method.&quot;&quot;&quot;</span>
+    <span class="n">modulator</span> <span class="o">=</span> <span class="n">Modulator</span><span class="p">(</span><span class="n">Path</span><span class="p">(</span><span class="n">project_path</span><span class="p">),</span> <span class="n">namespace</span><span class="p">)</span>
+    <span class="n">modulator</span><span class="o">.</span><span class="n">create_class_method</span><span class="p">(</span><span class="n">module_name</span><span class="p">,</span> <span class="n">class_name</span><span class="p">,</span> <span class="n">method_name</span><span class="p">,</span> <span class="n">args</span><span class="p">,</span> <span class="n">return_type</span><span class="p">)</span>
+    <span class="n">click</span><span class="o">.</span><span class="n">echo</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Method </span><span class="si">{</span><span class="n">method_name</span><span class="si">}</span><span class="s2"> created successfully in class </span><span class="si">{</span><span class="n">class_name</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span></div>
+
+
+
+<span class="n">cli</span><span class="o">.</span><span class="n">add_command</span><span class="p">(</span><span class="n">modulator</span><span class="p">)</span>
+
+<span class="nd">@cli</span><span class="o">.</span><span class="n">group</span><span class="p">()</span>
+<div class="viewcode-block" id="curator">
+<a class="viewcode-back" href="../../modules/api/clerk/clerk/index.html#clerk.clerk.curator">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">curator</span><span class="p">():</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Organizes git/archive management.&quot;&quot;&quot;</span>
+    <span class="k">pass</span></div>
+
+
+<span class="nd">@curator</span><span class="o">.</span><span class="n">command</span><span class="p">(</span><span class="s1">&#39;branches&#39;</span><span class="p">)</span>
+<span class="nd">@click</span><span class="o">.</span><span class="n">option</span><span class="p">(</span><span class="s1">&#39;--repo-path&#39;</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="s1">&#39;.&#39;</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s1">&#39;The path to the repository.&#39;</span><span class="p">)</span>
+<div class="viewcode-block" id="branches">
+<a class="viewcode-back" href="../../modules/api/clerk/clerk/index.html#clerk.clerk.branches">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">branches</span><span class="p">(</span><span class="n">repo_path</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Lists the branches in the repository.&quot;&quot;&quot;</span>
+    <span class="n">repo</span> <span class="o">=</span> <span class="n">curator_actions</span><span class="o">.</span><span class="n">action_get_repo</span><span class="p">(</span><span class="n">repo_path</span><span class="p">)</span>
+    <span class="n">branches</span> <span class="o">=</span> <span class="n">curator_actions</span><span class="o">.</span><span class="n">action_get_branches</span><span class="p">(</span><span class="n">repo</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">branch</span><span class="p">,</span> <span class="n">is_active</span> <span class="ow">in</span> <span class="n">branches</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+        <span class="k">if</span> <span class="n">is_active</span><span class="p">:</span>
+            <span class="n">click</span><span class="o">.</span><span class="n">echo</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;* </span><span class="si">{</span><span class="n">branch</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">click</span><span class="o">.</span><span class="n">echo</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  </span><span class="si">{</span><span class="n">branch</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span></div>
+
+
+<span class="nd">@curator</span><span class="o">.</span><span class="n">command</span><span class="p">(</span><span class="s1">&#39;create-release-branch&#39;</span><span class="p">)</span>
+<span class="nd">@click</span><span class="o">.</span><span class="n">option</span><span class="p">(</span><span class="s1">&#39;--repo-path&#39;</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="s1">&#39;.&#39;</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s1">&#39;The path to the repository.&#39;</span><span class="p">)</span>
+<span class="nd">@click</span><span class="o">.</span><span class="n">option</span><span class="p">(</span><span class="s1">&#39;--release-version&#39;</span><span class="p">,</span> <span class="n">prompt</span><span class="o">=</span><span class="s1">&#39;Release Version&#39;</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s1">&#39;The version number for the release.&#39;</span><span class="p">)</span>
+<span class="nd">@click</span><span class="o">.</span><span class="n">option</span><span class="p">(</span><span class="s1">&#39;--description&#39;</span><span class="p">,</span> <span class="n">prompt</span><span class="o">=</span><span class="s1">&#39;Description&#39;</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s1">&#39;A short description of the release.&#39;</span><span class="p">)</span>
+<div class="viewcode-block" id="create_release_branch">
+<a class="viewcode-back" href="../../modules/api/clerk/clerk/index.html#clerk.clerk.create_release_branch">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">create_release_branch</span><span class="p">(</span><span class="n">repo_path</span><span class="p">,</span> <span class="n">release_version</span><span class="p">,</span> <span class="n">description</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Creates a new release branch.&quot;&quot;&quot;</span>
+    <span class="n">repo</span> <span class="o">=</span> <span class="n">curator_actions</span><span class="o">.</span><span class="n">action_get_repo</span><span class="p">(</span><span class="n">repo_path</span><span class="p">)</span>
+    <span class="n">success</span><span class="p">,</span> <span class="n">message</span> <span class="o">=</span> <span class="n">curator_actions</span><span class="o">.</span><span class="n">action_create_release_branch</span><span class="p">(</span><span class="n">repo</span><span class="p">,</span> <span class="n">release_version</span><span class="p">,</span> <span class="n">description</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">success</span><span class="p">:</span>
+        <span class="n">click</span><span class="o">.</span><span class="n">echo</span><span class="p">(</span><span class="n">message</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">click</span><span class="o">.</span><span class="n">echo</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Error: </span><span class="si">{</span><span class="n">message</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span></div>
+
+
+<span class="nd">@curator</span><span class="o">.</span><span class="n">command</span><span class="p">(</span><span class="s1">&#39;merge-to-main&#39;</span><span class="p">)</span>
+<span class="nd">@click</span><span class="o">.</span><span class="n">option</span><span class="p">(</span><span class="s1">&#39;--repo-path&#39;</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="s1">&#39;.&#39;</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s1">&#39;The path to the repository.&#39;</span><span class="p">)</span>
+<span class="nd">@click</span><span class="o">.</span><span class="n">option</span><span class="p">(</span><span class="s1">&#39;--branch-name&#39;</span><span class="p">,</span> <span class="n">prompt</span><span class="o">=</span><span class="s1">&#39;Branch Name&#39;</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s1">&#39;The name of the branch to merge.&#39;</span><span class="p">)</span>
+<span class="nd">@click</span><span class="o">.</span><span class="n">option</span><span class="p">(</span><span class="s1">&#39;--commit-message&#39;</span><span class="p">,</span> <span class="n">prompt</span><span class="o">=</span><span class="s1">&#39;Commit Message&#39;</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s1">&#39;The commit message.&#39;</span><span class="p">)</span>
+<div class="viewcode-block" id="merge_to_main">
+<a class="viewcode-back" href="../../modules/api/clerk/clerk/index.html#clerk.clerk.merge_to_main">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">merge_to_main</span><span class="p">(</span><span class="n">repo_path</span><span class="p">,</span> <span class="n">branch_name</span><span class="p">,</span> <span class="n">commit_message</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Merges a branch to main.&quot;&quot;&quot;</span>
+    <span class="n">repo</span> <span class="o">=</span> <span class="n">curator_actions</span><span class="o">.</span><span class="n">action_get_repo</span><span class="p">(</span><span class="n">repo_path</span><span class="p">)</span>
+    <span class="n">success</span><span class="p">,</span> <span class="n">message</span> <span class="o">=</span> <span class="n">curator_actions</span><span class="o">.</span><span class="n">action_merge_to_main</span><span class="p">(</span><span class="n">repo</span><span class="p">,</span> <span class="n">branch_name</span><span class="p">,</span> <span class="n">commit_message</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">success</span><span class="p">:</span>
+        <span class="n">click</span><span class="o">.</span><span class="n">echo</span><span class="p">(</span><span class="n">message</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">click</span><span class="o">.</span><span class="n">echo</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Error: </span><span class="si">{</span><span class="n">message</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span></div>
+
+
+<span class="nd">@curator</span><span class="o">.</span><span class="n">command</span><span class="p">(</span><span class="s1">&#39;create-tag&#39;</span><span class="p">)</span>
+<span class="nd">@click</span><span class="o">.</span><span class="n">option</span><span class="p">(</span><span class="s1">&#39;--repo-path&#39;</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="s1">&#39;.&#39;</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s1">&#39;The path to the repository.&#39;</span><span class="p">)</span>
+<span class="nd">@click</span><span class="o">.</span><span class="n">option</span><span class="p">(</span><span class="s1">&#39;--tag-name&#39;</span><span class="p">,</span> <span class="n">prompt</span><span class="o">=</span><span class="s1">&#39;Tag Name&#39;</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s1">&#39;The name of the tag.&#39;</span><span class="p">)</span>
+<span class="nd">@click</span><span class="o">.</span><span class="n">option</span><span class="p">(</span><span class="s1">&#39;--message&#39;</span><span class="p">,</span> <span class="n">prompt</span><span class="o">=</span><span class="s1">&#39;Message&#39;</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s1">&#39;The message for the tag.&#39;</span><span class="p">)</span>
+<div class="viewcode-block" id="create_tag">
+<a class="viewcode-back" href="../../modules/api/clerk/clerk/index.html#clerk.clerk.create_tag">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">create_tag</span><span class="p">(</span><span class="n">repo_path</span><span class="p">,</span> <span class="n">tag_name</span><span class="p">,</span> <span class="n">message</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Creates a new tag.&quot;&quot;&quot;</span>
+    <span class="n">repo</span> <span class="o">=</span> <span class="n">curator_actions</span><span class="o">.</span><span class="n">action_get_repo</span><span class="p">(</span><span class="n">repo_path</span><span class="p">)</span>
+    <span class="n">success</span><span class="p">,</span> <span class="n">message</span> <span class="o">=</span> <span class="n">curator_actions</span><span class="o">.</span><span class="n">action_create_tag</span><span class="p">(</span><span class="n">repo</span><span class="p">,</span> <span class="n">tag_name</span><span class="p">,</span> <span class="n">message</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">success</span><span class="p">:</span>
+        <span class="n">click</span><span class="o">.</span><span class="n">echo</span><span class="p">(</span><span class="n">message</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">click</span><span class="o">.</span><span class="n">echo</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Error: </span><span class="si">{</span><span class="n">message</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span></div>
+
+
+<span class="nd">@curator</span><span class="o">.</span><span class="n">command</span><span class="p">(</span><span class="s1">&#39;init&#39;</span><span class="p">)</span>
+<div class="viewcode-block" id="init_repo">
+<a class="viewcode-back" href="../../modules/api/clerk/clerk/index.html#clerk.clerk.init_repo">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">init_repo</span><span class="p">():</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Initializes a new git repository.&quot;&quot;&quot;</span>
+    <span class="kn">from</span><span class="w"> </span><span class="nn">.curator</span><span class="w"> </span><span class="kn">import</span> <span class="n">git_init</span>
+    <span class="n">git_init</span><span class="o">.</span><span class="n">main</span><span class="p">()</span></div>
+
+
+<span class="n">cli</span><span class="o">.</span><span class="n">add_command</span><span class="p">(</span><span class="n">curator</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">cli</span><span class="p">()</span>
+</pre></div>
+      </div>
+      <footer></footer>
+    </article>
+
+  </main>
+
+<div class="asides">
+    <aside>
+        <h3>Search</h3>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+    </aside>
+    
+</div>
+<footer>
+    <hr/>
+    <div role="contentinfo">
+        <p>
+                &copy; Copyright .
+        </p>
+    </div>
+</footer>
+
+  <script src="../../_static/jquery.js?v=5d32c60e"></script>
+  <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+  <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
+  <script src="../../_static/doctools.js?v=9bcbadda"></script>
+  <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+
+
+</body>
+</html>

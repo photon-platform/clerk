@@ -1,0 +1,190 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>clerk.modulator.modulator &mdash; Project name not set  documentation</title>
+  <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=ea5fcf70" />
+  <link rel="stylesheet" type="text/css" href="../../../_static/css/styles.css?v=d4fd7cae" />
+  <link rel="stylesheet" type="text/css" href="../../../_static/graphviz.css?v=4ae1632d" />
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <a href="../../../index.html">
+        <h1>Project name not set</h1>
+      </a>
+      <div class="org-repo">
+        <span class="org">photon-platform</span>
+        •
+        <span class="repo">clerk</span>
+      </div>
+    </div>
+    <nav aria-label="Header">
+      <input type="checkbox" id="nav-Header-toggle" >
+      <label for="nav-Header-toggle" >Header</label>
+      <ul>
+      </ul>
+    </nav>
+    <div class="motto"></div>
+  </header>
+  <main>
+
+    <article>
+      <nav class="context">
+        <div class="prev">
+        </div>
+        <div class="next">
+        </div>
+      </nav>
+      <nav class="breadcrumbs">
+        <span><a href="../../../index.html">Home</a></span>
+          <span>/</span>
+        <span><a href="../../index.html">Module code</a></span>
+          <span>/</span>
+        <span><a href="../../clerk.html">clerk</a></span>
+          <span>/</span>
+        <span><a href="../modulator.html">clerk.modulator</a></span>
+        <span>/</span>
+        <span>clerk.modulator.modulator</span>
+      </nav>
+      <div class="content">
+          <h1>Source code for clerk.modulator.modulator</h1><div class="highlight"><pre>
+<span></span><span class="kn">from</span><span class="w"> </span><span class="nn">pathlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">Path</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">jinja2</span><span class="w"> </span><span class="kn">import</span> <span class="n">Environment</span><span class="p">,</span> <span class="n">PackageLoader</span>
+
+<div class="viewcode-block" id="Modulator">
+<a class="viewcode-back" href="../../../modules/api/clerk/modulator/modulator/index.html#clerk.modulator.modulator.Modulator">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">Modulator</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">project_path</span><span class="p">:</span> <span class="n">Path</span><span class="p">,</span> <span class="n">namespace</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
+<div class="viewcode-block" id="Modulator.project_path">
+<a class="viewcode-back" href="../../../modules/api/clerk/modulator/modulator/index.html#clerk.modulator.modulator.Modulator.project_path">[docs]</a>
+        <span class="bp">self</span><span class="o">.</span><span class="n">project_path</span> <span class="o">=</span> <span class="n">project_path</span></div>
+
+<div class="viewcode-block" id="Modulator.namespace">
+<a class="viewcode-back" href="../../../modules/api/clerk/modulator/modulator/index.html#clerk.modulator.modulator.Modulator.namespace">[docs]</a>
+        <span class="bp">self</span><span class="o">.</span><span class="n">namespace</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_clean</span><span class="p">(</span><span class="n">namespace</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Modulator.env">
+<a class="viewcode-back" href="../../../modules/api/clerk/modulator/modulator/index.html#clerk.modulator.modulator.Modulator.env">[docs]</a>
+        <span class="bp">self</span><span class="o">.</span><span class="n">env</span> <span class="o">=</span> <span class="n">Environment</span><span class="p">(</span><span class="n">loader</span><span class="o">=</span><span class="n">PackageLoader</span><span class="p">(</span><span class="s2">&quot;photon_platform.clerk.modulator&quot;</span><span class="p">,</span> <span class="s2">&quot;templates&quot;</span><span class="p">))</span></div>
+
+
+<div class="viewcode-block" id="Modulator.create_module">
+<a class="viewcode-back" href="../../../modules/api/clerk/modulator/modulator/index.html#clerk.modulator.modulator.Modulator.create_module">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">create_module</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">module_name</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">module_name</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_clean</span><span class="p">(</span><span class="n">module_name</span><span class="p">)</span>
+        <span class="n">module_dir</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">project_path</span> <span class="o">/</span> <span class="s2">&quot;src&quot;</span> <span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">namespace</span> <span class="o">/</span> <span class="n">module_name</span>
+        <span class="n">module_dir</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">parents</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+        <span class="n">context</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s2">&quot;namespace_name&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">namespace</span><span class="p">,</span>
+            <span class="s2">&quot;module_name&quot;</span><span class="p">:</span> <span class="n">module_name</span><span class="p">,</span>
+            <span class="s2">&quot;author&quot;</span><span class="p">:</span> <span class="s2">&quot;PHOTON platform&quot;</span><span class="p">,</span>
+        <span class="p">}</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_render_template</span><span class="p">(</span><span class="s2">&quot;__init__.py.j2&quot;</span><span class="p">,</span> <span class="n">context</span><span class="p">,</span> <span class="n">module_dir</span> <span class="o">/</span> <span class="s2">&quot;__init__.py&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_render_template</span><span class="p">(</span><span class="s2">&quot;__main__.py.j2&quot;</span><span class="p">,</span> <span class="n">context</span><span class="p">,</span> <span class="n">module_dir</span> <span class="o">/</span> <span class="s2">&quot;__main__.py&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_render_template</span><span class="p">(</span><span class="s2">&quot;app.py.j2&quot;</span><span class="p">,</span> <span class="n">context</span><span class="p">,</span> <span class="n">module_dir</span> <span class="o">/</span> <span class="s2">&quot;app.py&quot;</span><span class="p">)</span>
+
+        <span class="k">with</span> <span class="p">(</span><span class="n">module_dir</span> <span class="o">/</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">module_name</span><span class="si">}</span><span class="s2">.py&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+            <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;&quot;&quot;&quot;</span><span class="se">\n</span><span class="si">{</span><span class="n">module_name</span><span class="si">}</span><span class="se">\n</span><span class="s1">&quot;&quot;&quot;&#39;</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="Modulator.create_submodule">
+<a class="viewcode-back" href="../../../modules/api/clerk/modulator/modulator/index.html#clerk.modulator.modulator.Modulator.create_submodule">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">create_submodule</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">module_name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">submodule_name</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">create_module</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">_clean</span><span class="p">(</span><span class="n">module_name</span><span class="p">)</span><span class="si">}</span><span class="s2">.</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">_clean</span><span class="p">(</span><span class="n">submodule_name</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="Modulator.create_class">
+<a class="viewcode-back" href="../../../modules/api/clerk/modulator/modulator/index.html#clerk.modulator.modulator.Modulator.create_class">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">create_class</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">module_name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">class_name</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">class_name</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_clean</span><span class="p">(</span><span class="n">class_name</span><span class="p">)</span>
+        <span class="n">module_dir</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">project_path</span> <span class="o">/</span> <span class="s2">&quot;src&quot;</span> <span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">namespace</span> <span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">_clean</span><span class="p">(</span><span class="n">module_name</span><span class="p">)</span>
+        <span class="n">class_file</span> <span class="o">=</span> <span class="n">module_dir</span> <span class="o">/</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">class_name</span><span class="si">}</span><span class="s2">.py&quot;</span>
+
+        <span class="n">context</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s2">&quot;class_name&quot;</span><span class="p">:</span> <span class="n">class_name</span>
+        <span class="p">}</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_render_template</span><span class="p">(</span><span class="s2">&quot;class.py.j2&quot;</span><span class="p">,</span> <span class="n">context</span><span class="p">,</span> <span class="n">class_file</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="Modulator.create_function">
+<a class="viewcode-back" href="../../../modules/api/clerk/modulator/modulator/index.html#clerk.modulator.modulator.Modulator.create_function">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">create_function</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">module_name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">function_name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">args</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">return_type</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">module_dir</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">project_path</span> <span class="o">/</span> <span class="s2">&quot;src&quot;</span> <span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">namespace</span> <span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">_clean</span><span class="p">(</span><span class="n">module_name</span><span class="p">)</span>
+        <span class="n">function_file</span> <span class="o">=</span> <span class="n">module_dir</span> <span class="o">/</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">_clean</span><span class="p">(</span><span class="n">module_name</span><span class="p">)</span><span class="si">}</span><span class="s2">.py&quot;</span>
+
+        <span class="n">context</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s2">&quot;function_name&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_clean</span><span class="p">(</span><span class="n">function_name</span><span class="p">),</span>
+            <span class="s2">&quot;args&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_clean</span><span class="p">(</span><span class="n">args</span><span class="p">),</span>
+            <span class="s2">&quot;return_type&quot;</span><span class="p">:</span> <span class="n">return_type</span>
+        <span class="p">}</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_render_template</span><span class="p">(</span><span class="s2">&quot;function.py.j2&quot;</span><span class="p">,</span> <span class="n">context</span><span class="p">,</span> <span class="n">function_file</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s2">&quot;a&quot;</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="Modulator.create_class_method">
+<a class="viewcode-back" href="../../../modules/api/clerk/modulator/modulator/index.html#clerk.modulator.modulator.Modulator.create_class_method">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">create_class_method</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span> <span class="n">module_name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">class_name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">method_name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">args</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">return_type</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">module_dir</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">project_path</span> <span class="o">/</span> <span class="s2">&quot;src&quot;</span> <span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">namespace</span> <span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">_clean</span><span class="p">(</span><span class="n">module_name</span><span class="p">)</span>
+        <span class="n">class_file</span> <span class="o">=</span> <span class="n">module_dir</span> <span class="o">/</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">_clean</span><span class="p">(</span><span class="n">class_name</span><span class="p">)</span><span class="si">}</span><span class="s2">.py&quot;</span>
+
+        <span class="n">context</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s2">&quot;method_name&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_clean</span><span class="p">(</span><span class="n">method_name</span><span class="p">),</span>
+            <span class="s2">&quot;args&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_clean</span><span class="p">(</span><span class="n">args</span><span class="p">),</span>
+            <span class="s2">&quot;return_type&quot;</span><span class="p">:</span> <span class="n">return_type</span>
+        <span class="p">}</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_render_template</span><span class="p">(</span><span class="s2">&quot;method.py.j2&quot;</span><span class="p">,</span> <span class="n">context</span><span class="p">,</span> <span class="n">class_file</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s2">&quot;a&quot;</span><span class="p">)</span></div>
+
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_render_template</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">template_name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">context</span><span class="p">:</span> <span class="nb">dict</span><span class="p">,</span> <span class="n">output_path</span><span class="p">:</span> <span class="n">Path</span><span class="p">,</span> <span class="n">mode</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">template</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">env</span><span class="o">.</span><span class="n">get_template</span><span class="p">(</span><span class="n">template_name</span><span class="p">)</span>
+        <span class="k">with</span> <span class="n">output_path</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">mode</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+            <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">template</span><span class="o">.</span><span class="n">render</span><span class="p">(</span><span class="o">**</span><span class="n">context</span><span class="p">))</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_clean</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">name</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="p">,</span> <span class="s2">&quot;_&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;-&quot;</span><span class="p">,</span> <span class="s2">&quot;_&quot;</span><span class="p">)</span></div>
+
+
+</pre></div>
+      </div>
+      <footer></footer>
+    </article>
+
+  </main>
+
+<div class="asides">
+    <aside>
+        <h3>Search</h3>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+    </aside>
+    
+</div>
+<footer>
+    <hr/>
+    <div role="contentinfo">
+        <p>
+                &copy; Copyright .
+        </p>
+    </div>
+</footer>
+
+  <script src="../../../_static/jquery.js?v=5d32c60e"></script>
+  <script src="../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+  <script src="../../../_static/documentation_options.js?v=5929fcd5"></script>
+  <script src="../../../_static/doctools.js?v=9bcbadda"></script>
+  <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+
+
+</body>
+</html>

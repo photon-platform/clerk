@@ -1,0 +1,291 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>clerk.gather.repo_rst &mdash; Project name not set  documentation</title>
+  <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=ea5fcf70" />
+  <link rel="stylesheet" type="text/css" href="../../../_static/css/styles.css?v=d4fd7cae" />
+  <link rel="stylesheet" type="text/css" href="../../../_static/graphviz.css?v=4ae1632d" />
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <a href="../../../index.html">
+        <h1>Project name not set</h1>
+      </a>
+      <div class="org-repo">
+        <span class="org">photon-platform</span>
+        •
+        <span class="repo">clerk</span>
+      </div>
+    </div>
+    <nav aria-label="Header">
+      <input type="checkbox" id="nav-Header-toggle" >
+      <label for="nav-Header-toggle" >Header</label>
+      <ul>
+      </ul>
+    </nav>
+    <div class="motto"></div>
+  </header>
+  <main>
+
+    <article>
+      <nav class="context">
+        <div class="prev">
+        </div>
+        <div class="next">
+        </div>
+      </nav>
+      <nav class="breadcrumbs">
+        <span><a href="../../../index.html">Home</a></span>
+          <span>/</span>
+        <span><a href="../../index.html">Module code</a></span>
+          <span>/</span>
+        <span><a href="../../clerk.html">clerk</a></span>
+          <span>/</span>
+        <span><a href="../gather.html">clerk.gather</a></span>
+        <span>/</span>
+        <span>clerk.gather.repo_rst</span>
+      </nav>
+      <div class="content">
+          <h1>Source code for clerk.gather.repo_rst</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">GitHub repository utility - fetches repo info and creates RST documentation</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">rich</span><span class="w"> </span><span class="kn">import</span> <span class="nb">print</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">subprocess</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">json</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pathlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">Path</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">datetime</span><span class="w"> </span><span class="kn">import</span> <span class="n">datetime</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">slugify</span><span class="w"> </span><span class="kn">import</span> <span class="n">slugify</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">base64</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">requests</span>
+
+
+<div class="viewcode-block" id="run_gh_command">
+<a class="viewcode-back" href="../../../modules/api/clerk/gather/repo_rst/index.html#clerk.gather.repo_rst.run_gh_command">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">run_gh_command</span><span class="p">(</span><span class="n">args</span><span class="p">:</span> <span class="nb">list</span><span class="p">,</span> <span class="n">fields</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Run GitHub CLI command and return JSON output.&quot;&quot;&quot;</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">cmd</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;gh&quot;</span><span class="p">]</span> <span class="o">+</span> <span class="n">args</span>
+        <span class="k">if</span> <span class="n">fields</span><span class="p">:</span>
+            <span class="n">cmd</span><span class="o">.</span><span class="n">extend</span><span class="p">([</span><span class="s2">&quot;--json&quot;</span><span class="p">,</span> <span class="n">fields</span><span class="p">])</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="n">subprocess</span><span class="o">.</span><span class="n">run</span><span class="p">(</span>
+            <span class="n">cmd</span><span class="p">,</span>
+            <span class="n">capture_output</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+            <span class="n">text</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+            <span class="n">check</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>  <span class="c1"># This will raise CalledProcessError if command fails</span>
+        <span class="p">)</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">result</span><span class="o">.</span><span class="n">stdout</span><span class="o">.</span><span class="n">strip</span><span class="p">():</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Empty response from GitHub CLI&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">result</span><span class="o">.</span><span class="n">stdout</span><span class="p">)</span>
+    <span class="k">except</span> <span class="n">subprocess</span><span class="o">.</span><span class="n">CalledProcessError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;[red]Error running gh command:[/red] </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;stderr: </span><span class="si">{</span><span class="n">e</span><span class="o">.</span><span class="n">stderr</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="k">raise</span>
+    <span class="k">except</span> <span class="n">json</span><span class="o">.</span><span class="n">JSONDecodeError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;[red]Error parsing gh output:[/red] </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;stdout: </span><span class="si">{</span><span class="n">result</span><span class="o">.</span><span class="n">stdout</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="k">raise</span></div>
+
+
+
+<div class="viewcode-block" id="get_repo_data">
+<a class="viewcode-back" href="../../../modules/api/clerk/gather/repo_rst/index.html#clerk.gather.repo_rst.get_repo_data">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">get_repo_data</span><span class="p">(</span><span class="n">repo</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Fetch repository metadata from GitHub.&quot;&quot;&quot;</span>
+    <span class="c1"># Get repo info with specific fields</span>
+    <span class="n">repo_fields</span> <span class="o">=</span> <span class="s2">&quot;name,nameWithOwner,owner,description,homepageUrl,createdAt,updatedAt,stargazerCount,forkCount,primaryLanguage,licenseInfo,url,sshUrl&quot;</span>
+    <span class="n">repo_data</span> <span class="o">=</span> <span class="n">run_gh_command</span><span class="p">([</span><span class="s2">&quot;repo&quot;</span><span class="p">,</span> <span class="s2">&quot;view&quot;</span><span class="p">,</span> <span class="n">repo</span><span class="p">],</span> <span class="n">repo_fields</span><span class="p">)</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;repo_data:&#39;</span><span class="p">,</span><span class="n">repo_data</span><span class="p">)</span>
+
+    <span class="c1"># Get latest release if any</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">release</span> <span class="o">=</span> <span class="n">run_gh_command</span><span class="p">([</span><span class="s2">&quot;release&quot;</span><span class="p">,</span> <span class="s2">&quot;view&quot;</span><span class="p">,</span> <span class="s2">&quot;--repo&quot;</span><span class="p">,</span> <span class="n">repo</span><span class="p">],</span> <span class="s2">&quot;tagName&quot;</span><span class="p">)</span>
+    <span class="k">except</span><span class="p">:</span>
+        <span class="n">release</span> <span class="o">=</span> <span class="kc">None</span>
+
+    <span class="n">response</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="n">repo_data</span><span class="p">[</span><span class="s2">&quot;name&quot;</span><span class="p">],</span>
+        <span class="s2">&quot;nameWithOwner&quot;</span><span class="p">:</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">repo_data</span><span class="p">[</span><span class="s1">&#39;nameWithOwner&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;owner&quot;</span><span class="p">:</span> <span class="n">repo_data</span><span class="p">[</span><span class="s2">&quot;owner&quot;</span><span class="p">],</span>
+        <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="n">repo_data</span><span class="p">[</span><span class="s2">&quot;description&quot;</span><span class="p">],</span>
+        <span class="s2">&quot;homepage&quot;</span><span class="p">:</span> <span class="n">repo_data</span><span class="p">[</span><span class="s2">&quot;homepageUrl&quot;</span><span class="p">],</span>
+        <span class="s2">&quot;created_at&quot;</span><span class="p">:</span> <span class="n">datetime</span><span class="o">.</span><span class="n">fromisoformat</span><span class="p">(</span><span class="n">repo_data</span><span class="p">[</span><span class="s2">&quot;createdAt&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">rstrip</span><span class="p">(</span><span class="s2">&quot;Z&quot;</span><span class="p">)),</span>
+        <span class="s2">&quot;updated_at&quot;</span><span class="p">:</span> <span class="n">datetime</span><span class="o">.</span><span class="n">fromisoformat</span><span class="p">(</span><span class="n">repo_data</span><span class="p">[</span><span class="s2">&quot;updatedAt&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">rstrip</span><span class="p">(</span><span class="s2">&quot;Z&quot;</span><span class="p">)),</span>
+        <span class="s2">&quot;stars&quot;</span><span class="p">:</span> <span class="n">repo_data</span><span class="p">[</span><span class="s2">&quot;stargazerCount&quot;</span><span class="p">],</span>
+        <span class="s2">&quot;forks&quot;</span><span class="p">:</span> <span class="n">repo_data</span><span class="p">[</span><span class="s2">&quot;forkCount&quot;</span><span class="p">],</span>
+        <span class="s2">&quot;language&quot;</span><span class="p">:</span> <span class="n">repo_data</span><span class="p">[</span><span class="s2">&quot;primaryLanguage&quot;</span><span class="p">][</span><span class="s2">&quot;name&quot;</span><span class="p">]</span>
+        <span class="k">if</span> <span class="n">repo_data</span><span class="p">[</span><span class="s2">&quot;primaryLanguage&quot;</span><span class="p">]</span>
+        <span class="k">else</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="s2">&quot;license&quot;</span><span class="p">:</span> <span class="n">repo_data</span><span class="p">[</span><span class="s2">&quot;licenseInfo&quot;</span><span class="p">][</span><span class="s2">&quot;name&quot;</span><span class="p">]</span>
+        <span class="k">if</span> <span class="n">repo_data</span><span class="p">[</span><span class="s2">&quot;licenseInfo&quot;</span><span class="p">]</span>
+        <span class="k">else</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="s2">&quot;latest_release&quot;</span><span class="p">:</span> <span class="n">release</span><span class="p">[</span><span class="s2">&quot;tagName&quot;</span><span class="p">]</span> <span class="k">if</span> <span class="n">release</span> <span class="k">else</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="s2">&quot;url&quot;</span><span class="p">:</span> <span class="n">repo_data</span><span class="p">[</span><span class="s2">&quot;url&quot;</span><span class="p">],</span>
+        <span class="s2">&quot;sshUrl&quot;</span><span class="p">:</span> <span class="n">repo_data</span><span class="p">[</span><span class="s2">&quot;sshUrl&quot;</span><span class="p">],</span>
+    <span class="p">}</span>
+    <span class="c1">#  print(response)</span>
+    <span class="k">return</span> <span class="n">response</span></div>
+
+
+
+<div class="viewcode-block" id="create_include_files">
+<a class="viewcode-back" href="../../../modules/api/clerk/gather/repo_rst/index.html#clerk.gather.repo_rst.create_include_files">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">create_include_files</span><span class="p">(</span><span class="n">repo_dir</span><span class="p">:</span> <span class="n">Path</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Create include files for analysis sections.&quot;&quot;&quot;</span>
+    <span class="n">includes</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s2">&quot;notes.rst&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;&quot;</span><span class="se">\</span>
+<span class="s2">notes</span>
+<span class="s2">-----</span>
+
+<span class="s2">&quot;&quot;&quot;</span><span class="p">,</span>
+    <span class="p">}</span>
+
+    <span class="k">for</span> <span class="n">filename</span><span class="p">,</span> <span class="n">content</span> <span class="ow">in</span> <span class="n">includes</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+        <span class="n">include_path</span> <span class="o">=</span> <span class="n">repo_dir</span> <span class="o">/</span> <span class="n">filename</span>
+        <span class="n">include_path</span><span class="o">.</span><span class="n">write_text</span><span class="p">(</span><span class="n">content</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Created include file: </span><span class="si">{</span><span class="n">include_path</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="format_rst">
+<a class="viewcode-back" href="../../../modules/api/clerk/gather/repo_rst/index.html#clerk.gather.repo_rst.format_rst">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">format_rst</span><span class="p">(</span><span class="n">data</span><span class="p">:</span> <span class="nb">dict</span><span class="p">,</span> <span class="n">readme_content</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Format repository data as RST document.&quot;&quot;&quot;</span>
+    <span class="c1"># Create slug from repo name</span>
+    <span class="n">slug</span> <span class="o">=</span> <span class="n">slugify</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;nameWithOwner&quot;</span><span class="p">])</span>
+
+    <span class="n">rst</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;&quot;&quot;</span><span class="se">\</span>
+<span class="s2">.. _</span><span class="si">{</span><span class="n">slug</span><span class="si">}</span><span class="s2">:</span>
+
+<span class="si">{</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;nameWithOwner&#39;</span><span class="p">]</span><span class="si">}</span>
+<span class="si">{</span><span class="s1">&#39;=&#39;</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;nameWithOwner&#39;</span><span class="p">])</span><span class="si">}</span>
+
+<span class="s2">:description: </span><span class="si">{</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;description&#39;</span><span class="p">]</span><span class="w"> </span><span class="ow">or</span><span class="w"> </span><span class="s1">&#39;N/A&#39;</span><span class="si">}</span>
+<span class="s2">:url: </span><span class="si">{</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;url&#39;</span><span class="p">]</span><span class="si">}</span>
+<span class="s2">:sshUrl: </span><span class="si">{</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;sshUrl&#39;</span><span class="p">]</span><span class="si">}</span>
+<span class="s2">:homepage: </span><span class="si">{</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;homepage&#39;</span><span class="p">]</span><span class="w"> </span><span class="ow">or</span><span class="w"> </span><span class="s1">&#39;N/A&#39;</span><span class="si">}</span>
+<span class="s2">:created_at: </span><span class="si">{</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;created_at&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;%Y-%m-</span><span class="si">%d</span><span class="s1">&#39;</span><span class="p">)</span><span class="si">}</span>
+<span class="s2">:license: </span><span class="si">{</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;license&#39;</span><span class="p">]</span><span class="w"> </span><span class="ow">or</span><span class="w"> </span><span class="s1">&#39;N/A&#39;</span><span class="si">}</span>
+<span class="s2">:latest_release: </span><span class="si">{</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;latest_release&#39;</span><span class="p">]</span><span class="w"> </span><span class="ow">or</span><span class="w"> </span><span class="s1">&#39;N/A&#39;</span><span class="si">}</span>
+
+<span class="s2">.. toctree::</span>
+<span class="s2">   :maxdepth: 1</span>
+
+<span class="s2">   </span><span class="si">{</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;readme_filename&quot;</span><span class="p">]</span><span class="si">}</span>
+
+<span class="s2">.. include:: notes.rst</span>
+<span class="s2">&quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">rst</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span></div>
+
+
+
+<div class="viewcode-block" id="fetch_and_save_readme">
+<a class="viewcode-back" href="../../../modules/api/clerk/gather/repo_rst/index.html#clerk.gather.repo_rst.fetch_and_save_readme">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">fetch_and_save_readme</span><span class="p">(</span><span class="n">data</span><span class="p">:</span> <span class="nb">dict</span><span class="p">,</span> <span class="n">repo_dir</span><span class="p">:</span> <span class="n">Path</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">[</span><span class="nb">bool</span><span class="p">,</span> <span class="nb">str</span><span class="p">]:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Fetch and save README file, trying MD then RST format.&quot;&quot;&quot;</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;get README&quot;</span><span class="p">)</span>
+    <span class="c1"># Try markdown first</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">readme_url</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;https://raw.githubusercontent.com/</span><span class="si">{</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;nameWithOwner&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">/main/README.md&quot;</span>
+        <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">readme_url</span><span class="p">)</span>
+        <span class="n">response</span><span class="o">.</span><span class="n">raise_for_status</span><span class="p">()</span>
+        <span class="n">readme_path</span> <span class="o">=</span> <span class="n">repo_dir</span> <span class="o">/</span> <span class="s2">&quot;README.md&quot;</span>
+        <span class="n">content</span> <span class="o">=</span> <span class="s2">&quot;# README.md</span><span class="se">\n\n</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="n">response</span><span class="o">.</span><span class="n">text</span>
+        <span class="n">readme_path</span><span class="o">.</span><span class="n">write_text</span><span class="p">(</span><span class="n">content</span><span class="p">)</span>
+        <span class="k">return</span> <span class="kc">True</span><span class="p">,</span> <span class="s2">&quot;README.md&quot;</span>
+    <span class="k">except</span> <span class="n">requests</span><span class="o">.</span><span class="n">RequestException</span><span class="p">:</span>
+        <span class="c1"># Try RST if MD fails</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">readme_url</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;https://raw.githubusercontent.com/</span><span class="si">{</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;nameWithOwner&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">/main/README.rst&quot;</span>
+            <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">readme_url</span><span class="p">)</span>
+            <span class="n">response</span><span class="o">.</span><span class="n">raise_for_status</span><span class="p">()</span>
+            <span class="n">readme_path</span> <span class="o">=</span> <span class="n">repo_dir</span> <span class="o">/</span> <span class="s2">&quot;README.rst&quot;</span>
+            <span class="n">content</span> <span class="o">=</span> <span class="s2">&quot;README.rst</span><span class="se">\n</span><span class="s2">-----------</span><span class="se">\n\n</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="n">response</span><span class="o">.</span><span class="n">text</span>
+            <span class="n">readme_path</span><span class="o">.</span><span class="n">write_text</span><span class="p">(</span><span class="n">content</span><span class="p">)</span>
+            <span class="k">return</span> <span class="kc">True</span><span class="p">,</span> <span class="s2">&quot;README.rst&quot;</span>
+        <span class="k">except</span> <span class="n">requests</span><span class="o">.</span><span class="n">RequestException</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;[yellow]Warning: Could not fetch either README:[/yellow] </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="k">return</span> <span class="kc">False</span><span class="p">,</span> <span class="s2">&quot;&quot;</span></div>
+
+
+
+<div class="viewcode-block" id="action_gather_repo">
+<a class="viewcode-back" href="../../../modules/api/clerk/gather/repo_rst/index.html#clerk.gather.repo_rst.action_gather_repo">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">action_gather_repo</span><span class="p">(</span><span class="n">repo</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">output_dir</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;.&quot;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Path</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Save repository metadata as RST.&quot;&quot;&quot;</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">get_repo_data</span><span class="p">(</span><span class="n">repo</span><span class="p">)</span>
+
+
+    <span class="c1"># Create repo directory using owner_repo format</span>
+    <span class="n">output_path</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="n">output_dir</span><span class="p">)</span>
+    <span class="n">output_path</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">parents</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+    <span class="n">repo_dir</span> <span class="o">=</span> <span class="n">output_path</span> <span class="o">/</span> <span class="n">slugify</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;nameWithOwner&quot;</span><span class="p">])</span>
+    <span class="n">repo_dir</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">parents</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+    <span class="c1"># Create include files</span>
+    <span class="n">create_include_files</span><span class="p">(</span><span class="n">repo_dir</span><span class="p">)</span>
+
+    <span class="c1"># Fetch and save README</span>
+    <span class="c1">#  &quot;readme_url&quot;: f&quot;https://raw.githubusercontent.com/{repo}/main/README&quot;,</span>
+    <span class="n">readme_exists</span><span class="p">,</span> <span class="n">readme_filename</span> <span class="o">=</span> <span class="n">fetch_and_save_readme</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">repo_dir</span><span class="p">)</span>
+    <span class="n">data</span><span class="p">[</span><span class="s2">&quot;readme_filename&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">readme_filename</span>
+
+    <span class="c1"># Generate RST content</span>
+    <span class="n">rst_content</span> <span class="o">=</span> <span class="n">format_rst</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">repo_dir</span><span class="p">)</span>
+
+    <span class="c1"># Add README to toctree if it exists</span>
+    <span class="c1">#  if readme_exists:</span>
+    <span class="c1">#  rst_content += f&quot;\n   {readme_filename}&quot;</span>
+
+    <span class="c1"># Save index.rst</span>
+    <span class="n">index_path</span> <span class="o">=</span> <span class="n">repo_dir</span> <span class="o">/</span> <span class="s2">&quot;index.rst&quot;</span>
+    <span class="n">index_path</span><span class="o">.</span><span class="n">write_text</span><span class="p">(</span><span class="n">rst_content</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Created RST file: </span><span class="si">{</span><span class="n">index_path</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">index_path</span></div>
+
+</pre></div>
+      </div>
+      <footer></footer>
+    </article>
+
+  </main>
+
+<div class="asides">
+    <aside>
+        <h3>Search</h3>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+    </aside>
+    
+</div>
+<footer>
+    <hr/>
+    <div role="contentinfo">
+        <p>
+                &copy; Copyright .
+        </p>
+    </div>
+</footer>
+
+  <script src="../../../_static/jquery.js?v=5d32c60e"></script>
+  <script src="../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+  <script src="../../../_static/documentation_options.js?v=5929fcd5"></script>
+  <script src="../../../_static/doctools.js?v=9bcbadda"></script>
+  <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+
+
+</body>
+</html>

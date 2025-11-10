@@ -1,0 +1,69 @@
+clerk
+=====
+
+.. py:module:: clerk
+
+.. autoapi-nested-parse::
+
+   clerk
+   =====
+
+   PHOTON platform
+   ---------------
+
+
+
+
+
+Submodules
+----------
+
+.. toctree::
+   :maxdepth: 1
+
+   /modules/api/clerk/__main__/index
+   /modules/api/clerk/clerk/index
+   /modules/api/clerk/curator/index
+   /modules/api/clerk/gather/index
+   /modules/api/clerk/logger/index
+   /modules/api/clerk/modulator/index
+   /modules/api/clerk/progenitor/index
+   /modules/api/clerk/rollup/index
+   /modules/api/clerk/status_diff/index
+
+
+Attributes
+----------
+
+.. autoapisummary::
+
+   clerk.__author__
+   clerk.__maintainer__
+   clerk.__email__
+   clerk.__version__
+   clerk.__licence__
+
+
+Package Contents
+----------------
+
+.. py:data:: __author__
+   :value: 'PHOTON platform'
+
+
+.. py:data:: __maintainer__
+   :value: 'PHOTON platform'
+
+
+.. py:data:: __email__
+   :value: 'github@phiarchitect.com'
+
+
+.. py:data:: __version__
+   :value: '0.0.6'
+
+
+.. py:data:: __licence__
+   :value: 'MIT'
+
+

@@ -1,0 +1,237 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>clerk.logger.lister &mdash; Project name not set  documentation</title>
+  <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=ea5fcf70" />
+  <link rel="stylesheet" type="text/css" href="../../../_static/css/styles.css?v=d4fd7cae" />
+  <link rel="stylesheet" type="text/css" href="../../../_static/graphviz.css?v=4ae1632d" />
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <a href="../../../index.html">
+        <h1>Project name not set</h1>
+      </a>
+      <div class="org-repo">
+        <span class="org">photon-platform</span>
+        •
+        <span class="repo">clerk</span>
+      </div>
+    </div>
+    <nav aria-label="Header">
+      <input type="checkbox" id="nav-Header-toggle" >
+      <label for="nav-Header-toggle" >Header</label>
+      <ul>
+      </ul>
+    </nav>
+    <div class="motto"></div>
+  </header>
+  <main>
+
+    <article>
+      <nav class="context">
+        <div class="prev">
+        </div>
+        <div class="next">
+        </div>
+      </nav>
+      <nav class="breadcrumbs">
+        <span><a href="../../../index.html">Home</a></span>
+          <span>/</span>
+        <span><a href="../../index.html">Module code</a></span>
+          <span>/</span>
+        <span><a href="../../clerk.html">clerk</a></span>
+          <span>/</span>
+        <span><a href="../logger.html">clerk.logger</a></span>
+        <span>/</span>
+        <span>clerk.logger.lister</span>
+      </nav>
+      <div class="content">
+          <h1>Source code for clerk.logger.lister</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">PHOTON lister</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">textual.app</span><span class="w"> </span><span class="kn">import</span> <span class="n">App</span><span class="p">,</span> <span class="n">ComposeResult</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">textual.containers</span><span class="w"> </span><span class="kn">import</span> <span class="n">Container</span><span class="p">,</span> <span class="n">Horizontal</span><span class="p">,</span> <span class="n">Vertical</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">textual.widgets</span><span class="w"> </span><span class="kn">import</span> <span class="n">Header</span><span class="p">,</span> <span class="n">Footer</span><span class="p">,</span> <span class="n">Static</span><span class="p">,</span> <span class="n">Button</span><span class="p">,</span> <span class="n">Input</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">rich</span><span class="w"> </span><span class="kn">import</span> <span class="n">inspect</span><span class="p">,</span> <span class="nb">print</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">rich.text</span><span class="w"> </span><span class="kn">import</span> <span class="n">Text</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">datetime</span><span class="w"> </span><span class="kn">import</span> <span class="n">datetime</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pathlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">Path</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">jinja2</span><span class="w"> </span><span class="kn">import</span> <span class="n">Environment</span><span class="p">,</span> <span class="n">PackageLoader</span><span class="p">,</span> <span class="n">select_autoescape</span>
+
+<div class="viewcode-block" id="LOG_TEMPLATE">
+<a class="viewcode-back" href="../../../modules/api/clerk/logger/lister/index.html#clerk.logger.lister.LOG_TEMPLATE">[docs]</a>
+<span class="n">LOG_TEMPLATE</span> <span class="o">=</span> <span class="s1">&#39;log.rst.j2&#39;</span></div>
+
+
+
+<div class="viewcode-block" id="Lister">
+<a class="viewcode-back" href="../../../modules/api/clerk/logger/lister/index.html#clerk.logger.lister.Lister">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">Lister</span><span class="p">(</span><span class="n">App</span><span class="p">):</span>
+<div class="viewcode-block" id="Lister.CSS_PATH">
+<a class="viewcode-back" href="../../../modules/api/clerk/logger/lister/index.html#clerk.logger.lister.Lister.CSS_PATH">[docs]</a>
+    <span class="n">CSS_PATH</span> <span class="o">=</span> <span class="s2">&quot;logger.css&quot;</span></div>
+
+<div class="viewcode-block" id="Lister.TITLE">
+<a class="viewcode-back" href="../../../modules/api/clerk/logger/lister/index.html#clerk.logger.lister.Lister.TITLE">[docs]</a>
+    <span class="n">TITLE</span> <span class="o">=</span> <span class="s2">&quot;PHOTON • log lister&quot;</span></div>
+
+<div class="viewcode-block" id="Lister.BINDINGS">
+<a class="viewcode-back" href="../../../modules/api/clerk/logger/lister/index.html#clerk.logger.lister.Lister.BINDINGS">[docs]</a>
+    <span class="n">BINDINGS</span> <span class="o">=</span> <span class="p">[</span>
+            <span class="p">(</span><span class="s1">&#39;ctrl+s&#39;</span><span class="p">,</span> <span class="s1">&#39;save&#39;</span><span class="p">,</span> <span class="s1">&#39;save&#39;</span><span class="p">),</span>
+            <span class="p">(</span><span class="s1">&#39;ctrl+p&#39;</span><span class="p">,</span> <span class="s1">&#39;screenshot&#39;</span><span class="p">,</span> <span class="s1">&#39;screenshot&#39;</span><span class="p">),</span>
+            <span class="p">(</span><span class="s1">&#39;ctrl+q&#39;</span><span class="p">,</span> <span class="s1">&#39;quit&#39;</span><span class="p">,</span> <span class="s1">&#39;quit&#39;</span><span class="p">),</span>
+            <span class="p">]</span></div>
+
+
+<div class="viewcode-block" id="Lister.compose">
+<a class="viewcode-back" href="../../../modules/api/clerk/logger/lister/index.html#clerk.logger.lister.Lister.compose">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">compose</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ComposeResult</span><span class="p">:</span>
+        <span class="n">log_time</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span>
+        <span class="n">log_str</span> <span class="o">=</span> <span class="n">log_time</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;%y.%j-%H%M%S&#39;</span><span class="p">)</span>
+        <span class="k">yield</span> <span class="n">Header</span><span class="p">()</span>
+        <span class="k">yield</span> <span class="n">Footer</span><span class="p">()</span>
+        <span class="k">yield</span> <span class="n">Container</span><span class="p">(</span>
+            <span class="n">Static</span><span class="p">(</span><span class="s1">&#39;LOG:&#39;</span><span class="p">,</span> <span class="n">classes</span><span class="o">=</span><span class="s1">&#39;label&#39;</span><span class="p">),</span>
+            <span class="n">Input</span><span class="p">(</span><span class="n">value</span><span class="o">=</span><span class="n">log_str</span><span class="p">,</span> <span class="nb">id</span><span class="o">=</span><span class="s1">&#39;log&#39;</span><span class="p">),</span>
+            <span class="n">Static</span><span class="p">(</span><span class="s1">&#39;TITLE:&#39;</span><span class="p">,</span> <span class="n">classes</span><span class="o">=</span><span class="s1">&#39;label&#39;</span><span class="p">),</span>
+            <span class="n">Input</span><span class="p">(</span><span class="n">placeholder</span><span class="o">=</span><span class="s1">&#39;Note Title&#39;</span><span class="p">,</span> <span class="nb">id</span><span class="o">=</span><span class="s1">&#39;title&#39;</span><span class="p">),</span>
+            <span class="n">Static</span><span class="p">(</span><span class="s1">&#39;EXCERPT:&#39;</span><span class="p">,</span> <span class="n">classes</span><span class="o">=</span><span class="s1">&#39;label&#39;</span><span class="p">),</span>
+            <span class="n">Input</span><span class="p">(</span><span class="n">placeholder</span><span class="o">=</span><span class="s1">&#39;short desc&#39;</span><span class="p">,</span> <span class="nb">id</span><span class="o">=</span><span class="s1">&#39;excerpt&#39;</span><span class="p">),</span>
+            <span class="n">Static</span><span class="p">(</span><span class="s1">&#39;TAGS:&#39;</span><span class="p">,</span> <span class="n">classes</span><span class="o">=</span><span class="s1">&#39;label&#39;</span><span class="p">),</span>
+            <span class="n">Input</span><span class="p">(</span><span class="n">placeholder</span><span class="o">=</span><span class="s1">&#39;comma separated list&#39;</span><span class="p">,</span> <span class="nb">id</span><span class="o">=</span><span class="s1">&#39;tags&#39;</span><span class="p">),</span>
+            <span class="n">Static</span><span class="p">(</span><span class="s1">&#39;CATEGORY:&#39;</span><span class="p">,</span> <span class="n">classes</span><span class="o">=</span><span class="s1">&#39;label&#39;</span><span class="p">),</span>
+            <span class="n">Input</span><span class="p">(</span><span class="n">placeholder</span><span class="o">=</span><span class="s1">&#39;comma separated list&#39;</span><span class="p">,</span> <span class="nb">id</span><span class="o">=</span><span class="s1">&#39;category&#39;</span><span class="p">),</span>
+            <span class="n">Static</span><span class="p">(),</span>
+            <span class="n">Button</span><span class="p">(</span><span class="s2">&quot;Save&quot;</span><span class="p">,</span> <span class="nb">id</span><span class="o">=</span><span class="s1">&#39;save&#39;</span><span class="p">),</span>
+            <span class="n">Static</span><span class="p">(),</span>
+            <span class="n">Button</span><span class="p">(</span><span class="s2">&quot;Quit&quot;</span><span class="p">,</span> <span class="nb">id</span><span class="o">=</span><span class="s1">&#39;quit&#39;</span><span class="p">),</span>
+            <span class="nb">id</span><span class="o">=</span><span class="s2">&quot;dialog&quot;</span><span class="p">,</span>
+            <span class="n">classes</span><span class="o">=</span><span class="s2">&quot;form&quot;</span>
+        <span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="Lister.on_button_pressed">
+<a class="viewcode-back" href="../../../modules/api/clerk/logger/lister/index.html#clerk.logger.lister.Lister.on_button_pressed">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">on_button_pressed</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">event</span><span class="p">:</span> <span class="n">Button</span><span class="o">.</span><span class="n">Pressed</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Event handler called when a button is pressed.&quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">event</span><span class="o">.</span><span class="n">button</span><span class="o">.</span><span class="n">id</span> <span class="o">==</span> <span class="s2">&quot;save&quot;</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">action_save</span><span class="p">()</span>
+
+        <span class="k">elif</span> <span class="n">event</span><span class="o">.</span><span class="n">button</span><span class="o">.</span><span class="n">id</span> <span class="o">==</span> <span class="s2">&quot;quit&quot;</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">exit</span><span class="p">()</span></div>
+
+
+<div class="viewcode-block" id="Lister.action_save">
+<a class="viewcode-back" href="../../../modules/api/clerk/logger/lister/index.html#clerk.logger.lister.Lister.action_save">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">action_save</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">log_stamp</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">query_one</span><span class="p">(</span><span class="s1">&#39;#log&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">value</span>
+        <span class="n">title</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">query_one</span><span class="p">(</span><span class="s1">&#39;#title&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">value</span>
+        <span class="n">excerpt</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">query_one</span><span class="p">(</span><span class="s1">&#39;#excerpt&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">value</span>
+        <span class="n">tags</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">query_one</span><span class="p">(</span><span class="s1">&#39;#tags&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">value</span>
+        <span class="n">category</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">query_one</span><span class="p">(</span><span class="s1">&#39;#category&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">value</span>
+        <span class="n">context</span> <span class="o">=</span> <span class="p">{</span>
+                <span class="s1">&#39;log_stamp&#39;</span><span class="p">:</span> <span class="n">log_stamp</span><span class="p">,</span>
+                <span class="s1">&#39;title&#39;</span><span class="p">:</span> <span class="n">title</span><span class="p">,</span>
+                <span class="s1">&#39;excerpt&#39;</span><span class="p">:</span> <span class="n">excerpt</span><span class="p">,</span>
+                <span class="s1">&#39;tags&#39;</span><span class="p">:</span> <span class="n">tags</span><span class="p">,</span>
+                <span class="s1">&#39;category&#39;</span><span class="p">:</span> <span class="n">category</span>
+                <span class="p">}</span>
+
+        <span class="n">env</span> <span class="o">=</span> <span class="n">Environment</span><span class="p">(</span>
+            <span class="c1">#  loader=FileSystemLoader(TEMPLATE_PATH),</span>
+            <span class="n">loader</span><span class="o">=</span><span class="n">PackageLoader</span><span class="p">(</span><span class="s1">&#39;photonplatform.logger&#39;</span><span class="p">),</span>
+            <span class="p">)</span>
+        <span class="n">template</span> <span class="o">=</span> <span class="n">env</span><span class="o">.</span><span class="n">get_template</span><span class="p">(</span><span class="n">LOG_TEMPLATE</span><span class="p">)</span>
+        <span class="n">rst_text</span> <span class="o">=</span> <span class="n">template</span><span class="o">.</span><span class="n">render</span><span class="p">(</span><span class="o">**</span><span class="n">context</span><span class="p">)</span>
+
+        <span class="n">filename</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;log/</span><span class="si">{</span><span class="n">log_stamp</span><span class="si">}</span><span class="s1">.rst&#39;</span>
+        <span class="n">file_path</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
+        <span class="n">file_path</span><span class="o">.</span><span class="n">write_text</span><span class="p">(</span><span class="n">rst_text</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="Lister.action_screenshot">
+<a class="viewcode-back" href="../../../modules/api/clerk/logger/lister/index.html#clerk.logger.lister.Lister.action_screenshot">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">action_screenshot</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">path</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;./&quot;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Save an SVG &quot;screenshot&quot;. This action will save an SVG file containing the current contents of the screen.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            filename (str | None, optional): Filename of screenshot, or None to auto-generate. Defaults to None.</span>
+<span class="sd">            path (str, optional): Path to directory. Defaults to &quot;./&quot;.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">bell</span><span class="p">()</span>
+
+        <span class="n">log_stamp</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">query_one</span><span class="p">(</span><span class="s1">&#39;#log&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">value</span>
+        <span class="n">filename</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;log/</span><span class="si">{</span><span class="n">log_stamp</span><span class="si">}</span><span class="s1">.svg&#39;</span>
+        <span class="n">path</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">save_screenshot</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">path</span><span class="p">)</span>
+
+        <span class="n">message</span> <span class="o">=</span> <span class="n">Text</span><span class="o">.</span><span class="n">assemble</span><span class="p">(</span><span class="s2">&quot;Screenshot saved to &quot;</span><span class="p">,</span> <span class="p">(</span><span class="sa">f</span><span class="s2">&quot;&#39;</span><span class="si">{</span><span class="n">path</span><span class="si">}</span><span class="s2">&#39;&quot;</span><span class="p">,</span> <span class="s2">&quot;bold green&quot;</span><span class="p">))</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">message</span><span class="p">)</span></div>
+</div>
+
+        <span class="c1">#  self.add_note(message)</span>
+        <span class="c1">#  self.screen.mount(Notification(message))</span>
+
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="kn">import</span><span class="w"> </span><span class="nn">subprocess</span>
+
+<div class="viewcode-block" id="app">
+<a class="viewcode-back" href="../../../modules/api/clerk/logger/lister/index.html#clerk.logger.lister.app">[docs]</a>
+    <span class="n">app</span> <span class="o">=</span> <span class="n">Lister</span><span class="p">()</span></div>
+
+    <span class="n">reply</span> <span class="o">=</span> <span class="n">app</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">reply</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">reply</span><span class="p">:</span>
+        <span class="n">subprocess</span><span class="o">.</span><span class="n">run</span><span class="p">([</span><span class="s1">&#39;vim&#39;</span><span class="p">,</span> <span class="n">reply</span><span class="p">])</span>
+
+</pre></div>
+      </div>
+      <footer></footer>
+    </article>
+
+  </main>
+
+<div class="asides">
+    <aside>
+        <h3>Search</h3>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+    </aside>
+    
+</div>
+<footer>
+    <hr/>
+    <div role="contentinfo">
+        <p>
+                &copy; Copyright .
+        </p>
+    </div>
+</footer>
+
+  <script src="../../../_static/jquery.js?v=5d32c60e"></script>
+  <script src="../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+  <script src="../../../_static/documentation_options.js?v=5929fcd5"></script>
+  <script src="../../../_static/doctools.js?v=9bcbadda"></script>
+  <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+
+
+</body>
+</html>

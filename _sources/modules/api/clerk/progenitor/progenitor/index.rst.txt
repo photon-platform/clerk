@@ -1,0 +1,22 @@
+clerk.progenitor.progenitor
+===========================
+
+.. py:module:: clerk.progenitor.progenitor
+
+
+Functions
+---------
+
+.. autoapisummary::
+
+   clerk.progenitor.progenitor.create_project
+
+
+Module Contents
+---------------
+
+.. py:function:: create_project(github_id, package_namespace, github_repo_id, package_name, author, description, path)
+
+   Create a new Python project in an empty folder.
+
+

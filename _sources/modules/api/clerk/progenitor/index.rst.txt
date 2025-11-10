@@ -1,0 +1,64 @@
+clerk.progenitor
+================
+
+.. py:module:: clerk.progenitor
+
+.. autoapi-nested-parse::
+
+   progenitor
+   ==========
+
+   PHOTON platform
+   ---------------
+
+   tools for creating and initializing Python projects
+
+
+
+Submodules
+----------
+
+.. toctree::
+   :maxdepth: 1
+
+   /modules/api/clerk/progenitor/__main__/index
+   /modules/api/clerk/progenitor/app/index
+   /modules/api/clerk/progenitor/folders/index
+   /modules/api/clerk/progenitor/progenitor/index
+
+
+Attributes
+----------
+
+.. autoapisummary::
+
+   clerk.progenitor.__author__
+   clerk.progenitor.__maintainer__
+   clerk.progenitor.__email__
+   clerk.progenitor.__version__
+   clerk.progenitor.__licence__
+
+
+Package Contents
+----------------
+
+.. py:data:: __author__
+   :value: 'phiarchitect'
+
+
+.. py:data:: __maintainer__
+   :value: 'PHOTON platform'
+
+
+.. py:data:: __email__
+   :value: 'github@phiarchitect.com'
+
+
+.. py:data:: __version__
+   :value: '0.0.1'
+
+
+.. py:data:: __licence__
+   :value: 'MIT'
+
+
