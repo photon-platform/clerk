@@ -1,0 +1,22 @@
+photon_platform.clerk.progenitor.cli
+====================================
+
+.. py:module:: photon_platform.clerk.progenitor.cli
+
+
+Functions
+---------
+
+.. autoapisummary::
+
+   photon_platform.clerk.progenitor.cli.progenitor
+
+
+Module Contents
+---------------
+
+.. py:function:: progenitor(ctx, project_name, description)
+
+   Creates a new Python project.
+
+

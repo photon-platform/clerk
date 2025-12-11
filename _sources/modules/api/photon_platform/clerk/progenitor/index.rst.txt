@@ -1,0 +1,44 @@
+photon_platform.clerk.progenitor
+================================
+
+.. py:module:: photon_platform.clerk.progenitor
+
+.. autoapi-nested-parse::
+
+   progenitor
+   ==========
+
+   PHOTON platform
+   ---------------
+
+   tools for creating and initializing Python projects
+
+
+
+Submodules
+----------
+
+.. toctree::
+   :maxdepth: 1
+
+   /modules/api/photon_platform/clerk/progenitor/cli/index
+   /modules/api/photon_platform/clerk/progenitor/folders/index
+   /modules/api/photon_platform/clerk/progenitor/progenitor/index
+
+
+Functions
+---------
+
+.. autoapisummary::
+
+   photon_platform.clerk.progenitor.create_project
+
+
+Package Contents
+----------------
+
+.. py:function:: create_project(github_id, package_namespace, github_repo_id, package_name, author, description, path)
+
+   Create a new Python project in an empty folder.
+
+

@@ -1,0 +1,58 @@
+photon_platform.clerk.modulator.cli
+===================================
+
+.. py:module:: photon_platform.clerk.modulator.cli
+
+
+Functions
+---------
+
+.. autoapisummary::
+
+   photon_platform.clerk.modulator.cli.resolve_project_path
+   photon_platform.clerk.modulator.cli.resolve_namespace
+   photon_platform.clerk.modulator.cli.modulator
+   photon_platform.clerk.modulator.cli.create_module
+   photon_platform.clerk.modulator.cli.create_submodule
+   photon_platform.clerk.modulator.cli.create_class
+   photon_platform.clerk.modulator.cli.create_function
+   photon_platform.clerk.modulator.cli.create_class_method
+
+
+Module Contents
+---------------
+
+.. py:function:: resolve_project_path(ctx, path)
+
+.. py:function:: resolve_namespace(ctx, namespace)
+
+.. py:function:: modulator()
+
+   Shapes Python modules and packages.
+
+
+.. py:function:: create_module(ctx, project_path, namespace, module_name)
+
+   Creates a new Python module.
+
+
+.. py:function:: create_submodule(ctx, project_path, namespace, module_name, submodule_name)
+
+   Creates a new Python submodule.
+
+
+.. py:function:: create_class(ctx, project_path, namespace, module_name, class_name)
+
+   Creates a new Python class.
+
+
+.. py:function:: create_function(ctx, project_path, namespace, module_name, function_name, args, return_type)
+
+   Creates a new Python function.
+
+
+.. py:function:: create_class_method(ctx, project_path, namespace, module_name, class_name, method_name, args, return_type)
+
+   Creates a new Python class method.
+
+

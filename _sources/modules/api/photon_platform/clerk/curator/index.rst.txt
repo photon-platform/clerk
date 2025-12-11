@@ -1,0 +1,66 @@
+photon_platform.clerk.curator
+=============================
+
+.. py:module:: photon_platform.clerk.curator
+
+.. autoapi-nested-parse::
+
+   curator
+   =======
+
+   PHOTON platform
+   ---------------
+
+
+
+
+Submodules
+----------
+
+.. toctree::
+   :maxdepth: 1
+
+   /modules/api/photon_platform/clerk/curator/branch/index
+   /modules/api/photon_platform/clerk/curator/cli/index
+   /modules/api/photon_platform/clerk/curator/curator/index
+   /modules/api/photon_platform/clerk/curator/get_stat/index
+   /modules/api/photon_platform/clerk/curator/git_init/index
+   /modules/api/photon_platform/clerk/curator/git_reset/index
+   /modules/api/photon_platform/clerk/curator/modal/index
+
+
+Attributes
+----------
+
+.. autoapisummary::
+
+   photon_platform.clerk.curator.__author__
+   photon_platform.clerk.curator.__maintainer__
+   photon_platform.clerk.curator.__email__
+   photon_platform.clerk.curator.__version__
+   photon_platform.clerk.curator.__licence__
+
+
+Package Contents
+----------------
+
+.. py:data:: __author__
+   :value: 'PHOTON platform'
+
+
+.. py:data:: __maintainer__
+   :value: 'PHOTON platform'
+
+
+.. py:data:: __email__
+   :value: 'github@phiarchitect.com'
+
+
+.. py:data:: __version__
+   :value: '0.0.3'
+
+
+.. py:data:: __licence__
+   :value: 'MIT'
+
+

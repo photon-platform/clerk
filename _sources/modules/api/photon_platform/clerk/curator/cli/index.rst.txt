@@ -1,0 +1,52 @@
+photon_platform.clerk.curator.cli
+=================================
+
+.. py:module:: photon_platform.clerk.curator.cli
+
+
+Functions
+---------
+
+.. autoapisummary::
+
+   photon_platform.clerk.curator.cli.curator
+   photon_platform.clerk.curator.cli.branches
+   photon_platform.clerk.curator.cli.create_release_branch
+   photon_platform.clerk.curator.cli.merge_to_main
+   photon_platform.clerk.curator.cli.create_tag
+   photon_platform.clerk.curator.cli.init_repo
+
+
+Module Contents
+---------------
+
+.. py:function:: curator()
+
+   Organizes git/archive management.
+
+
+.. py:function:: branches(ctx, repo_path)
+
+   Lists the branches in the repository.
+
+
+.. py:function:: create_release_branch(ctx, repo_path, release_version, description)
+
+   Creates a new release branch.
+
+
+.. py:function:: merge_to_main(ctx, repo_path, branch_name, commit_message)
+
+   Merges a branch to main.
+
+
+.. py:function:: create_tag(ctx, repo_path, tag_name, message)
+
+   Creates a new tag.
+
+
+.. py:function:: init_repo()
+
+   Initializes a new git repository.
+
+

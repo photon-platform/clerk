@@ -1,0 +1,19 @@
+photon_platform.clerk.curator.branch
+====================================
+
+.. py:module:: photon_platform.clerk.curator.branch
+
+
+Attributes
+----------
+
+.. autoapisummary::
+
+   photon_platform.clerk.curator.branch.curator
+
+
+Module Contents
+---------------
+
+.. py:data:: curator
+
