@@ -6,17 +6,13 @@ authors = [
 ]
 description = "{{ description }}"
 readme = "README.rst"
-requires-python = ">=3.7"
+requires-python = ">=3.13"
 classifiers = [
     "Programming Language :: Python :: 3",
     "License :: OSI Approved :: MIT License",
     "Operating System :: OS Independent",
 ]
-dependencies = [
-    "textual",
-    "rich",
-    "jinja2",
-]
+dependencies = []
 
 [project.scripts]
 {{ github_repo_id }} = "{{ package_namespace }}.{{ package_name }}.__main__:run"

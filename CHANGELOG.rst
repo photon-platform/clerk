@@ -1,6 +1,17 @@
 changelog
 =========
 
+0.0.7
+-----
+*2025-12-11*
+
+**refactored**
+
+.. + Refactored `clerk` CLI into context-aware sub-apps (`progenitor`, `modulator`, `curator`, `gather`, `logger`).
+.. + Removed legacy TUI applications in favor of a unified Click-based CLI.
+.. + Implemented `Context` class for automatic situational awareness and path detection.
+.. + Cleaned up redundant entry points and files.
+
 0.0.6
 -----
 *2025-11-06*

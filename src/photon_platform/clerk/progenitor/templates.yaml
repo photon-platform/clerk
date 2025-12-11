@@ -8,16 +8,12 @@
   template: README.rst.j2
 - target: .gitignore
   template: .gitignore.j2
-- target: .ctags
-  template: .ctags.j2
 
 - target: demos/demo.py
   template: demos/demo.py.j2
 
 - target: docsrc/_static/css/custom.css
   template: docsrc/_static/css/custom.css.j2
-- target: docsrc/_static/css/rtd-dark.css
-  template: docsrc/_static/css/rtd-dark.css.j2
 
 - target: docsrc/conf.py
   template: docsrc/conf.py.j2
@@ -32,8 +28,8 @@
   template: docsrc/changelog.rst.j2
 - target: docsrc/todos.rst
   template: docsrc/todos.rst.j2
-- target: docsrc/logs.rst
-  template: docsrc/logs.rst.j2
+- target: docsrc/log/index.rst
+  template: docsrc/log/index.rst.j2
 - target: docsrc/connect.rst
   template: docsrc/connect.rst.j2
 - target: docsrc/about.rst

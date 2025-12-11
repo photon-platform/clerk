@@ -16,4 +16,4 @@ We are currently working towards tighter integration with the Gemini CLI.
 -   **modulator**: Shapes Python modules and packages.
 -   **curator**: Organizes git/archive management.
 -   **logger**: Creates log entries.
--   **summarizer**: Summarizes web pages.
+-   **gather**: Gathers content from various sources.

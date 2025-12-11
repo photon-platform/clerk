@@ -1,15 +1,7 @@
 """
 clerk
-=====
-
-PHOTON platform
----------------
 
 
 
 """
-__author__ = "PHOTON platform"
-__maintainer__ = "PHOTON platform"
-__email__ = "github@phiarchitect.com"
-__version__ = "0.0.6"
-__licence__ = "MIT"
+__version__ = "0.0.7"

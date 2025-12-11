@@ -1,11 +1,13 @@
-{% set module_path = package_namespace + '.' + package_name %}
+:navigation: header
+:order: 3
+
 modules
 =======
 
-.. automodule:: {{ module_path }}
-   :members:
-   :undoc-members:
-   :show-inheritance:
+.. include:: api/{{ package_namespace }}/{{ package_name }}/index.rst
 
+indices
+-------
 
-
+* :ref:`genindex`
+* :ref:`modindex`
