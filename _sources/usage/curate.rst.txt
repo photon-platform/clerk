@@ -3,7 +3,13 @@
 curate
 ======
 
-The ``curate`` command manages git repositories, branches, and releases.
+The ``curate`` command:
+- **branches**: Lists branches.
+- **create-release-branch**: Creates a release branch (e.g. `release-0.1.0`).
+- **merge-to-main**: Merges a branch to main.
+- **create-tag**: Creates a git tag.
+- **rollup**: Automates the release process (version bump, changelog, merge, tag).
+- **status**: Shows git status and diff since branching.
 
 Context Awareness
 -----------------

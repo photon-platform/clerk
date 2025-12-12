@@ -67,7 +67,13 @@
         </nav>
           <section id="curate">
 <h1>curate<a class="headerlink" href="#curate" title="Link to this heading">¶</a></h1>
-<p>The <code class="docutils literal notranslate"><span class="pre">curate</span></code> command manages git repositories, branches, and releases.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">curate</span></code> command:
+- <strong>branches</strong>: Lists branches.
+- <strong>create-release-branch</strong>: Creates a release branch (e.g. <cite>release-0.1.0</cite>).
+- <strong>merge-to-main</strong>: Merges a branch to main.
+- <strong>create-tag</strong>: Creates a git tag.
+- <strong>rollup</strong>: Automates the release process (version bump, changelog, merge, tag).
+- <strong>status</strong>: Shows git status and diff since branching.</p>
 <section id="context-awareness">
 <h2>Context Awareness<a class="headerlink" href="#context-awareness" title="Link to this heading">¶</a></h2>
 <p>Curator operations default to the current <strong>Project Root</strong> if not explicitly provided.</p>
