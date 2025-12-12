@@ -1,6 +1,15 @@
 changelog
 =========
 
+0.0.8
+-----
+*2025-12-11*
+
+**added**
+
+.. + Added comprehensive usage documentation for `curator`, `gather`, `logger`, `modulator`, and `progenitor`.
+.. + Improved documentation structure and navigation in `docsrc`.
+
 0.0.7
 -----
 *2025-12-11*

@@ -1,10 +1,9 @@
+:navigation: header
+:order: 2
 
 modules
 =======
 
-.. automodule:: photon_platform.clerk
-   :members:
-   :undoc-members:
-   :show-inheritance:
+.. include:: api/photon_platform/clerk/index.rst
 
 
