@@ -26,7 +26,7 @@ def create_log_entry(project_root, title, excerpt, tags, category, image):
     }
 
     env = Environment(
-        loader=PackageLoader("photon_platform.clerk.logger"),
+        loader=PackageLoader("photon_platform.clerk.log"),
     )
     template = env.get_template(LOG_TEMPLATE)
     rst_text = template.render(**context)

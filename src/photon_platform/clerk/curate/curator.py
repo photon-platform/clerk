@@ -1,5 +1,5 @@
 """
-Curator
+Curate
 =======
 
     # Example usage

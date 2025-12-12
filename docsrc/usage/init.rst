@@ -1,9 +1,9 @@
 :order: 1
 
-progenitor
-==========
+init
+====
 
-The ``progenitor`` command creates new Python projects using standard templates.
+The ``init`` command creates new Python projects using standard templates.
 
 Context Awareness
 -----------------
@@ -15,6 +15,6 @@ Progenitor uses the current working directory to determine the **Organization** 
 Usage
 -----
 
-.. click:: photon_platform.clerk.progenitor.cli:progenitor
-   :prog: clerk progenitor
+.. click:: photon_platform.clerk.init.cli:init
+   :prog: clerk init
    :nested: full

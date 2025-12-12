@@ -19,11 +19,11 @@ def resolve_namespace(ctx, namespace):
     return click.prompt("Namespace")
 
 @click.group()
-def modulator():
+def build():
     """Shapes Python modules and packages."""
     pass
 
-@modulator.command('create-module')
+@build.command('module')
 @click.option('--project-path', help='The path to the project.')
 @click.option('--namespace', help='The namespace for the module.')
 @click.option('--module-name', prompt='Module Name', help='The name of the module.')
@@ -37,7 +37,7 @@ def create_module(ctx, project_path, namespace, module_name):
     modulator.create_module(module_name)
     click.echo(f"Module {module_name} created successfully.")
 
-@modulator.command('create-submodule')
+@build.command('submodule')
 @click.option('--project-path', help='The path to the project.')
 @click.option('--namespace', help='The namespace for the module.')
 @click.option('--module-name', prompt='Module Name', help='The name of the parent module.')
@@ -52,7 +52,7 @@ def create_submodule(ctx, project_path, namespace, module_name, submodule_name):
     modulator.create_submodule(module_name, submodule_name)
     click.echo(f"Submodule {submodule_name} created successfully in {module_name}.")
 
-@modulator.command('create-class')
+@build.command('class')
 @click.option('--project-path', help='The path to the project.')
 @click.option('--namespace', help='The namespace for the module.')
 @click.option('--module-name', prompt='Module Name', help='The name of the module.')
@@ -67,7 +67,7 @@ def create_class(ctx, project_path, namespace, module_name, class_name):
     modulator.create_class(module_name, class_name)
     click.echo(f"Class {class_name} created successfully in {module_name}.")
 
-@modulator.command('create-function')
+@build.command('function')
 @click.option('--project-path', help='The path to the project.')
 @click.option('--namespace', help='The namespace for the module.')
 @click.option('--module-name', prompt='Module Name', help='The name of the module.')
@@ -84,7 +84,7 @@ def create_function(ctx, project_path, namespace, module_name, function_name, ar
     modulator.create_function(module_name, function_name, args, return_type)
     click.echo(f"Function {function_name} created successfully in {module_name}.")
 
-@modulator.command('create-class-method')
+@build.command('method')
 @click.option('--project-path', help='The path to the project.')
 @click.option('--namespace', help='The namespace for the module.')
 @click.option('--module-name', prompt='Module Name', help='The name of the module.')

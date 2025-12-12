@@ -3,11 +3,11 @@ import os
 from . import curator as curator_actions
 
 @click.group()
-def curator():
+def curate():
     """Organizes git/archive management."""
     pass
 
-@curator.command('branches')
+@curate.command('branches')
 @click.option('--repo-path', default='', help='The path to the repository.')
 @click.pass_context
 def branches(ctx, repo_path):
@@ -27,7 +27,7 @@ def branches(ctx, repo_path):
         else:
             click.echo(f"  {branch}")
 
-@curator.command('create-release-branch')
+@curate.command('create-release-branch')
 @click.option('--repo-path', default='', help='The path to the repository.')
 @click.option('--release-version', prompt='Release Version', help='The version number for the release.')
 @click.option('--description', prompt='Description', help='A short description of the release.')
@@ -48,7 +48,7 @@ def create_release_branch(ctx, repo_path, release_version, description):
     else:
         click.echo(f"Error: {message}")
 
-@curator.command('merge-to-main')
+@curate.command('merge-to-main')
 @click.option('--repo-path', default='', help='The path to the repository.')
 @click.option('--branch-name', prompt='Branch Name', help='The name of the branch to merge.')
 @click.option('--commit-message', prompt='Commit Message', help='The commit message.')
@@ -69,7 +69,7 @@ def merge_to_main(ctx, repo_path, branch_name, commit_message):
     else:
         click.echo(f"Error: {message}")
 
-@curator.command('create-tag')
+@curate.command('create-tag')
 @click.option('--repo-path', default='', help='The path to the repository.')
 @click.option('--tag-name', prompt='Tag Name', help='The name of the tag.')
 @click.option('--message', prompt='Message', help='The message for the tag.')
@@ -90,7 +90,7 @@ def create_tag(ctx, repo_path, tag_name, message):
     else:
         click.echo(f"Error: {message}")
 
-@curator.command('init')
+@curate.command('init')
 def init_repo():
     """Initializes a new git repository."""
     from . import git_init

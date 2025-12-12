@@ -6,11 +6,11 @@ from pathlib import Path
 
 import click
 
-from .progenitor.cli import progenitor
-from .modulator.cli import modulator
-from .curator.cli import curator
+from .init.cli import init
+from .build.cli import build
+from .curate.cli import curate
 from .gather.cli import gather
-from .logger.cli import logger
+from .log.cli import log
 from .context import determine_context
 
 @click.group()
@@ -20,11 +20,11 @@ def cli(ctx):
     ctx.ensure_object(dict)
     ctx.obj['context'] = determine_context(Path(os.getcwd()))
 
-cli.add_command(progenitor)
-cli.add_command(modulator)
-cli.add_command(curator)
+cli.add_command(init)
+cli.add_command(build)
+cli.add_command(curate)
 cli.add_command(gather)
-cli.add_command(logger)
+cli.add_command(log)
 
 if __name__ == '__main__':
     cli()

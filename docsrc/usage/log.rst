@@ -1,9 +1,9 @@
 :order: 5
 
-logger
-======
+log
+===
 
-The ``logger`` command creates standardized log entries in the project's documentation.
+The ``log`` command creates standardized log entries in the project's documentation.
 
 Context Awareness
 -----------------
@@ -16,6 +16,6 @@ Logger **requires** a valid project context to function.
 Usage
 -----
 
-.. click:: photon_platform.clerk.logger.cli:logger
-   :prog: clerk logger
+.. click:: photon_platform.clerk.log.cli:log
+   :prog: clerk log
    :nested: full

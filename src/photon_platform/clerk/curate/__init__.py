@@ -1,5 +1,5 @@
 """
-curator
+curate
 =======
 
 PHOTON platform

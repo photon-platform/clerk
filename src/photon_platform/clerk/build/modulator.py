@@ -5,7 +5,7 @@ class Modulator:
     def __init__(self, project_path: Path, namespace: str):
         self.project_path = project_path
         self.namespace = self._clean(namespace)
-        self.env = Environment(loader=PackageLoader("photon_platform.clerk.modulator", "templates"))
+        self.env = Environment(loader=PackageLoader("photon_platform.clerk.build", "templates"))
 
     def create_module(self, module_name: str) -> None:
         module_name = self._clean(module_name)

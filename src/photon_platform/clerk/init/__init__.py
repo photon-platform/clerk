@@ -1,5 +1,5 @@
 """
-progenitor
+init
 ==========
 
 PHOTON platform

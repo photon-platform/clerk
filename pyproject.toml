@@ -25,8 +25,8 @@ dependencies = [
 
 [project.scripts]
 clerk = "photon_platform.clerk.__main__:cli"
-rollup = "photon_platform.clerk.rollup:rollup"
-status_diff = "photon_platform.clerk.status_diff:status_diff"
+rollup = "photon_platform.clerk.curate.rollup:rollup"
+status_diff = "photon_platform.clerk.curate.status_diff:status_diff"
 
 [build-system]
 requires = ["setuptools", "setuptools-scm"]

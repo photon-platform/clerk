@@ -1,9 +1,9 @@
 :order: 3
 
-curator
-=======
+curate
+======
 
-The ``curator`` command manages git repositories, branches, and releases.
+The ``curate`` command manages git repositories, branches, and releases.
 
 Context Awareness
 -----------------
@@ -15,6 +15,6 @@ Curator operations default to the current **Project Root** if not explicitly pro
 Usage
 -----
 
-.. click:: photon_platform.clerk.curator.cli:curator
-   :prog: clerk curator
+.. click:: photon_platform.clerk.curate.cli:curate
+   :prog: clerk curate
    :nested: full

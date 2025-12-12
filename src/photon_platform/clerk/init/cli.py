@@ -5,10 +5,10 @@ import click
 from .progenitor import create_project
 
 @click.command()
-@click.option('--project-name', prompt='Project Name', help='The name of the project.')
-@click.option('--description', prompt='Description', help='A short description of the project.')
+@click.argument('project_name')
+@click.option('--description', '-d', help='Project description')
 @click.pass_context
-def progenitor(ctx, project_name, description):
+def init(ctx, project_name, description):
     """Creates a new Python project."""
     context = ctx.obj.get('context')
     

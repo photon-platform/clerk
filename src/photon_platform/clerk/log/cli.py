@@ -8,7 +8,7 @@ from .logger import create_log_entry
 @click.option('--category', prompt='Category', help='Comma separated list of categories')
 @click.option('--image', prompt='Image', default='', help='Path to image')
 @click.pass_context
-def logger(ctx, title, excerpt, tags, category, image):
+def log(ctx, title, excerpt, tags, category, image):
     """Creates a new log entry."""
     context = ctx.obj.get('context')
     

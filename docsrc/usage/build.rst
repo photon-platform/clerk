@@ -1,9 +1,9 @@
 :order: 2
 
-modulator
-=========
+build
+=====
 
-The ``modulator`` command shapes Python modules, classes, and functions.
+The ``build`` command shapes Python modules, classes, and functions.
 
 Context Awareness
 -----------------
@@ -18,6 +18,6 @@ If these cannot be detected, you will be prompted to provide them.
 Usage
 -----
 
-.. click:: photon_platform.clerk.modulator.cli:modulator
-   :prog: clerk modulator
+.. click:: photon_platform.clerk.build.cli:build
+   :prog: clerk build
    :nested: full

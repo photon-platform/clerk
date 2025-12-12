@@ -11,11 +11,11 @@ current working directory (CWD) and the information it contains.
 Here are the roles of CLERK, each fulfilling a unique function within the
 knowledge management process:
 
-- `progenitor`: Sparks life into Python projects.
-- `modulator`: Shapes Python modules and packages.
-- `curator`: Organizes git/archive management.
-- `logger`: Creates log entries.
-- `gather`: Downloads and organizes information from the web. It can handle various sources like URLs, GitHub repositories, arXiv papers, and YouTube videos.
+- ``init``: Sparks life into Python projects.
+- ``build``: Shapes Python modules and packages.
+- ``curate``: Organizes git/archive management.
+- ``log``: Creates log entries.
+- ``gather``: Downloads and organizes information from the web. It can handle various sources like URLs, GitHub repositories, arXiv papers, and YouTube videos.
 
 Usage
 -----
@@ -25,21 +25,21 @@ CLERK is designed to be agent-friendly, supporting command-line arguments for al
 Top-Level Commands
 ~~~~~~~~~~~~~~~~~~
 
-- `clerk gather`: Gathers content from various sources.
-- `clerk logger`: Creates a new log entry.
-- `clerk progenitor`: Creates a new Python project.
-- `clerk modulator`: Shapes Python modules and packages.
-- `clerk curator`: Organizes git/archive management.
+- ``clerk gather``: Gathers content from various sources.
+- ``clerk log``: Creates a new log entry.
+- ``clerk init``: Creates a new Python project.
+- ``clerk build``: Shapes Python modules and packages.
+- ``clerk curate``: Organizes git/archive management.
 
 
-`logger` Command
-~~~~~~~~~~~~~~~~
+``log`` Command
+~~~~~~~~~~~~~~~
 
 Creates a new log entry in ``docsrc/log/``.
 
 .. code-block:: bash
 
-    clerk logger [OPTIONS]
+    clerk log [OPTIONS]
 
 Options:
     --title TEXT     Title for log entry
@@ -48,39 +48,39 @@ Options:
     --category TEXT  Comma separated list of categories
     --image TEXT     Path to image
 
-`progenitor` Command
-~~~~~~~~~~~~~~~~~~~~
+``init`` Command
+~~~~~~~~~~~~~~~~
 
 Creates a new Python project structure.
 Context awareness: Infers organization from parent directory and author from git config.
 
 .. code-block:: bash
 
-    clerk progenitor [OPTIONS]
+    clerk init [OPTIONS]
 
 Options:
     --project-name TEXT  The name of the project.
     --description TEXT   A short description of the project.
 
-`modulator` Commands
-~~~~~~~~~~~~~~~~~~~~
+``build`` Commands
+~~~~~~~~~~~~~~~~~~
 
 Shapes Python modules and packages.
 Context awareness: Infers project path and namespace from CWD.
 
-- `create-module`: Creates a new Python module.
-- `create-submodule`: Creates a new Python submodule.
-- `create-class`: Creates a new Python class.
-- `create-function`: Creates a new Python function.
-- `create-class-method`: Creates a new Python class method.
+- `module`: Creates a new Python module.
+- `submodule`: Creates a new Python submodule.
+- `class`: Creates a new Python class.
+- `function`: Creates a new Python function.
+- `method`: Creates a new Python class method.
 
 .. code-block:: bash
 
-    clerk modulator create-module --module-name my_module
-    clerk modulator create-function --module-name my_module --function-name my_func --args "a,b" --return-type int
+    clerk build module --module-name my_module
+    clerk build function --module-name my_module --function-name my_func --args "a,b" --return-type int
 
-`curator` Commands
-~~~~~~~~~~~~~~~~~~
+``curate`` Commands
+~~~~~~~~~~~~~~~~~~~
 
 Manages git repositories and releases.
 Context awareness: Infers repo path from CWD.
@@ -92,7 +92,7 @@ Context awareness: Infers repo path from CWD.
 
 .. code-block:: bash
 
-    clerk curator create-release-branch --release-version 0.1.0 --description "New features"
+    clerk curate create-release-branch --release-version 0.1.0 --description "New features"
 
 `gather` Commands
 ~~~~~~~~~~~~~~~~~

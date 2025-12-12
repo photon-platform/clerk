@@ -12,8 +12,8 @@ We are currently working towards tighter integration with the Gemini CLI.
 
 ## Integrated Tools
 
--   **progenitor**: Creates new Python projects.
--   **modulator**: Shapes Python modules and packages.
--   **curator**: Organizes git/archive management.
--   **logger**: Creates log entries.
+-   **init**: Creates new Python projects.
+-   **build**: Shapes Python modules and packages.
+-   **curate**: Organizes git/archive management.
+-   **log**: Creates log entries.
 -   **gather**: Gathers content from various sources.

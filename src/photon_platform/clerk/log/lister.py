@@ -73,7 +73,7 @@ class Lister(App):
 
         env = Environment(
             #  loader=FileSystemLoader(TEMPLATE_PATH),
-            loader=PackageLoader('photonplatform.logger'),
+            loader=PackageLoader('photon_platform.clerk.log'),
             )
         template = env.get_template(LOG_TEMPLATE)
         rst_text = template.render(**context)

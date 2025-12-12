@@ -1,6 +1,16 @@
 changelog
 =========
 
+0.0.10
+------
+*2025-12-12*
+
+**refactored**
+
+.. + Renamed top-level modules to action-oriented verbs: ``init``, ``build``, ``curate``, ``log``.
+.. + Simplified ``build`` command names (e.g. ``module`` instead of ``create-module``).
+.. + Moved ``rollup`` and ``status_diff`` into ``curate`` module.
+
 0.0.9
 -----
 *2025-12-12*
