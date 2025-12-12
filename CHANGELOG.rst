@@ -1,6 +1,16 @@
 changelog
 =========
 
+0.0.9
+-----
+*2025-12-12*
+
+**changed**
+
+.. + Updated `README.rst` to accurately document CLI arguments and remove legacy roadmap.
+.. + Improved `gather` command documentation in `README.rst`.
+
+
 0.0.8
 -----
 *2025-12-11*

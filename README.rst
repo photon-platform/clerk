@@ -1,5 +1,5 @@
-CLERK: Command-Line Executor for Rapid Knowledge
-================================================
+PHOTON • clerk
+==============
 
 The CLERK project is a pivotal component of the `PHOTON platform`_, a suite of
 tools committed to gathering, processing, and publishing knowledge. Inspired by
@@ -20,7 +20,7 @@ knowledge management process:
 Usage
 -----
 
-Here is a summary of the CLERK CLI interface:
+CLERK is designed to be agent-friendly, supporting command-line arguments for all operations to enable non-interactive use.
 
 Top-Level Commands
 ~~~~~~~~~~~~~~~~~~
@@ -31,50 +31,82 @@ Top-Level Commands
 - `clerk modulator`: Shapes Python modules and packages.
 - `clerk curator`: Organizes git/archive management.
 
-`gather` Commands
-~~~~~~~~~~~~~~~~~
-
-- `clerk gather url <url_string>`: Gathers content from a URL. It intelligently handles sources like Wikipedia, arXiv, YouTube, GitHub, and general web pages.
-- `clerk gather repo <repo_string>`: Gathers information about a GitHub repository (e.g., `owner/repo`).
 
 `logger` Command
 ~~~~~~~~~~~~~~~~
 
-- `clerk logger`: This command takes no arguments and opens an interactive prompt to create a new log entry.
+Creates a new log entry in ``docsrc/log/``.
+
+.. code-block:: bash
+
+    clerk logger [OPTIONS]
+
+Options:
+    --title TEXT     Title for log entry
+    --excerpt TEXT   Short description
+    --tags TEXT      Comma separated list of tags
+    --category TEXT  Comma separated list of categories
+    --image TEXT     Path to image
 
 `progenitor` Command
 ~~~~~~~~~~~~~~~~~~~~
 
-- `clerk progenitor`: Creates a new Python project. It prompts for the following information:
-    - `--github-id`: Your GitHub username or organization.
-    - `--package-namespace`: The namespace for the package.
-    - `--github-repo-id`: The name of the GitHub repository.
-    - `--package-name`: The name of the Python package.
-    - `--author`: The name of the author.
-    - `--description`: A short description of the project.
-    - `--path`: The path to create the project in.
+Creates a new Python project structure.
+Context awareness: Infers organization from parent directory and author from git config.
+
+.. code-block:: bash
+
+    clerk progenitor [OPTIONS]
+
+Options:
+    --project-name TEXT  The name of the project.
+    --description TEXT   A short description of the project.
 
 `modulator` Commands
 ~~~~~~~~~~~~~~~~~~~~
 
-- `clerk modulator create-module`: Creates a new Python module.
-- `clerk modulator create-submodule`: Creates a new Python submodule.
-- `clerk modulator create-class`: Creates a new Python class.
-- `clerk modulator create-function`: Creates a new Python function.
-- `clerk modulator create-class-method`: Creates a new Python class method.
+Shapes Python modules and packages.
+Context awareness: Infers project path and namespace from CWD.
 
-(Each `modulator` command prompts for necessary information like project path, namespace, module name, etc.)
+- `create-module`: Creates a new Python module.
+- `create-submodule`: Creates a new Python submodule.
+- `create-class`: Creates a new Python class.
+- `create-function`: Creates a new Python function.
+- `create-class-method`: Creates a new Python class method.
+
+.. code-block:: bash
+
+    clerk modulator create-module --module-name my_module
+    clerk modulator create-function --module-name my_module --function-name my_func --args "a,b" --return-type int
 
 `curator` Commands
 ~~~~~~~~~~~~~~~~~~
 
-- `clerk curator branches`: Lists the branches in the repository.
-- `clerk curator create-release-branch`: Creates a new release branch.
-- `clerk curator merge-to-main`: Merges a branch to main.
-- `clerk curator create-tag`: Creates a new tag.
+Manages git repositories and releases.
+Context awareness: Infers repo path from CWD.
 
-(Each `curator` command can take a `--repo-path` and will prompt for other necessary information.)
+- `branches`: Lists branches.
+- `create-release-branch`: Creates a release branch (e.g. `release-0.1.0`).
+- `merge-to-main`: Merges a branch to main.
+- `create-tag`: Creates a git tag.
 
+.. code-block:: bash
+
+    clerk curator create-release-branch --release-version 0.1.0 --description "New features"
+
+`gather` Commands
+~~~~~~~~~~~~~~~~~
+
+Downloads and organizes information from the web.
+Context awareness: Context Agnostic.
+
+- `url`: Gathers content from a URL. It intelligently handles sources like Wikipedia, arXiv, YouTube, GitHub, and general web pages.
+- `repo`: Gathers information about a GitHub repository (e.g., `owner/repo`).
+
+.. code-block:: bash
+
+    clerk gather url "https://example.com"
+    clerk gather repo "photon-platform/clerk"
 
 By being context-aware, CLERK can suggest relevant operations based on the CWD,
 making workflows smoother and more efficient. This context-sensitive approach
