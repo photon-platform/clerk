@@ -1,6 +1,16 @@
 changelog
 =========
 
+0.0.11
+------
+*2025-12-12*
+
+**refactored**
+
+.. + Integrated ``rollup`` and ``status`` commands into ``clerk curate``.
+.. + Removed unused ``openai`` dependency.
+.. + Cleaned up ``pyproject.toml`` dependencies.
+
 0.0.10
 ------
 *2025-12-12*

@@ -1,6 +1,8 @@
 import click
 import os
 from . import curator as curator_actions
+from . import rollup as rollup_module
+from . import status_diff as status_diff_module
 
 @click.group()
 def curate():
@@ -95,3 +97,13 @@ def init_repo():
     """Initializes a new git repository."""
     from . import git_init
     git_init.main()
+
+@curate.command('rollup')
+def rollup():
+    """Automates the release process."""
+    rollup_module.rollup()
+
+@curate.command('status')
+def status():
+    """Shows git status and diff."""
+    status_diff_module.status_diff()

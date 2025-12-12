@@ -6,13 +6,12 @@ import re
 import requests
 from bs4 import BeautifulSoup
 from slugify import slugify
-import openai
+
 from .arxivit import action_gather_arxiv
 from .get_youtube import action_gather_youtube
 from .repo_rst import action_gather_repo
 
-# TODO: Replace with a secure method for API key management
-openai.api_key = os.getenv("OPENAI_API_KEY", "YOUR_API_KEY_HERE")
+
 
 
 def _download_and_summarize_url(url):

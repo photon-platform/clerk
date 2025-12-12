@@ -89,10 +89,14 @@ Context awareness: Infers repo path from CWD.
 - `create-release-branch`: Creates a release branch (e.g. `release-0.1.0`).
 - `merge-to-main`: Merges a branch to main.
 - `create-tag`: Creates a git tag.
+- `rollup`: Automates the release process.
+- `status`: Shows git status and diff.
 
 .. code-block:: bash
 
     clerk curate create-release-branch --release-version 0.1.0 --description "New features"
+    clerk curate rollup
+    clerk curate status
 
 `gather` Commands
 ~~~~~~~~~~~~~~~~~
