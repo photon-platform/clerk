@@ -1,0 +1,61 @@
+photon_platform.clerk.track.core
+================================
+
+.. py:module:: photon_platform.clerk.track.core
+
+.. autoapi-nested-parse::
+
+   Clerk track core logic.
+
+
+
+Functions
+---------
+
+.. autoapisummary::
+
+   photon_platform.clerk.track.core.get_frontmatter_and_content
+   photon_platform.clerk.track.core.get_todos
+   photon_platform.clerk.track.core.report_todos_md
+   photon_platform.clerk.track.core.report_todos_rich
+   photon_platform.clerk.track.core.report_todos_json
+   photon_platform.clerk.track.core.report_todos_list
+
+
+Module Contents
+---------------
+
+.. py:function:: get_frontmatter_and_content(file_path: pathlib.Path) -> tuple[dict, str]
+
+   Extract frontmatter and content from a markdown file.
+
+   Assumes frontmatter is between the first two '---' lines.
+
+
+.. py:function:: get_todos(base_path: pathlib.Path) -> Dict[str, List[Dict]]
+
+   Scan for docsrc/todos/*.md files recursively from base_path.
+
+   Returns a dictionary of relative paths to valid todo dictionaries.
+
+
+.. py:function:: report_todos_md(todos_map: Dict[str, List[Dict]]) -> None
+
+   Print a formatted markdown report of todos.
+
+
+.. py:function:: report_todos_rich(todos_map: Dict[str, List[Dict]], group_by_project: bool = False) -> None
+
+   Print a formatted rich text report of todos.
+
+
+.. py:function:: report_todos_json(todos_map: Dict[str, List[Dict]]) -> None
+
+   Print a JSON representation of todos.
+
+
+.. py:function:: report_todos_list(todos_map: Dict[str, List[Dict]]) -> None
+
+   Print a simple list of todo titles, sorted globally by order.
+
+

@@ -8,14 +8,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>photon_platform.clerk.curate.cli &mdash; Project name not set  documentation</title>
   <link rel="stylesheet" type="text/css" href="../../../../../../_static/pygments.css?v=ea5fcf70" />
-  <link rel="stylesheet" type="text/css" href="../../../../../../_static/css/styles.css?v=647d561f" />
+  <link rel="stylesheet" type="text/css" href="../../../../../../_static/css/styles.css?v=38c7a96b" />
   <link rel="stylesheet" type="text/css" href="../../../../../../_static/graphviz.css?v=4ae1632d" />
   <link rel="stylesheet" href="../../../../../../_static/css/print.css" type="text/css" media="print" />
   <link rel="icon" href="../../../../../../_static/favicon.ico" />
 </head>
 
 <body>
-    <header>
+  <header>
     <div class="logo">
       <a href="../../../../../../index.html">
         <h1>Project name not set</h1>
@@ -47,169 +47,157 @@
     <div class="motto"></div>
   </header>
   <main>
-    
     <article>
-      <div class="content">
+      <header>
       <nav class="breadcrumbs">
         <span><a href="../../../../../../index.html">Home</a></span>
           <span>/</span>
         <span><a href="../../../../../index.html">modules</a></span>
           <span>/</span>
         <span><a href="../index.html">photon_platform.clerk.curate</a></span>
-        <span>/</span>
-        <span>photon_platform.clerk.curate.cli</span>
       </nav>
         <nav class="context">
           <div class="prev">
-             <a href="../branch/index.html" class="btn btn-neutral float-left" title="photon_platform.clerk.curate.branch" >Prev</a>
+             <a href="../branch/index.html" title="photon_platform.clerk.curate.branch" >Prev</a>
           </div>
           <div class="next">
-            <a href="../curator/index.html" class="btn btn-neutral float-right" title="photon_platform.clerk.curate.curator" >Next</a>
+            <a href="../curator/index.html" title="photon_platform.clerk.curate.curator" >Next</a>
           </div>
         </nav>
-          <section id="module-photon_platform.clerk.curate.cli">
-<span id="photon-platform-clerk-curate-cli"></span><h1>photon_platform.clerk.curate.cli<a class="headerlink" href="#module-photon_platform.clerk.curate.cli" title="Link to this heading">¶</a></h1>
-<section id="functions">
-<h2>Functions<a class="headerlink" href="#functions" title="Link to this heading">¶</a></h2>
-<table class="autosummary longtable docutils align-default">
-<tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="#photon_platform.clerk.curate.cli.curate" title="photon_platform.clerk.curate.cli.curate"><code class="xref py py-obj docutils literal notranslate"><span class="pre">curate</span></code></a>()</p></td>
-<td><p>Organizes git/archive management.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#photon_platform.clerk.curate.cli.branches" title="photon_platform.clerk.curate.cli.branches"><code class="xref py py-obj docutils literal notranslate"><span class="pre">branches</span></code></a>(ctx, repo_path)</p></td>
-<td><p>Lists the branches in the repository.</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#photon_platform.clerk.curate.cli.create_release_branch" title="photon_platform.clerk.curate.cli.create_release_branch"><code class="xref py py-obj docutils literal notranslate"><span class="pre">create_release_branch</span></code></a>(ctx, repo_path, release_version, ...)</p></td>
-<td><p>Creates a new release branch.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#photon_platform.clerk.curate.cli.merge_to_main" title="photon_platform.clerk.curate.cli.merge_to_main"><code class="xref py py-obj docutils literal notranslate"><span class="pre">merge_to_main</span></code></a>(ctx, repo_path, branch_name, commit_message)</p></td>
-<td><p>Merges a branch to main.</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#photon_platform.clerk.curate.cli.create_tag" title="photon_platform.clerk.curate.cli.create_tag"><code class="xref py py-obj docutils literal notranslate"><span class="pre">create_tag</span></code></a>(ctx, repo_path, tag_name, message)</p></td>
-<td><p>Creates a new tag.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#photon_platform.clerk.curate.cli.init_repo" title="photon_platform.clerk.curate.cli.init_repo"><code class="xref py py-obj docutils literal notranslate"><span class="pre">init_repo</span></code></a>()</p></td>
-<td><p>Initializes a new git repository.</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#photon_platform.clerk.curate.cli.rollup" title="photon_platform.clerk.curate.cli.rollup"><code class="xref py py-obj docutils literal notranslate"><span class="pre">rollup</span></code></a>()</p></td>
-<td><p>Automates the release process.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#photon_platform.clerk.curate.cli.status" title="photon_platform.clerk.curate.cli.status"><code class="xref py py-obj docutils literal notranslate"><span class="pre">status</span></code></a>()</p></td>
-<td><p>Shows git status and diff.</p></td>
-</tr>
-</tbody>
-</table>
-</section>
-<section id="module-contents">
-<h2>Module Contents<a class="headerlink" href="#module-contents" title="Link to this heading">¶</a></h2>
-<dl class="py function">
-<dt class="sig sig-object py" id="photon_platform.clerk.curate.cli.curate">
-<span class="sig-prename descclassname"><span class="pre">photon_platform.clerk.curate.cli.</span></span><span class="sig-name descname"><span class="pre">curate</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#photon_platform.clerk.curate.cli.curate" title="Link to this definition">¶</a></dt>
-<dd><p>Organizes git/archive management.</p>
-</dd></dl>
+      </header>
+      <div class="content">
+        <section id="module-photon_platform.clerk.curate.cli">
+          <span id="photon-platform-clerk-curate-cli"></span><h1>photon_platform.clerk.curate.cli<a class="headerlink" href="#module-photon_platform.clerk.curate.cli" title="Link to this heading">¶</a></h1>
+          <section id="functions">
+          <h2>Functions<a class="headerlink" href="#functions" title="Link to this heading">¶</a></h2>
+          <table class="autosummary longtable docutils align-default">
+          <tbody>
+          <tr class="row-odd"><td><p><a class="reference internal" href="#photon_platform.clerk.curate.cli.curate" title="photon_platform.clerk.curate.cli.curate"><code class="xref py py-obj docutils literal notranslate"><span class="pre">curate</span></code></a>()</p></td>
+          <td><p>Organizes git/archive management.</p></td>
+          </tr>
+          <tr class="row-even"><td><p><a class="reference internal" href="#photon_platform.clerk.curate.cli.branches" title="photon_platform.clerk.curate.cli.branches"><code class="xref py py-obj docutils literal notranslate"><span class="pre">branches</span></code></a>(ctx, repo_path)</p></td>
+          <td><p>Lists the branches in the repository.</p></td>
+          </tr>
+          <tr class="row-odd"><td><p><a class="reference internal" href="#photon_platform.clerk.curate.cli.create_release_branch" title="photon_platform.clerk.curate.cli.create_release_branch"><code class="xref py py-obj docutils literal notranslate"><span class="pre">create_release_branch</span></code></a>(ctx, repo_path, release_version, ...)</p></td>
+          <td><p>Creates a new release branch.</p></td>
+          </tr>
+          <tr class="row-even"><td><p><a class="reference internal" href="#photon_platform.clerk.curate.cli.merge_to_main" title="photon_platform.clerk.curate.cli.merge_to_main"><code class="xref py py-obj docutils literal notranslate"><span class="pre">merge_to_main</span></code></a>(ctx, repo_path, branch_name, commit_message)</p></td>
+          <td><p>Merges a branch to main.</p></td>
+          </tr>
+          <tr class="row-odd"><td><p><a class="reference internal" href="#photon_platform.clerk.curate.cli.create_tag" title="photon_platform.clerk.curate.cli.create_tag"><code class="xref py py-obj docutils literal notranslate"><span class="pre">create_tag</span></code></a>(ctx, repo_path, tag_name, message)</p></td>
+          <td><p>Creates a new tag.</p></td>
+          </tr>
+          <tr class="row-even"><td><p><a class="reference internal" href="#photon_platform.clerk.curate.cli.init_repo" title="photon_platform.clerk.curate.cli.init_repo"><code class="xref py py-obj docutils literal notranslate"><span class="pre">init_repo</span></code></a>()</p></td>
+          <td><p>Initializes a new git repository.</p></td>
+          </tr>
+          <tr class="row-odd"><td><p><a class="reference internal" href="#photon_platform.clerk.curate.cli.rollup" title="photon_platform.clerk.curate.cli.rollup"><code class="xref py py-obj docutils literal notranslate"><span class="pre">rollup</span></code></a>()</p></td>
+          <td><p>Automates the release process.</p></td>
+          </tr>
+          <tr class="row-even"><td><p><a class="reference internal" href="#photon_platform.clerk.curate.cli.status" title="photon_platform.clerk.curate.cli.status"><code class="xref py py-obj docutils literal notranslate"><span class="pre">status</span></code></a>()</p></td>
+          <td><p>Shows git status and diff.</p></td>
+          </tr>
+          </tbody>
+          </table>
+          </section>
+          <section id="module-contents">
+          <h2>Module Contents<a class="headerlink" href="#module-contents" title="Link to this heading">¶</a></h2>
+          <dl class="py function">
+          <dt class="sig sig-object py" id="photon_platform.clerk.curate.cli.curate">
+          <span class="sig-prename descclassname"><span class="pre">photon_platform.clerk.curate.cli.</span></span><span class="sig-name descname"><span class="pre">curate</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#photon_platform.clerk.curate.cli.curate" title="Link to this definition">¶</a></dt>
+          <dd><p>Organizes git/archive management.</p>
+          </dd></dl>
 
-<dl class="py function">
-<dt class="sig sig-object py" id="photon_platform.clerk.curate.cli.branches">
-<span class="sig-prename descclassname"><span class="pre">photon_platform.clerk.curate.cli.</span></span><span class="sig-name descname"><span class="pre">branches</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ctx</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">repo_path</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#photon_platform.clerk.curate.cli.branches" title="Link to this definition">¶</a></dt>
-<dd><p>Lists the branches in the repository.</p>
-</dd></dl>
+          <dl class="py function">
+          <dt class="sig sig-object py" id="photon_platform.clerk.curate.cli.branches">
+          <span class="sig-prename descclassname"><span class="pre">photon_platform.clerk.curate.cli.</span></span><span class="sig-name descname"><span class="pre">branches</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ctx</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">repo_path</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#photon_platform.clerk.curate.cli.branches" title="Link to this definition">¶</a></dt>
+          <dd><p>Lists the branches in the repository.</p>
+          </dd></dl>
 
-<dl class="py function">
-<dt class="sig sig-object py" id="photon_platform.clerk.curate.cli.create_release_branch">
-<span class="sig-prename descclassname"><span class="pre">photon_platform.clerk.curate.cli.</span></span><span class="sig-name descname"><span class="pre">create_release_branch</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ctx</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">repo_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">release_version</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">description</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#photon_platform.clerk.curate.cli.create_release_branch" title="Link to this definition">¶</a></dt>
-<dd><p>Creates a new release branch.</p>
-</dd></dl>
+          <dl class="py function">
+          <dt class="sig sig-object py" id="photon_platform.clerk.curate.cli.create_release_branch">
+          <span class="sig-prename descclassname"><span class="pre">photon_platform.clerk.curate.cli.</span></span><span class="sig-name descname"><span class="pre">create_release_branch</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ctx</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">repo_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">release_version</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">description</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#photon_platform.clerk.curate.cli.create_release_branch" title="Link to this definition">¶</a></dt>
+          <dd><p>Creates a new release branch.</p>
+          </dd></dl>
 
-<dl class="py function">
-<dt class="sig sig-object py" id="photon_platform.clerk.curate.cli.merge_to_main">
-<span class="sig-prename descclassname"><span class="pre">photon_platform.clerk.curate.cli.</span></span><span class="sig-name descname"><span class="pre">merge_to_main</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ctx</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">repo_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">branch_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">commit_message</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#photon_platform.clerk.curate.cli.merge_to_main" title="Link to this definition">¶</a></dt>
-<dd><p>Merges a branch to main.</p>
-</dd></dl>
+          <dl class="py function">
+          <dt class="sig sig-object py" id="photon_platform.clerk.curate.cli.merge_to_main">
+          <span class="sig-prename descclassname"><span class="pre">photon_platform.clerk.curate.cli.</span></span><span class="sig-name descname"><span class="pre">merge_to_main</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ctx</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">repo_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">branch_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">commit_message</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#photon_platform.clerk.curate.cli.merge_to_main" title="Link to this definition">¶</a></dt>
+          <dd><p>Merges a branch to main.</p>
+          </dd></dl>
 
-<dl class="py function">
-<dt class="sig sig-object py" id="photon_platform.clerk.curate.cli.create_tag">
-<span class="sig-prename descclassname"><span class="pre">photon_platform.clerk.curate.cli.</span></span><span class="sig-name descname"><span class="pre">create_tag</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ctx</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">repo_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tag_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">message</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#photon_platform.clerk.curate.cli.create_tag" title="Link to this definition">¶</a></dt>
-<dd><p>Creates a new tag.</p>
-</dd></dl>
+          <dl class="py function">
+          <dt class="sig sig-object py" id="photon_platform.clerk.curate.cli.create_tag">
+          <span class="sig-prename descclassname"><span class="pre">photon_platform.clerk.curate.cli.</span></span><span class="sig-name descname"><span class="pre">create_tag</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ctx</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">repo_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tag_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">message</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#photon_platform.clerk.curate.cli.create_tag" title="Link to this definition">¶</a></dt>
+          <dd><p>Creates a new tag.</p>
+          </dd></dl>
 
-<dl class="py function">
-<dt class="sig sig-object py" id="photon_platform.clerk.curate.cli.init_repo">
-<span class="sig-prename descclassname"><span class="pre">photon_platform.clerk.curate.cli.</span></span><span class="sig-name descname"><span class="pre">init_repo</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#photon_platform.clerk.curate.cli.init_repo" title="Link to this definition">¶</a></dt>
-<dd><p>Initializes a new git repository.</p>
-</dd></dl>
+          <dl class="py function">
+          <dt class="sig sig-object py" id="photon_platform.clerk.curate.cli.init_repo">
+          <span class="sig-prename descclassname"><span class="pre">photon_platform.clerk.curate.cli.</span></span><span class="sig-name descname"><span class="pre">init_repo</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#photon_platform.clerk.curate.cli.init_repo" title="Link to this definition">¶</a></dt>
+          <dd><p>Initializes a new git repository.</p>
+          </dd></dl>
 
-<dl class="py function">
-<dt class="sig sig-object py" id="photon_platform.clerk.curate.cli.rollup">
-<span class="sig-prename descclassname"><span class="pre">photon_platform.clerk.curate.cli.</span></span><span class="sig-name descname"><span class="pre">rollup</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#photon_platform.clerk.curate.cli.rollup" title="Link to this definition">¶</a></dt>
-<dd><p>Automates the release process.</p>
-</dd></dl>
+          <dl class="py function">
+          <dt class="sig sig-object py" id="photon_platform.clerk.curate.cli.rollup">
+          <span class="sig-prename descclassname"><span class="pre">photon_platform.clerk.curate.cli.</span></span><span class="sig-name descname"><span class="pre">rollup</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#photon_platform.clerk.curate.cli.rollup" title="Link to this definition">¶</a></dt>
+          <dd><p>Automates the release process.</p>
+          </dd></dl>
 
-<dl class="py function">
-<dt class="sig sig-object py" id="photon_platform.clerk.curate.cli.status">
-<span class="sig-prename descclassname"><span class="pre">photon_platform.clerk.curate.cli.</span></span><span class="sig-name descname"><span class="pre">status</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#photon_platform.clerk.curate.cli.status" title="Link to this definition">¶</a></dt>
-<dd><p>Shows git status and diff.</p>
-</dd></dl>
+          <dl class="py function">
+          <dt class="sig sig-object py" id="photon_platform.clerk.curate.cli.status">
+          <span class="sig-prename descclassname"><span class="pre">photon_platform.clerk.curate.cli.</span></span><span class="sig-name descname"><span class="pre">status</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#photon_platform.clerk.curate.cli.status" title="Link to this definition">¶</a></dt>
+          <dd><p>Shows git status and diff.</p>
+          </dd></dl>
 
-</section>
-</section>
+          </section>
+          </section>
 
       </div>
       <footer>
 
-
         <nav class="context">
           <div class="prev">
-             <a href="../branch/index.html" class="btn btn-neutral float-left" title="photon_platform.clerk.curate.branch" >Prev</a>
+             <a href="../branch/index.html" title="photon_platform.clerk.curate.branch" >Prev</a>
           </div>
           <div class="next">
-            <a href="../curator/index.html" class="btn btn-neutral float-right" title="photon_platform.clerk.curate.curator" >Next</a>
+            <a href="../curator/index.html" title="photon_platform.clerk.curate.curator" >Next</a>
           </div>
-        </nav></footer>
+        </nav>
+      </footer>
     </article>
-
   </main>
-
   <div class="asides">
     <aside>
-        <h3>Search</h3>
-<div role="search">
-  <form id="rtd-search-form" class="wy-form" action="../../../../../../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
-    <input type="hidden" name="check_keywords" value="yes" />
-    <input type="hidden" name="area" value="default" />
-  </form>
-</div>
+      <h3>Search</h3>
+      <div role="search">
+        <form id="rtd-search-form" class="wy-form" action="../../../../../../search.html" method="get">
+          <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+          <input type="hidden" name="check_keywords" value="yes" />
+          <input type="hidden" name="area" value="default" />
+        </form>
+      </div>
     </aside>
-    
-    
-
-    
-
-    
-
-</div>
+  </div>
   <footer>
     <div class="footer-nav">
-    <ul>
+      <ul>
         <li><a href="../../../../../../about.html">about</a></li>
-    </ul>
-</div>
-    <hr/>
-    <div role="contentinfo">
-        <p>
-                &copy; Copyright .
-        </p>
+      </ul>
     </div>
-</footer>
-  
+    <hr />
+    <div role="contentinfo">
+      <p>
+        &copy; Copyright .
+      </p>
+    </div>
+  </footer>
+
   <script src="../../../../../../_static/jquery.js?v=5d32c60e"></script>
   <script src="../../../../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
   <script src="../../../../../../_static/documentation_options.js?v=5929fcd5"></script>
   <script src="../../../../../../_static/doctools.js?v=9bcbadda"></script>
   <script src="../../../../../../_static/sphinx_highlight.js?v=dc90522c"></script>
   <script src="../../../../../../_static/js/collection_controls.js?v=b6b5297a"></script>
-  
 
 </body>
-
 </html>
