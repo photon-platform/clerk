@@ -15,6 +15,7 @@ knowledge management process:
 - ``build``: Shapes Python modules and packages.
 - ``curate``: Organizes git/archive management.
 - ``log``: Creates log entries.
+- ``track``: Scans for and reports on project tasks/todos.
 - ``gather``: Downloads and organizes information from the web. It can handle various sources like URLs, GitHub repositories, arXiv papers, and YouTube videos.
 
 Usage
@@ -30,6 +31,7 @@ Top-Level Commands
 - ``clerk init``: Creates a new Python project.
 - ``clerk build``: Shapes Python modules and packages.
 - ``clerk curate``: Organizes git/archive management.
+- ``clerk track``: Scans for and reports on project tasks/todos.
 
 
 ``log`` Command
@@ -97,6 +99,24 @@ Context awareness: Infers repo path from CWD.
     clerk curate create-release-branch --release-version 0.1.0 --description "New features"
     clerk curate rollup
     clerk curate status
+
+
+``track`` Command
+~~~~~~~~~~~~~~~~~
+
+Scans for todo files (``docsrc/todos/index.rst``) and generates a status report.
+
+.. code-block:: bash
+
+    clerk track [OPTIONS] [COMMAND]
+
+Options:
+    --group  Group output by project
+
+Commands:
+    md    Output report in Markdown format
+    json  Output report in JSON format
+    list  Output simple list of todo titles
 
 `gather` Commands
 ~~~~~~~~~~~~~~~~~

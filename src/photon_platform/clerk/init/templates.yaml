@@ -26,8 +26,8 @@
   template: docsrc/glossary.rst.j2
 - target: docsrc/changelog.rst
   template: docsrc/changelog.rst.j2
-- target: docsrc/todos.rst
-  template: docsrc/todos.rst.j2
+- target: docsrc/todos/index.rst
+  template: docsrc/todos/index.rst.j2
 - target: docsrc/log/index.rst
   template: docsrc/log/index.rst.j2
 - target: docsrc/connect.rst

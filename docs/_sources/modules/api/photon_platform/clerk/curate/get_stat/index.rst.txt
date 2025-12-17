@@ -1,0 +1,34 @@
+photon_platform.clerk.curate.get_stat
+=====================================
+
+.. py:module:: photon_platform.clerk.curate.get_stat
+
+
+Attributes
+----------
+
+.. autoapisummary::
+
+   photon_platform.clerk.curate.get_stat.total_files
+   photon_platform.clerk.curate.get_stat.total_lines
+   photon_platform.clerk.curate.get_stat.module_files
+   photon_platform.clerk.curate.get_stat.average_lines_per_file
+
+
+Module Contents
+---------------
+
+.. py:data:: total_files
+   :value: 0
+
+
+.. py:data:: total_lines
+   :value: 0
+
+
+.. py:data:: module_files
+
+.. py:data:: average_lines_per_file
+   :value: 0
+
+

@@ -11,6 +11,7 @@ from .build.cli import build
 from .curate.cli import curate
 from .gather.cli import gather
 from .log.cli import log
+from .track.cli import track
 from .context import determine_context
 
 @click.group()
@@ -25,6 +26,7 @@ cli.add_command(build)
 cli.add_command(curate)
 cli.add_command(gather)
 cli.add_command(log)
+cli.add_command(track)
 
 if __name__ == '__main__':
     cli()

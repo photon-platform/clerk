@@ -16,4 +16,5 @@ We are currently working towards tighter integration with the Gemini CLI.
 -   **build**: Shapes Python modules and packages.
 -   **curate**: Organizes git/archive management.
 -   **log**: Creates log entries.
+-   **track**: Scans for and reports on project tasks/todos.
 -   **gather**: Gathers content from various sources.

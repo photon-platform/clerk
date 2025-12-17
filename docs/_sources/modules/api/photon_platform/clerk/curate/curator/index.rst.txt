@@ -1,0 +1,64 @@
+photon_platform.clerk.curate.curator
+====================================
+
+.. py:module:: photon_platform.clerk.curate.curator
+
+.. autoapi-nested-parse::
+
+   Curate
+   =======
+
+       # Example usage
+       curator = Curator('.')
+       curator.create_release_branch('1.0.0', 'release-1.0.0')
+       curator.merge_to_main('release-1.0.0', 'Release 1.0.0')
+
+
+
+Functions
+---------
+
+.. autoapisummary::
+
+   photon_platform.clerk.curate.curator.action_get_repo
+   photon_platform.clerk.curate.curator.action_get_root_path
+   photon_platform.clerk.curate.curator.action_load_pyproject_toml
+   photon_platform.clerk.curate.curator.action_get_branches
+   photon_platform.clerk.curate.curator.action_discover_module
+   photon_platform.clerk.curate.curator.action_get_version
+   photon_platform.clerk.curate.curator.action_set_version
+   photon_platform.clerk.curate.curator.action_update_changelog
+   photon_platform.clerk.curate.curator.action_merge_to_main
+   photon_platform.clerk.curate.curator.action_create_release_branch
+   photon_platform.clerk.curate.curator.action_create_tag
+
+
+Module Contents
+---------------
+
+.. py:function:: action_get_repo(repo_path: str = '.')
+
+.. py:function:: action_get_root_path(repo)
+
+.. py:function:: action_load_pyproject_toml(root_path)
+
+.. py:function:: action_get_branches(repo) -> dict
+
+.. py:function:: action_discover_module(pyproject_toml, root_path) -> tuple[pathlib.Path | None, pathlib.Path | None]
+
+   Discovers the source directory and main module path based on pyproject.toml,
+   prioritizing [tool.setuptools.dynamic].version.attr.
+
+
+.. py:function:: action_get_version(module: pathlib.Path) -> str | None
+
+.. py:function:: action_set_version(module: pathlib.Path, version: str) -> None
+
+.. py:function:: action_update_changelog(root_path, version: str, description: str) -> None
+
+.. py:function:: action_merge_to_main(repo, branch_name: str, commit_message: str) -> None
+
+.. py:function:: action_create_release_branch(repo, release_version: str, description: str) -> None
+
+.. py:function:: action_create_tag(repo, tag_name: str, message: str) -> tuple[bool, str]
+
