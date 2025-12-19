@@ -18,3 +18,4 @@ We are currently working towards tighter integration with the Gemini CLI.
 -   **log**: Creates log entries.
 -   **track**: Scans for and reports on project tasks/todos.
 -   **gather**: Gathers content from various sources.
+-   **navigator**: TUI for project navigation and situational awareness.

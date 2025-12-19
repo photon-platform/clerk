@@ -1,0 +1,41 @@
+/* Miller Column Layout */
+
+#miller-columns {
+    layout: grid;
+    grid-size: 3;
+    grid-columns: 1fr 2fr 3fr;
+    height: 1fr;
+}
+
+/* Dashboard mode layout adjustments - Keep Parent, replace others */
+.dashboard-view #current-table,
+.dashboard-view #preview-pane {
+    display: none;
+}
+
+#dashboard-panel {
+    display: none;
+    border: double $accent;
+    height: 100%;
+    padding: 1;
+}
+
+.dashboard-view #dashboard-panel {
+    display: block;
+    column-span: 2; /* Span middle and right columns */
+}
+
+.column {
+    border: solid $accent;
+    height: 100%;
+}
+
+/* Org Dashboard Styling */
+.dashboard-view #org-table {
+    border: double $accent;
+}
+
+/* File View Styling */
+.file-view .column {
+    border: solid $primary;
+}
