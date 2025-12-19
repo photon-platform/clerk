@@ -1,6 +1,18 @@
 changelog
 =========
 
+0.1.1
+-----
+*2025-12-19*
+
+**added**
+
+.. + Added ``clerk navigator`` command for TUI-based project navigation.
+.. + Implemented Miller Column navigation for exploring organizations and repositories.
+.. + Added Context Dashboard with "Project Stats" and "Intelligent Previews".
+.. + Added Universal Navigation (up to system root) and smart shortcuts (``s``, ``d``, ``t``).
+.. + Implemented shell integration to change directory on exit.
+
 0.1.0
 -----
 *2025-12-17*
