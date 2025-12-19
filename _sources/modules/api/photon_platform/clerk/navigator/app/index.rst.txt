@@ -1,0 +1,98 @@
+photon_platform.clerk.navigator.app
+===================================
+
+.. py:module:: photon_platform.clerk.navigator.app
+
+.. autoapi-nested-parse::
+
+   Clerk Navigator Application.
+
+
+
+Classes
+-------
+
+.. autoapisummary::
+
+   photon_platform.clerk.navigator.app.ClerkNavigator
+
+
+Module Contents
+---------------
+
+.. py:class:: ClerkNavigator(context: photon_platform.clerk.context.Context)
+
+   Bases: :py:obj:`textual.app.App`
+
+
+   A context-sensitive navigation TUI for the PHOTON platform.
+
+
+   .. py:attribute:: CSS_PATH
+      :value: 'navigator.tcss'
+
+
+      File paths to load CSS from.
+
+
+   .. py:attribute:: BINDINGS
+      :value: [('q', 'quit', 'Quit'), ('.', 'toggle_hidden', 'Hidden Files'), ('F', 'set_file_view', 'File...
+
+
+      The default key bindings.
+
+
+   .. py:attribute:: clerk_context
+
+
+   .. py:attribute:: show_hidden
+      :value: False
+
+
+
+   .. py:attribute:: view_mode
+      :value: 'dashboard'
+
+
+
+   .. py:attribute:: exit_path
+      :value: None
+
+
+
+   .. py:method:: update_context(new_path: pathlib.Path)
+
+      Update the global context with the new navigation path.
+
+
+
+   .. py:method:: action_set_file_view() -> None
+      :async:
+
+
+
+   .. py:method:: action_set_dashboard_view() -> None
+      :async:
+
+
+
+   .. py:method:: compose() -> textual.app.ComposeResult
+
+      Yield child widgets for a container.
+
+      This method should be implemented in a subclass.
+
+
+
+   .. py:method:: on_mount() -> None
+
+
+   .. py:method:: action_toggle_hidden() -> None
+
+
+   .. py:method:: action_quit() -> None
+
+      An [action](/guide/actions) to quit the app as soon as possible.
+
+
+

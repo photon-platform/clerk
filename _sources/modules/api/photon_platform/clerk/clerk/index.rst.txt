@@ -15,6 +15,7 @@ Functions
 .. autoapisummary::
 
    photon_platform.clerk.clerk.cli
+   photon_platform.clerk.clerk.navigator
 
 
 Module Contents
@@ -23,5 +24,10 @@ Module Contents
 .. py:function:: cli(ctx)
 
    A command-line tool for situational awareness and context-sensitive operations.
+
+
+.. py:function:: navigator(path: str) -> None
+
+   Launch the Clerk Navigator TUI.
 
 

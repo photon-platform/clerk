@@ -52,8 +52,41 @@ Module Contents
 
 
 
+   .. py:attribute:: git_branch
+      :type:  Optional[str]
+      :value: None
+
+
+
+   .. py:attribute:: is_dirty
+      :type:  bool
+      :value: False
+
+
+
    .. py:property:: is_project
       :type: bool
+
+
+
+   .. py:property:: is_src
+      :type: bool
+
+
+
+   .. py:property:: is_docs
+      :type: bool
+
+
+
+   .. py:property:: is_tests
+      :type: bool
+
+
+
+   .. py:method:: export_for_agent() -> str
+
+      Export the current context as a structured string for agents.
 
 
 

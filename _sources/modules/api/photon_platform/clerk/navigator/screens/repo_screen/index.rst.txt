@@ -1,0 +1,143 @@
+photon_platform.clerk.navigator.screens.repo_screen
+===================================================
+
+.. py:module:: photon_platform.clerk.navigator.screens.repo_screen
+
+
+Classes
+-------
+
+.. autoapisummary::
+
+   photon_platform.clerk.navigator.screens.repo_screen.RepoScreen
+
+
+Module Contents
+---------------
+
+.. py:class:: RepoScreen(repo_path: pathlib.Path)
+
+   Bases: :py:obj:`textual.screen.Screen`
+
+
+   Lists files and directories within a repository with Miller columns.
+
+
+   .. py:attribute:: BINDINGS
+      :value: [('j', 'move_down', 'Down'), ('k', 'move_up', 'Up'), ('l', 'select_item', 'Open'), ('enter',...
+
+
+      A list of key bindings.
+
+
+   .. py:attribute:: repo_path
+
+
+   .. py:attribute:: current_path
+
+
+   .. py:attribute:: current_items
+      :value: []
+
+
+
+   .. py:attribute:: parent_items
+      :value: []
+
+
+
+   .. py:method:: compose() -> textual.app.ComposeResult
+
+      Called by Textual to create child widgets.
+
+      This method is called when a widget is mounted or by setting `recompose=True` when
+      calling [`refresh()`][textual.widget.Widget.refresh].
+
+      Note that you don't typically need to explicitly call this method.
+
+      .. rubric:: Example
+
+      ```python
+      def compose(self) -> ComposeResult:
+          yield Header()
+          yield Label("Press the button below:")
+          yield Button()
+          yield Footer()
+      ```
+
+
+
+   .. py:method:: on_mount() -> None
+      :async:
+
+
+
+   .. py:method:: refresh_view() -> None
+      :async:
+
+
+      Refresh the current view based on current state.
+
+
+
+   .. py:method:: load_directory(path: pathlib.Path)
+      :async:
+
+
+
+   .. py:method:: load_parent_column()
+
+
+   .. py:method:: update_preview(item: pathlib.Path)
+
+
+   .. py:method:: on_data_table_row_highlighted(event: textual.widgets.DataTable.RowHighlighted) -> None
+      :async:
+
+
+
+   .. py:method:: action_move_up() -> None
+      :async:
+
+
+
+   .. py:method:: action_move_down() -> None
+      :async:
+
+
+
+   .. py:method:: action_parent_prev() -> None
+      :async:
+
+
+
+   .. py:method:: action_parent_next() -> None
+      :async:
+
+
+
+   .. py:method:: action_select_item() -> None
+      :async:
+
+
+
+   .. py:method:: action_navigate_back() -> None
+      :async:
+
+
+
+   .. py:method:: action_jump_to_source() -> None
+      :async:
+
+
+
+   .. py:method:: action_jump_to_docs() -> None
+      :async:
+
+
+
+   .. py:method:: action_jump_to_tests() -> None
+      :async:
+
+
+
