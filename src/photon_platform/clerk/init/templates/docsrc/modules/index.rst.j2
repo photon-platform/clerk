@@ -1,13 +1,15 @@
 :navigation: header
-:order: 3
+:order: 40
 
+=======
 modules
 =======
 
-.. include:: api/{{ package_namespace }}/{{ package_name }}/index.rst
+API reference for ``{{ org_slug }}.{{ repo_slug }}``.
 
-indices
--------
+.. autosummary::
+   :toctree: _autosummary
+   :template: custom-module-template.rst
+   :recursive:
 
-* :ref:`genindex`
-* :ref:`modindex`
+   {{ org_slug }}.{{ repo_slug }}

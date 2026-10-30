@@ -1,9 +1,16 @@
-:type: log 
-:date: {{ log_stamp }}
-:tags: {{ tags }}
-:category: {{ category }}
-
+{%- set title = title -%}
+:date: {{ date_code }}
+:author: {{ author }}
+:type: log
+{% if category %}:categories: {{ category }}
+{% endif %}{% if tags %}:tags: {{ tags | join(', ') }}
+{% endif %}
+{{ '=' * (title | length) }}
 {{ title }}
-{{ '=' * title|length }}
+{{ '=' * (title | length) }}
 
+{% if excerpt %}
 {{ excerpt }}
+{% else %}
+..
+{% endif %}
