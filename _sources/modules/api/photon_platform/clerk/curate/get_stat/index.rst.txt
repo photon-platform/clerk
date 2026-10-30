@@ -29,6 +29,4 @@ Module Contents
 .. py:data:: module_files
 
 .. py:data:: average_lines_per_file
-   :value: 0
-
 
