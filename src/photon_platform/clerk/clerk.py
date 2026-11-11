@@ -6,6 +6,7 @@ from pathlib import Path
 
 import click
 
+from .agents.cli import agents
 from .init.cli import init
 from .build.cli import build
 from .curate.cli import curate
@@ -39,6 +40,7 @@ def navigator(path: str) -> None:
     if exit_path:
         print(exit_path)
 
+cli.add_command(agents)
 cli.add_command(init)
 cli.add_command(build)
 cli.add_command(curate)
