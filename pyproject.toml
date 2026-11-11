@@ -20,6 +20,12 @@ dependencies = [
     "requests",
     "beautifulsoup4",
     "python-slugify",
+    "pyyaml",
+    "GitPython",
+    "PyGithub",
+    "toml",
+    "arxiv",
+    "graphviz",
 ]
 
 [project.scripts]

@@ -5,33 +5,53 @@ from pathlib import Path
 from typing import List, Dict, Optional
 
 def get_frontmatter_and_content(file_path: Path) -> tuple[dict, str]:
-    """Extract frontmatter and content from a markdown file.
+    """Extract frontmatter and content from a markdown or RST file.
 
-    Assumes frontmatter is between the first two '---' lines.
+    For MD: Assumes frontmatter is between the first two '---' lines.
+    For RST: Assumes field lists at the top (e.g. :order: 1).
     """
     try:
         text = file_path.read_text()
-    except Exception as e:
+    except Exception:
         return {}, ""
 
-    if text.startswith("---"):
+    frontmatter = {}
+    content = text
+
+    if file_path.suffix == ".md" and text.startswith("---"):
         try:
             parts = text.split("---", 2)
             if len(parts) >= 3:
                 frontmatter_str = parts[1]
                 content = parts[2].strip()
                 
-                # Simple YAML parsing (only supporting 'order' for now)
-                frontmatter = {}
                 for line in frontmatter_str.strip().split('\n'):
                     if ':' in line:
                         key, value = line.split(':', 1)
                         frontmatter[key.strip()] = value.strip()
-                return frontmatter, content
         except Exception:
             pass
+    elif file_path.suffix == ".rst":
+        # Parse RST field lists at the top
+        lines = text.splitlines()
+        content_start = 0
+        for i, line in enumerate(lines):
+            match = re.match(r'^:([^:]+):\s*(.*)$', line.strip())
+            if match:
+                key, value = match.groups()
+                frontmatter[key.strip()] = value.strip()
+                content_start = i + 1
+            elif not line.strip():
+                # Skip empty lines between fields or after fields
+                if i == content_start:
+                    content_start = i + 1
+                continue
+            else:
+                # Stop at the first non-field, non-empty line
+                break
+        content = "\n".join(lines[content_start:]).strip()
             
-    return {}, text
+    return frontmatter, content
 
 def get_todos(base_path: Path) -> Dict[str, List[Dict]]:
     """Scan for docsrc/todos/*.md files recursively from base_path.
@@ -58,7 +78,7 @@ def get_todos(base_path: Path) -> Dict[str, List[Dict]]:
                  
         if is_todo_dir:
             for file in files:
-                if file.endswith(".md"):
+                if file.endswith(".md") or file.endswith(".rst"):
                     file_path = root_path / file
                     frontmatter, content = get_frontmatter_and_content(file_path)
                     
@@ -236,19 +256,28 @@ def report_todos_list(todos_map: Dict[str, List[Dict]]) -> None:
 def _get_summary(item: Dict) -> str:
     """Extract title/summary from item content.
 
-    Prioritizes the first Markdown heading (starting with #).
+    Prioritizes the first Markdown heading (starting with #) 
+    or RST heading (underlined).
     Falls back to the first non-empty line.
     Falls back to filename.
     """
     content_lines = item['content'].split('\n')
     
-    # First pass: look for header
+    # First pass: look for Markdown header
     for line in content_lines:
         clean_line = line.strip()
         if clean_line.startswith('#'):
             return clean_line.lstrip('#').strip()
             
-    # Second pass: first non-empty line
+    # Second pass: look for RST header (Underlined Title)
+    # We check for a line followed by an underline of =, -, or ~
+    for i in range(len(content_lines) - 1):
+        line = content_lines[i].strip()
+        underline = content_lines[i+1].strip()
+        if line and underline and len(underline) >= len(line) and all(c == underline[0] for c in underline) and underline[0] in '=-~':
+             return line
+
+    # Third pass: first non-empty line
     for line in content_lines:
         clean_line = line.strip()
         if clean_line:

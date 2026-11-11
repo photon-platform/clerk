@@ -1,7 +1,6 @@
----
-order: 2
----
+:order: 2
 
-# Add Ruff Settings
+Add Ruff Settings
+=================
 
 add [tool.ruff] settings to all projects pyprojects or global

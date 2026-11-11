@@ -1,7 +1,6 @@
----
-order: 1
----
+:order: 1
 
-# Human Conduit
+Human Conduit
+=============
 
 the human is the conduit to creativity

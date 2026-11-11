@@ -1,8 +1,7 @@
----
-order: 3
----
+:order: 3
 
-# Expand Engelbart
+Expand Engelbart
+================
 
 expand Engelbart
 
