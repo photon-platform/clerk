@@ -1,7 +1,6 @@
----
-order: 1
----
+:order: 1
 
-# UV Integration
+UV Integration
+==============
 
 uv integration - particularly dependencies and dev deps

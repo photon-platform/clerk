@@ -9,14 +9,6 @@ photon_platform.clerk.gather.gather
 
 
 
-Attributes
-----------
-
-.. autoapisummary::
-
-   photon_platform.clerk.gather.gather.test_url
-
-
 Functions
 ---------
 
@@ -32,6 +24,4 @@ Module Contents
 
    Gathers content from a URL, intelligently handling the source.
 
-
-.. py:data:: test_url
 

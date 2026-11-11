@@ -11,7 +11,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..700;1,400..700&family=Fira+Sans+Condensed:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600;1,700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" type="text/css" href="../../../../../../_static/pygments.css?v=ea5fcf70" />
-  <link rel="stylesheet" type="text/css" href="../../../../../../_static/css/styles.css?v=69acf51f" />
+  <link rel="stylesheet" type="text/css" href="../../../../../../_static/css/styles.css?v=66998e95" />
   <link rel="stylesheet" type="text/css" href="../../../../../../_static/graphviz.css?v=4ae1632d" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" />
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
@@ -81,24 +81,14 @@
       <div class="content body book-content" role="main">
         <section class="level-1" id="module-photon_platform.clerk.init.folders">
         <span id="photon-platform-clerk-init-folders"></span><h1>photon_platform.clerk.init.folders<a class="headerlink" href="#module-photon_platform.clerk.init.folders" title="Link to this heading">¶</a></h1>
-        <section class="level-2" id="attributes">
-        <h2>Attributes<a class="headerlink" href="#attributes" title="Link to this heading">¶</a></h2>
-        <table class="autosummary longtable docutils align-default">
-        <tbody>
-        <tr class="row-odd"><td><p><a class="reference internal" href="#photon_platform.clerk.init.folders.base_folder" title="photon_platform.clerk.init.folders.base_folder"><code class="xref py py-obj docutils literal notranslate"><span class="pre">base_folder</span></code></a></p></td>
-        <td><p></p></td>
-        </tr>
-        </tbody>
-        </table>
-        </section>
         <section class="level-2" id="functions">
         <h2>Functions<a class="headerlink" href="#functions" title="Link to this heading">¶</a></h2>
         <table class="autosummary longtable docutils align-default">
         <tbody>
-        <tr class="row-odd"><td><p><a class="reference internal" href="#photon_platform.clerk.init.folders.get_base_project_folder" title="photon_platform.clerk.init.folders.get_base_project_folder"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_base_project_folder</span></code></a>(→ pathlib.Path)</p></td>
+        <tr class="row-odd"><td><p><a class="reference internal" href="#photon_platform.clerk.init.folders.get_base_project_folder" title="photon_platform.clerk.init.folders.get_base_project_folder"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_base_project_folder</span></code></a>() → pathlib.Path</p></td>
         <td><p>Retrieve the base project folder from an environment variable or default to '~/PROJECTS'.</p></td>
         </tr>
-        <tr class="row-even"><td><p><a class="reference internal" href="#photon_platform.clerk.init.folders.list_organization_folders" title="photon_platform.clerk.init.folders.list_organization_folders"><code class="xref py py-obj docutils literal notranslate"><span class="pre">list_organization_folders</span></code></a>(→ list[str])</p></td>
+        <tr class="row-even"><td><p><a class="reference internal" href="#photon_platform.clerk.init.folders.list_organization_folders" title="photon_platform.clerk.init.folders.list_organization_folders"><code class="xref py py-obj docutils literal notranslate"><span class="pre">list_organization_folders</span></code></a>(base_folder_path) → list[str]</p></td>
         <td><p>List the GitHub organization folders present in the base project folder.</p></td>
         </tr>
         </tbody>
@@ -123,11 +113,6 @@
         <p>Returns:
         - list[str]: A list of folder names representing GitHub organizations.</p>
         </dd></dl>
-
-        <dl class="py data">
-        <dt class="sig sig-object py" id="photon_platform.clerk.init.folders.base_folder">
-        <span class="sig-prename descclassname"><span class="pre">photon_platform.clerk.init.folders.</span></span><span class="sig-name descname"><span class="pre">base_folder</span></span><a class="headerlink" href="#photon_platform.clerk.init.folders.base_folder" title="Link to this definition">¶</a></dt>
-        <dd></dd></dl>
 
         </section>
         </section>
@@ -189,7 +174,7 @@
   <script src="../../../../../../_static/doctools.js?v=fd6eb6e6"></script>
   <script src="../../../../../../_static/sphinx_highlight.js?v=6ffebe34"></script>
   <script src="../../../../../../_static/js/collection_controls.js?v=b6b5297a"></script>
-  <script src="../../../../../../_static/js/geometor_interactive.js?v=4430a5d4"></script>
+  <script src="../../../../../../_static/js/geometor_interactive.js?v=b2892320"></script>
   <script src="../../../../../../_static/js/search_highlight.js"></script>
 
 </body>

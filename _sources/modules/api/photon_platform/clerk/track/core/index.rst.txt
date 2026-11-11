@@ -27,9 +27,10 @@ Module Contents
 
 .. py:function:: get_frontmatter_and_content(file_path: pathlib.Path) -> tuple[dict, str]
 
-   Extract frontmatter and content from a markdown file.
+   Extract frontmatter and content from a markdown or RST file.
 
-   Assumes frontmatter is between the first two '---' lines.
+   For MD: Assumes frontmatter is between the first two '---' lines.
+   For RST: Assumes field lists at the top (e.g. :order: 1).
 
 
 .. py:function:: get_todos(base_path: pathlib.Path) -> Dict[str, List[Dict]]

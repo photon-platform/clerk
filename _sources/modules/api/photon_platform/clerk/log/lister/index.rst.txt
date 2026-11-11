@@ -15,7 +15,6 @@ Attributes
 .. autoapisummary::
 
    photon_platform.clerk.log.lister.LOG_TEMPLATE
-   photon_platform.clerk.log.lister.app
 
 
 Classes
@@ -92,6 +91,4 @@ Module Contents
       :type path: str, optional
 
 
-
-.. py:data:: app
 

@@ -11,7 +11,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..700;1,400..700&family=Fira+Sans+Condensed:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600;1,700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" type="text/css" href="../../../../../../_static/pygments.css?v=ea5fcf70" />
-  <link rel="stylesheet" type="text/css" href="../../../../../../_static/css/styles.css?v=69acf51f" />
+  <link rel="stylesheet" type="text/css" href="../../../../../../_static/css/styles.css?v=66998e95" />
   <link rel="stylesheet" type="text/css" href="../../../../../../_static/graphviz.css?v=4ae1632d" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" />
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
@@ -86,22 +86,22 @@
         <h2>Functions<a class="headerlink" href="#functions" title="Link to this heading">¶</a></h2>
         <table class="autosummary longtable docutils align-default">
         <tbody>
-        <tr class="row-odd"><td><p><a class="reference internal" href="#photon_platform.clerk.track.core.get_frontmatter_and_content" title="photon_platform.clerk.track.core.get_frontmatter_and_content"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_frontmatter_and_content</span></code></a>(→ tuple[dict, str])</p></td>
-        <td><p>Extract frontmatter and content from a markdown file.</p></td>
+        <tr class="row-odd"><td><p><a class="reference internal" href="#photon_platform.clerk.track.core.get_frontmatter_and_content" title="photon_platform.clerk.track.core.get_frontmatter_and_content"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_frontmatter_and_content</span></code></a>(file_path) → tuple[dict, str]</p></td>
+        <td><p>Extract frontmatter and content from a markdown or RST file.</p></td>
         </tr>
-        <tr class="row-even"><td><p><a class="reference internal" href="#photon_platform.clerk.track.core.get_todos" title="photon_platform.clerk.track.core.get_todos"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_todos</span></code></a>(→ Dict[str, List[Dict]])</p></td>
+        <tr class="row-even"><td><p><a class="reference internal" href="#photon_platform.clerk.track.core.get_todos" title="photon_platform.clerk.track.core.get_todos"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_todos</span></code></a>(base_path) → Dict[str, List[Dict]]</p></td>
         <td><p>Scan for docsrc/todos/<a href="#id1"><span class="problematic" id="id2">*</span></a>.md files recursively from base_path.</p></td>
         </tr>
-        <tr class="row-odd"><td><p><a class="reference internal" href="#photon_platform.clerk.track.core.report_todos_md" title="photon_platform.clerk.track.core.report_todos_md"><code class="xref py py-obj docutils literal notranslate"><span class="pre">report_todos_md</span></code></a>(→ None)</p></td>
+        <tr class="row-odd"><td><p><a class="reference internal" href="#photon_platform.clerk.track.core.report_todos_md" title="photon_platform.clerk.track.core.report_todos_md"><code class="xref py py-obj docutils literal notranslate"><span class="pre">report_todos_md</span></code></a>(todos_map) → None</p></td>
         <td><p>Print a formatted markdown report of todos.</p></td>
         </tr>
-        <tr class="row-even"><td><p><a class="reference internal" href="#photon_platform.clerk.track.core.report_todos_rich" title="photon_platform.clerk.track.core.report_todos_rich"><code class="xref py py-obj docutils literal notranslate"><span class="pre">report_todos_rich</span></code></a>(→ None)</p></td>
+        <tr class="row-even"><td><p><a class="reference internal" href="#photon_platform.clerk.track.core.report_todos_rich" title="photon_platform.clerk.track.core.report_todos_rich"><code class="xref py py-obj docutils literal notranslate"><span class="pre">report_todos_rich</span></code></a>(todos_map[, group_by_project]) → None</p></td>
         <td><p>Print a formatted rich text report of todos.</p></td>
         </tr>
-        <tr class="row-odd"><td><p><a class="reference internal" href="#photon_platform.clerk.track.core.report_todos_json" title="photon_platform.clerk.track.core.report_todos_json"><code class="xref py py-obj docutils literal notranslate"><span class="pre">report_todos_json</span></code></a>(→ None)</p></td>
+        <tr class="row-odd"><td><p><a class="reference internal" href="#photon_platform.clerk.track.core.report_todos_json" title="photon_platform.clerk.track.core.report_todos_json"><code class="xref py py-obj docutils literal notranslate"><span class="pre">report_todos_json</span></code></a>(todos_map) → None</p></td>
         <td><p>Print a JSON representation of todos.</p></td>
         </tr>
-        <tr class="row-even"><td><p><a class="reference internal" href="#photon_platform.clerk.track.core.report_todos_list" title="photon_platform.clerk.track.core.report_todos_list"><code class="xref py py-obj docutils literal notranslate"><span class="pre">report_todos_list</span></code></a>(→ None)</p></td>
+        <tr class="row-even"><td><p><a class="reference internal" href="#photon_platform.clerk.track.core.report_todos_list" title="photon_platform.clerk.track.core.report_todos_list"><code class="xref py py-obj docutils literal notranslate"><span class="pre">report_todos_list</span></code></a>(todos_map) → None</p></td>
         <td><p>Print a simple list of todo titles, sorted globally by order.</p></td>
         </tr>
         </tbody>
@@ -112,8 +112,9 @@
         <dl class="py function">
         <dt class="sig sig-object py" id="photon_platform.clerk.track.core.get_frontmatter_and_content">
         <span class="sig-prename descclassname"><span class="pre">photon_platform.clerk.track.core.</span></span><span class="sig-name descname"><span class="pre">get_frontmatter_and_content</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3.13/library/pathlib.html#pathlib.Path" title="(in Python v3.13)"><span class="pre">pathlib.Path</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3.13/builtins/stdtypes.html#tuple" title="(in Python v3.13)"><span class="pre">tuple</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3.13/builtins/stdtypes.html#dict" title="(in Python v3.13)"><span class="pre">dict</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3.13/builtins/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#photon_platform.clerk.track.core.get_frontmatter_and_content" title="Link to this definition">¶</a></dt>
-        <dd><p>Extract frontmatter and content from a markdown file.</p>
-        <p>Assumes frontmatter is between the first two ‘—’ lines.</p>
+        <dd><p>Extract frontmatter and content from a markdown or RST file.</p>
+        <p>For MD: Assumes frontmatter is between the first two ‘—’ lines.
+        For RST: Assumes field lists at the top (e.g. :order: 1).</p>
         </dd></dl>
 
         <dl class="py function">
@@ -207,7 +208,7 @@
   <script src="../../../../../../_static/doctools.js?v=fd6eb6e6"></script>
   <script src="../../../../../../_static/sphinx_highlight.js?v=6ffebe34"></script>
   <script src="../../../../../../_static/js/collection_controls.js?v=b6b5297a"></script>
-  <script src="../../../../../../_static/js/geometor_interactive.js?v=4430a5d4"></script>
+  <script src="../../../../../../_static/js/geometor_interactive.js?v=b2892320"></script>
   <script src="../../../../../../_static/js/search_highlight.js"></script>
 
 </body>

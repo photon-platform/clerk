@@ -4,14 +4,6 @@ photon_platform.clerk.init.folders
 .. py:module:: photon_platform.clerk.init.folders
 
 
-Attributes
-----------
-
-.. autoapisummary::
-
-   photon_platform.clerk.init.folders.base_folder
-
-
 Functions
 ---------
 
@@ -42,6 +34,4 @@ Module Contents
    Returns:
    - list[str]: A list of folder names representing GitHub organizations.
 
-
-.. py:data:: base_folder
 
