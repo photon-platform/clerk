@@ -1,6 +1,15 @@
 changelog
 =========
 
+0.1.2
+-----
+*2026-11-12*
+
+**added**
+
+- Added canonical ``clerk-branch`` and ``clerk-rollup`` skills and ``clerk`` subagent definition.
+- Added ``clerk agents status`` and ``clerk agents sync`` CLI commands and symlink registry for PHOTON and GEOMETOR workspaces.
+
 0.1.1
 -----
 *2025-12-19*
