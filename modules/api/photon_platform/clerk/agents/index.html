@@ -1,0 +1,570 @@
+
+
+<!DOCTYPE html>
+<html lang="en" data-content_root="../../../../../">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>photon_platform.clerk.agents &mdash; photon-platform • clerk</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..700;1,400..700&family=Fira+Sans+Condensed:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600;1,700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" type="text/css" href="../../../../../_static/pygments.css?v=ea5fcf70" />
+  <link rel="stylesheet" type="text/css" href="../../../../../_static/css/styles.css?v=66998e95" />
+  <link rel="stylesheet" type="text/css" href="../../../../../_static/graphviz.css?v=4ae1632d" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" />
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+  <link rel="stylesheet" href="../../../../../_static/css/print.css" type="text/css" media="print" />
+  <link rel="icon" href="../../../../../_static/favicon.ico" />
+</head>
+
+<body class="book-theme-classical-serif">
+  <header>
+    <div class="logo">
+      <a href="../../../../../index.html">
+        <h1>photon-platform • clerk</h1>
+      </a>
+      <div class="org-repo">
+        <span class="org">photon-platform</span>
+        •
+        <span class="repo">clerk</span>
+      </div>
+    </div>
+    <nav aria-label="Header">
+      <input type="checkbox" id="nav-Header-toggle" >
+      <label for="nav-Header-toggle" >Header</label>
+      <ul>
+        <li>
+          <a href="../../../../../mission/index.html"  >mission</a>
+        </li>
+        <li>
+          <a href="../../../../index.html" class="is-active" aria-selected="true" >modules</a>
+        </li>
+        <li>
+          <a href="../../../../../usage/index.html"  >usage</a>
+        </li>
+        <li>
+          <a href="../../../../../log/index.html"  >log</a>
+        </li>
+      </ul>
+    </nav>
+    <div class="motto"></div>
+  </header>
+  <main class="book-main">
+    <article class="book-layout book-reading-pane">
+      <header class="book-header">
+        <div class="book-header-bar">
+          <div class="book-header-identity">
+            <a class="book-portal-link" href="../../../../../index.html" title="Return to Project Portal">&larr; clerk</a>
+            <span class="book-header-sep">/</span>
+            <a class="book-title-link" href="../../../../../index.html">photon-platform • clerk</a>
+          </div>
+          <div class="book-header-breadcrumbs book-header-badges" role="navigation" aria-label="Breadcrumbs">
+            <a class="book-crumb-link" href="../../../../index.html">modules</a>
+          </div>
+        </div>
+        <div class="book-header-nav">
+          <div class="book-nav-prev">
+            <a class="book-nav-btn" href="../__main__/index.html" title="photon_platform.clerk.__main__">&larr; <span class="nav-label">Prev</span></a>
+          </div>
+          <div class="book-nav-center">
+          </div>
+          <div class="book-nav-next">
+            <a class="book-nav-btn" href="cli/index.html" title="photon_platform.clerk.agents.cli"><span class="nav-label">Next</span> &rarr;</a>
+          </div>
+        </div>
+      </header>
+      <div class="content body book-content" role="main">
+        <section class="level-1" id="module-photon_platform.clerk.agents">
+        <span id="photon-platform-clerk-agents"></span><h1>photon_platform.clerk.agents<a class="headerlink" href="#module-photon_platform.clerk.agents" title="Link to this heading">¶</a></h1>
+        <p>Agent skills and subagent definition discovery and symlink synchronization.</p>
+        <section class="level-2" id="submodules">
+        <h2>Submodules<a class="headerlink" href="#submodules" title="Link to this heading">¶</a></h2>
+        <div class="toctree-wrapper compound">
+        <ul>
+        <li class="toctree-l1"><a class="reference internal" href="cli/index.html">photon_platform.clerk.agents.cli</a></li>
+        <li class="toctree-l1"><a class="reference internal" href="registry/index.html">photon_platform.clerk.agents.registry</a></li>
+        </ul>
+        </div>
+        </section>
+        <section class="level-2" id="attributes">
+        <h2>Attributes<a class="headerlink" href="#attributes" title="Link to this heading">¶</a></h2>
+        <table class="autosummary longtable docutils align-default">
+        <tbody>
+        <tr class="row-odd"><td><p><a class="reference internal" href="#photon_platform.clerk.agents.DEFAULT_TOOL_REPO_SPECS" title="photon_platform.clerk.agents.DEFAULT_TOOL_REPO_SPECS"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DEFAULT_TOOL_REPO_SPECS</span></code></a></p></td>
+        <td><p></p></td>
+        </tr>
+        </tbody>
+        </table>
+        </section>
+        <section class="level-2" id="classes">
+        <h2>Classes<a class="headerlink" href="#classes" title="Link to this heading">¶</a></h2>
+        <table class="autosummary longtable docutils align-default">
+        <tbody>
+        <tr class="row-odd"><td><p><a class="reference internal" href="#photon_platform.clerk.agents.CustomizationItem" title="photon_platform.clerk.agents.CustomizationItem"><code class="xref py py-obj docutils literal notranslate"><span class="pre">CustomizationItem</span></code></a></p></td>
+        <td><p>A canonical skill directory or subagent Markdown definition.</p></td>
+        </tr>
+        <tr class="row-even"><td><p><a class="reference internal" href="#photon_platform.clerk.agents.LinkCheck" title="photon_platform.clerk.agents.LinkCheck"><code class="xref py py-obj docutils literal notranslate"><span class="pre">LinkCheck</span></code></a></p></td>
+        <td><p>Verification result for a single customization entry inside a target root.</p></td>
+        </tr>
+        <tr class="row-odd"><td><p><a class="reference internal" href="#photon_platform.clerk.agents.StatusReport" title="photon_platform.clerk.agents.StatusReport"><code class="xref py py-obj docutils literal notranslate"><span class="pre">StatusReport</span></code></a></p></td>
+        <td><p>Aggregate report returned by <cite>check_status</cite>.</p></td>
+        </tr>
+        <tr class="row-even"><td><p><a class="reference internal" href="#photon_platform.clerk.agents.SyncAction" title="photon_platform.clerk.agents.SyncAction"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SyncAction</span></code></a></p></td>
+        <td><p>Result of synchronizing a single customization link.</p></td>
+        </tr>
+        <tr class="row-odd"><td><p><a class="reference internal" href="#photon_platform.clerk.agents.SyncReport" title="photon_platform.clerk.agents.SyncReport"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SyncReport</span></code></a></p></td>
+        <td><p>Aggregate report returned by <cite>sync_links</cite>.</p></td>
+        </tr>
+        <tr class="row-even"><td><p><a class="reference internal" href="#photon_platform.clerk.agents.TargetRoot" title="photon_platform.clerk.agents.TargetRoot"><code class="xref py py-obj docutils literal notranslate"><span class="pre">TargetRoot</span></code></a></p></td>
+        <td><p>A destination customization root (<cite>.agents/</cite> in a workspace or <cite>~/.gemini/config</cite>).</p></td>
+        </tr>
+        <tr class="row-odd"><td><p><a class="reference internal" href="#photon_platform.clerk.agents.ToolRepoSpec" title="photon_platform.clerk.agents.ToolRepoSpec"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ToolRepoSpec</span></code></a></p></td>
+        <td><p>Specification for a repository hosting canonical skills and subagent definitions.</p></td>
+        </tr>
+        </tbody>
+        </table>
+        </section>
+        <section class="level-2" id="functions">
+        <h2>Functions<a class="headerlink" href="#functions" title="Link to this heading">¶</a></h2>
+        <table class="autosummary longtable docutils align-default">
+        <tbody>
+        <tr class="row-odd"><td><p><a class="reference internal" href="#photon_platform.clerk.agents.agents" title="photon_platform.clerk.agents.agents"><code class="xref py py-obj docutils literal notranslate"><span class="pre">agents</span></code></a>() → None</p></td>
+        <td><p>Manage canonical agent definitions, skills, and workspace/global symlinks.</p></td>
+        </tr>
+        <tr class="row-even"><td><p><a class="reference internal" href="#photon_platform.clerk.agents.build_target_roots" title="photon_platform.clerk.agents.build_target_roots"><code class="xref py py-obj docutils literal notranslate"><span class="pre">build_target_roots</span></code></a>([projects_dir, global_config_dir, ...]) → list[TargetRoot]</p></td>
+        <td><p>Build the ordered list of target customization roots for the requested scope.</p></td>
+        </tr>
+        <tr class="row-odd"><td><p><a class="reference internal" href="#photon_platform.clerk.agents.check_status" title="photon_platform.clerk.agents.check_status"><code class="xref py py-obj docutils literal notranslate"><span class="pre">check_status</span></code></a>([projects_dir, global_config_dir, scope, ...]) → StatusReport</p></td>
+        <td><p>Check canonical customization sources and symlink alignment across targets.</p></td>
+        </tr>
+        <tr class="row-even"><td><p><a class="reference internal" href="#photon_platform.clerk.agents.discover_customizations" title="photon_platform.clerk.agents.discover_customizations"><code class="xref py py-obj docutils literal notranslate"><span class="pre">discover_customizations</span></code></a>([projects_dir, specs]) → tuple[list[CustomizationItem], list[str]]</p></td>
+        <td><p>Discover canonical skills and subagent definitions across configured tool repos.</p></td>
+        </tr>
+        <tr class="row-odd"><td><p><a class="reference internal" href="#photon_platform.clerk.agents.sync_links" title="photon_platform.clerk.agents.sync_links"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sync_links</span></code></a>([projects_dir, global_config_dir, scope, ...]) → SyncReport</p></td>
+        <td><p>Create or repair symlinks in workspace <cite>.agents/</cite> and <cite>~/.gemini/config/</cite>.</p></td>
+        </tr>
+        </tbody>
+        </table>
+        </section>
+        <section class="level-2" id="package-contents">
+        <h2>Package Contents<a class="headerlink" href="#package-contents" title="Link to this heading">¶</a></h2>
+        <dl class="py function">
+        <dt class="sig sig-object py" id="photon_platform.clerk.agents.agents">
+        <span class="sig-prename descclassname"><span class="pre">photon_platform.clerk.agents.</span></span><span class="sig-name descname"><span class="pre">agents</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3.13/builtins/constants.html#None" title="(in Python v3.13)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#photon_platform.clerk.agents.agents" title="Link to this definition">¶</a></dt>
+        <dd><p>Manage canonical agent definitions, skills, and workspace/global symlinks.</p>
+        </dd></dl>
+
+        <dl class="py data">
+        <dt class="sig sig-object py" id="photon_platform.clerk.agents.DEFAULT_TOOL_REPO_SPECS">
+        <span class="sig-prename descclassname"><span class="pre">photon_platform.clerk.agents.</span></span><span class="sig-name descname"><span class="pre">DEFAULT_TOOL_REPO_SPECS</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3.13/builtins/stdtypes.html#tuple" title="(in Python v3.13)"><span class="pre">tuple</span></a><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#photon_platform.clerk.agents.ToolRepoSpec" title="photon_platform.clerk.agents.ToolRepoSpec"><span class="pre">ToolRepoSpec</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="p"><span class="pre">...</span></span><span class="p"><span class="pre">]</span></span></span><a class="headerlink" href="#photon_platform.clerk.agents.DEFAULT_TOOL_REPO_SPECS" title="Link to this definition">¶</a></dt>
+        <dd></dd></dl>
+
+        <dl class="py class">
+        <dt class="sig sig-object py" id="photon_platform.clerk.agents.CustomizationItem">
+        <span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">photon_platform.clerk.agents.</span></span><span class="sig-name descname"><span class="pre">CustomizationItem</span></span><a class="headerlink" href="#photon_platform.clerk.agents.CustomizationItem" title="Link to this definition">¶</a></dt>
+        <dd><p>A canonical skill directory or subagent Markdown definition.</p>
+        <dl class="py attribute">
+        <dt class="sig sig-object py" id="photon_platform.clerk.agents.CustomizationItem.kind">
+        <span class="sig-name descname"><span class="pre">kind</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="registry/index.html#photon_platform.clerk.agents.registry.CustomizationKind" title="photon_platform.clerk.agents.registry.CustomizationKind"><span class="pre">CustomizationKind</span></a></span><a class="headerlink" href="#photon_platform.clerk.agents.CustomizationItem.kind" title="Link to this definition">¶</a></dt>
+        <dd></dd></dl>
+
+        <dl class="py attribute">
+        <dt class="sig sig-object py" id="photon_platform.clerk.agents.CustomizationItem.name">
+        <span class="sig-name descname"><span class="pre">name</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3.13/builtins/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a></span><a class="headerlink" href="#photon_platform.clerk.agents.CustomizationItem.name" title="Link to this definition">¶</a></dt>
+        <dd></dd></dl>
+
+        <dl class="py attribute">
+        <dt class="sig sig-object py" id="photon_platform.clerk.agents.CustomizationItem.repo">
+        <span class="sig-name descname"><span class="pre">repo</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3.13/builtins/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a></span><a class="headerlink" href="#photon_platform.clerk.agents.CustomizationItem.repo" title="Link to this definition">¶</a></dt>
+        <dd></dd></dl>
+
+        <dl class="py attribute">
+        <dt class="sig sig-object py" id="photon_platform.clerk.agents.CustomizationItem.source_path">
+        <span class="sig-name descname"><span class="pre">source_path</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3.13/library/pathlib.html#pathlib.Path" title="(in Python v3.13)"><span class="pre">pathlib.Path</span></a></span><a class="headerlink" href="#photon_platform.clerk.agents.CustomizationItem.source_path" title="Link to this definition">¶</a></dt>
+        <dd></dd></dl>
+
+        <dl class="py attribute">
+        <dt class="sig sig-object py" id="photon_platform.clerk.agents.CustomizationItem.source_exists">
+        <span class="sig-name descname"><span class="pre">source_exists</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3.13/builtins/functions.html#bool" title="(in Python v3.13)"><span class="pre">bool</span></a></span><a class="headerlink" href="#photon_platform.clerk.agents.CustomizationItem.source_exists" title="Link to this definition">¶</a></dt>
+        <dd></dd></dl>
+
+        <dl class="py method">
+        <dt class="sig sig-object py" id="photon_platform.clerk.agents.CustomizationItem.to_dict">
+        <span class="sig-name descname"><span class="pre">to_dict</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3.13/builtins/stdtypes.html#dict" title="(in Python v3.13)"><span class="pre">dict</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3.13/builtins/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#photon_platform.clerk.agents.CustomizationItem.to_dict" title="Link to this definition">¶</a></dt>
+        <dd><p>Serialize item to a JSON-friendly dictionary.</p>
+        </dd></dl>
+
+        </dd></dl>
+
+        <dl class="py class">
+        <dt class="sig sig-object py" id="photon_platform.clerk.agents.LinkCheck">
+        <span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">photon_platform.clerk.agents.</span></span><span class="sig-name descname"><span class="pre">LinkCheck</span></span><a class="headerlink" href="#photon_platform.clerk.agents.LinkCheck" title="Link to this definition">¶</a></dt>
+        <dd><p>Verification result for a single customization entry inside a target root.</p>
+        <dl class="py attribute">
+        <dt class="sig sig-object py" id="photon_platform.clerk.agents.LinkCheck.target_label">
+        <span class="sig-name descname"><span class="pre">target_label</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3.13/builtins/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a></span><a class="headerlink" href="#photon_platform.clerk.agents.LinkCheck.target_label" title="Link to this definition">¶</a></dt>
+        <dd></dd></dl>
+
+        <dl class="py attribute">
+        <dt class="sig sig-object py" id="photon_platform.clerk.agents.LinkCheck.kind">
+        <span class="sig-name descname"><span class="pre">kind</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="registry/index.html#photon_platform.clerk.agents.registry.CustomizationKind" title="photon_platform.clerk.agents.registry.CustomizationKind"><span class="pre">CustomizationKind</span></a></span><a class="headerlink" href="#photon_platform.clerk.agents.LinkCheck.kind" title="Link to this definition">¶</a></dt>
+        <dd></dd></dl>
+
+        <dl class="py attribute">
+        <dt class="sig sig-object py" id="photon_platform.clerk.agents.LinkCheck.name">
+        <span class="sig-name descname"><span class="pre">name</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3.13/builtins/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a></span><a class="headerlink" href="#photon_platform.clerk.agents.LinkCheck.name" title="Link to this definition">¶</a></dt>
+        <dd></dd></dl>
+
+        <dl class="py attribute">
+        <dt class="sig sig-object py" id="photon_platform.clerk.agents.LinkCheck.repo">
+        <span class="sig-name descname"><span class="pre">repo</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3.13/builtins/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a></span><a class="headerlink" href="#photon_platform.clerk.agents.LinkCheck.repo" title="Link to this definition">¶</a></dt>
+        <dd></dd></dl>
+
+        <dl class="py attribute">
+        <dt class="sig sig-object py" id="photon_platform.clerk.agents.LinkCheck.link_path">
+        <span class="sig-name descname"><span class="pre">link_path</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3.13/library/pathlib.html#pathlib.Path" title="(in Python v3.13)"><span class="pre">pathlib.Path</span></a></span><a class="headerlink" href="#photon_platform.clerk.agents.LinkCheck.link_path" title="Link to this definition">¶</a></dt>
+        <dd></dd></dl>
+
+        <dl class="py attribute">
+        <dt class="sig sig-object py" id="photon_platform.clerk.agents.LinkCheck.source_path">
+        <span class="sig-name descname"><span class="pre">source_path</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3.13/library/pathlib.html#pathlib.Path" title="(in Python v3.13)"><span class="pre">pathlib.Path</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3.13/builtins/constants.html#None" title="(in Python v3.13)"><span class="pre">None</span></a></span><a class="headerlink" href="#photon_platform.clerk.agents.LinkCheck.source_path" title="Link to this definition">¶</a></dt>
+        <dd></dd></dl>
+
+        <dl class="py attribute">
+        <dt class="sig sig-object py" id="photon_platform.clerk.agents.LinkCheck.status">
+        <span class="sig-name descname"><span class="pre">status</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="registry/index.html#photon_platform.clerk.agents.registry.LinkStatus" title="photon_platform.clerk.agents.registry.LinkStatus"><span class="pre">LinkStatus</span></a></span><a class="headerlink" href="#photon_platform.clerk.agents.LinkCheck.status" title="Link to this definition">¶</a></dt>
+        <dd></dd></dl>
+
+        <dl class="py attribute">
+        <dt class="sig sig-object py" id="photon_platform.clerk.agents.LinkCheck.detail">
+        <span class="sig-name descname"><span class="pre">detail</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3.13/builtins/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a></span><a class="headerlink" href="#photon_platform.clerk.agents.LinkCheck.detail" title="Link to this definition">¶</a></dt>
+        <dd></dd></dl>
+
+        <dl class="py method">
+        <dt class="sig sig-object py" id="photon_platform.clerk.agents.LinkCheck.to_dict">
+        <span class="sig-name descname"><span class="pre">to_dict</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3.13/builtins/stdtypes.html#dict" title="(in Python v3.13)"><span class="pre">dict</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3.13/builtins/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#photon_platform.clerk.agents.LinkCheck.to_dict" title="Link to this definition">¶</a></dt>
+        <dd><p>Serialize check to a JSON-friendly dictionary.</p>
+        </dd></dl>
+
+        </dd></dl>
+
+        <dl class="py class">
+        <dt class="sig sig-object py" id="photon_platform.clerk.agents.StatusReport">
+        <span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">photon_platform.clerk.agents.</span></span><span class="sig-name descname"><span class="pre">StatusReport</span></span><a class="headerlink" href="#photon_platform.clerk.agents.StatusReport" title="Link to this definition">¶</a></dt>
+        <dd><p>Aggregate report returned by <cite>check_status</cite>.</p>
+        <dl class="py attribute">
+        <dt class="sig sig-object py" id="photon_platform.clerk.agents.StatusReport.projects_dir">
+        <span class="sig-name descname"><span class="pre">projects_dir</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3.13/library/pathlib.html#pathlib.Path" title="(in Python v3.13)"><span class="pre">pathlib.Path</span></a></span><a class="headerlink" href="#photon_platform.clerk.agents.StatusReport.projects_dir" title="Link to this definition">¶</a></dt>
+        <dd></dd></dl>
+
+        <dl class="py attribute">
+        <dt class="sig sig-object py" id="photon_platform.clerk.agents.StatusReport.scope">
+        <span class="sig-name descname"><span class="pre">scope</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="registry/index.html#photon_platform.clerk.agents.registry.ScopeName" title="photon_platform.clerk.agents.registry.ScopeName"><span class="pre">ScopeName</span></a></span><a class="headerlink" href="#photon_platform.clerk.agents.StatusReport.scope" title="Link to this definition">¶</a></dt>
+        <dd></dd></dl>
+
+        <dl class="py attribute">
+        <dt class="sig sig-object py" id="photon_platform.clerk.agents.StatusReport.canonical_items">
+        <span class="sig-name descname"><span class="pre">canonical_items</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3.13/builtins/stdtypes.html#list" title="(in Python v3.13)"><span class="pre">list</span></a><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#photon_platform.clerk.agents.CustomizationItem" title="photon_platform.clerk.agents.CustomizationItem"><span class="pre">CustomizationItem</span></a><span class="p"><span class="pre">]</span></span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[]</span></span><a class="headerlink" href="#photon_platform.clerk.agents.StatusReport.canonical_items" title="Link to this definition">¶</a></dt>
+        <dd></dd></dl>
+
+        <dl class="py attribute">
+        <dt class="sig sig-object py" id="photon_platform.clerk.agents.StatusReport.checks">
+        <span class="sig-name descname"><span class="pre">checks</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3.13/builtins/stdtypes.html#list" title="(in Python v3.13)"><span class="pre">list</span></a><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#photon_platform.clerk.agents.LinkCheck" title="photon_platform.clerk.agents.LinkCheck"><span class="pre">LinkCheck</span></a><span class="p"><span class="pre">]</span></span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[]</span></span><a class="headerlink" href="#photon_platform.clerk.agents.StatusReport.checks" title="Link to this definition">¶</a></dt>
+        <dd></dd></dl>
+
+        <dl class="py attribute">
+        <dt class="sig sig-object py" id="photon_platform.clerk.agents.StatusReport.collisions">
+        <span class="sig-name descname"><span class="pre">collisions</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3.13/builtins/stdtypes.html#list" title="(in Python v3.13)"><span class="pre">list</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3.13/builtins/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a><span class="p"><span class="pre">]</span></span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[]</span></span><a class="headerlink" href="#photon_platform.clerk.agents.StatusReport.collisions" title="Link to this definition">¶</a></dt>
+        <dd></dd></dl>
+
+        <dl class="py property">
+        <dt class="sig sig-object py" id="photon_platform.clerk.agents.StatusReport.managed_checks">
+        <span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">managed_checks</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3.13/builtins/stdtypes.html#list" title="(in Python v3.13)"><span class="pre">list</span></a><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#photon_platform.clerk.agents.LinkCheck" title="photon_platform.clerk.agents.LinkCheck"><span class="pre">LinkCheck</span></a><span class="p"><span class="pre">]</span></span></span><a class="headerlink" href="#photon_platform.clerk.agents.StatusReport.managed_checks" title="Link to this definition">¶</a></dt>
+        <dd><p>Return checks corresponding to canonical managed items.</p>
+        </dd></dl>
+
+        <dl class="py property">
+        <dt class="sig sig-object py" id="photon_platform.clerk.agents.StatusReport.unmanaged_checks">
+        <span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">unmanaged_checks</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3.13/builtins/stdtypes.html#list" title="(in Python v3.13)"><span class="pre">list</span></a><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#photon_platform.clerk.agents.LinkCheck" title="photon_platform.clerk.agents.LinkCheck"><span class="pre">LinkCheck</span></a><span class="p"><span class="pre">]</span></span></span><a class="headerlink" href="#photon_platform.clerk.agents.StatusReport.unmanaged_checks" title="Link to this definition">¶</a></dt>
+        <dd><p>Return checks corresponding to unmanaged stray entries.</p>
+        </dd></dl>
+
+        <dl class="py property">
+        <dt class="sig sig-object py" id="photon_platform.clerk.agents.StatusReport.all_ok">
+        <span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">all_ok</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3.13/builtins/functions.html#bool" title="(in Python v3.13)"><span class="pre">bool</span></a></span><a class="headerlink" href="#photon_platform.clerk.agents.StatusReport.all_ok" title="Link to this definition">¶</a></dt>
+        <dd><p>Return True if all canonical sources exist and all managed links are <cite>ok</cite>.</p>
+        </dd></dl>
+
+        <dl class="py method">
+        <dt class="sig sig-object py" id="photon_platform.clerk.agents.StatusReport.to_dict">
+        <span class="sig-name descname"><span class="pre">to_dict</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3.13/builtins/stdtypes.html#dict" title="(in Python v3.13)"><span class="pre">dict</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3.13/builtins/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#photon_platform.clerk.agents.StatusReport.to_dict" title="Link to this definition">¶</a></dt>
+        <dd><p>Serialize full report to a JSON-friendly dictionary.</p>
+        </dd></dl>
+
+        </dd></dl>
+
+        <dl class="py class">
+        <dt class="sig sig-object py" id="photon_platform.clerk.agents.SyncAction">
+        <span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">photon_platform.clerk.agents.</span></span><span class="sig-name descname"><span class="pre">SyncAction</span></span><a class="headerlink" href="#photon_platform.clerk.agents.SyncAction" title="Link to this definition">¶</a></dt>
+        <dd><p>Result of synchronizing a single customization link.</p>
+        <dl class="py attribute">
+        <dt class="sig sig-object py" id="photon_platform.clerk.agents.SyncAction.target_label">
+        <span class="sig-name descname"><span class="pre">target_label</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3.13/builtins/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a></span><a class="headerlink" href="#photon_platform.clerk.agents.SyncAction.target_label" title="Link to this definition">¶</a></dt>
+        <dd></dd></dl>
+
+        <dl class="py attribute">
+        <dt class="sig sig-object py" id="photon_platform.clerk.agents.SyncAction.kind">
+        <span class="sig-name descname"><span class="pre">kind</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="registry/index.html#photon_platform.clerk.agents.registry.CustomizationKind" title="photon_platform.clerk.agents.registry.CustomizationKind"><span class="pre">CustomizationKind</span></a></span><a class="headerlink" href="#photon_platform.clerk.agents.SyncAction.kind" title="Link to this definition">¶</a></dt>
+        <dd></dd></dl>
+
+        <dl class="py attribute">
+        <dt class="sig sig-object py" id="photon_platform.clerk.agents.SyncAction.name">
+        <span class="sig-name descname"><span class="pre">name</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3.13/builtins/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a></span><a class="headerlink" href="#photon_platform.clerk.agents.SyncAction.name" title="Link to this definition">¶</a></dt>
+        <dd></dd></dl>
+
+        <dl class="py attribute">
+        <dt class="sig sig-object py" id="photon_platform.clerk.agents.SyncAction.link_path">
+        <span class="sig-name descname"><span class="pre">link_path</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3.13/library/pathlib.html#pathlib.Path" title="(in Python v3.13)"><span class="pre">pathlib.Path</span></a></span><a class="headerlink" href="#photon_platform.clerk.agents.SyncAction.link_path" title="Link to this definition">¶</a></dt>
+        <dd></dd></dl>
+
+        <dl class="py attribute">
+        <dt class="sig sig-object py" id="photon_platform.clerk.agents.SyncAction.source_path">
+        <span class="sig-name descname"><span class="pre">source_path</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3.13/library/pathlib.html#pathlib.Path" title="(in Python v3.13)"><span class="pre">pathlib.Path</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3.13/builtins/constants.html#None" title="(in Python v3.13)"><span class="pre">None</span></a></span><a class="headerlink" href="#photon_platform.clerk.agents.SyncAction.source_path" title="Link to this definition">¶</a></dt>
+        <dd></dd></dl>
+
+        <dl class="py attribute">
+        <dt class="sig sig-object py" id="photon_platform.clerk.agents.SyncAction.action">
+        <span class="sig-name descname"><span class="pre">action</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3.13/builtins/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a></span><a class="headerlink" href="#photon_platform.clerk.agents.SyncAction.action" title="Link to this definition">¶</a></dt>
+        <dd></dd></dl>
+
+        <dl class="py attribute">
+        <dt class="sig sig-object py" id="photon_platform.clerk.agents.SyncAction.detail">
+        <span class="sig-name descname"><span class="pre">detail</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3.13/builtins/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a></span><a class="headerlink" href="#photon_platform.clerk.agents.SyncAction.detail" title="Link to this definition">¶</a></dt>
+        <dd></dd></dl>
+
+        <dl class="py method">
+        <dt class="sig sig-object py" id="photon_platform.clerk.agents.SyncAction.to_dict">
+        <span class="sig-name descname"><span class="pre">to_dict</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3.13/builtins/stdtypes.html#dict" title="(in Python v3.13)"><span class="pre">dict</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3.13/builtins/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#photon_platform.clerk.agents.SyncAction.to_dict" title="Link to this definition">¶</a></dt>
+        <dd><p>Serialize sync action to a JSON-friendly dictionary.</p>
+        </dd></dl>
+
+        </dd></dl>
+
+        <dl class="py class">
+        <dt class="sig sig-object py" id="photon_platform.clerk.agents.SyncReport">
+        <span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">photon_platform.clerk.agents.</span></span><span class="sig-name descname"><span class="pre">SyncReport</span></span><a class="headerlink" href="#photon_platform.clerk.agents.SyncReport" title="Link to this definition">¶</a></dt>
+        <dd><p>Aggregate report returned by <cite>sync_links</cite>.</p>
+        <dl class="py attribute">
+        <dt class="sig sig-object py" id="photon_platform.clerk.agents.SyncReport.dry_run">
+        <span class="sig-name descname"><span class="pre">dry_run</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3.13/builtins/functions.html#bool" title="(in Python v3.13)"><span class="pre">bool</span></a></span><a class="headerlink" href="#photon_platform.clerk.agents.SyncReport.dry_run" title="Link to this definition">¶</a></dt>
+        <dd></dd></dl>
+
+        <dl class="py attribute">
+        <dt class="sig sig-object py" id="photon_platform.clerk.agents.SyncReport.scope">
+        <span class="sig-name descname"><span class="pre">scope</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="registry/index.html#photon_platform.clerk.agents.registry.ScopeName" title="photon_platform.clerk.agents.registry.ScopeName"><span class="pre">ScopeName</span></a></span><a class="headerlink" href="#photon_platform.clerk.agents.SyncReport.scope" title="Link to this definition">¶</a></dt>
+        <dd></dd></dl>
+
+        <dl class="py attribute">
+        <dt class="sig sig-object py" id="photon_platform.clerk.agents.SyncReport.actions">
+        <span class="sig-name descname"><span class="pre">actions</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3.13/builtins/stdtypes.html#list" title="(in Python v3.13)"><span class="pre">list</span></a><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#photon_platform.clerk.agents.SyncAction" title="photon_platform.clerk.agents.SyncAction"><span class="pre">SyncAction</span></a><span class="p"><span class="pre">]</span></span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[]</span></span><a class="headerlink" href="#photon_platform.clerk.agents.SyncReport.actions" title="Link to this definition">¶</a></dt>
+        <dd></dd></dl>
+
+        <dl class="py attribute">
+        <dt class="sig sig-object py" id="photon_platform.clerk.agents.SyncReport.errors">
+        <span class="sig-name descname"><span class="pre">errors</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3.13/builtins/stdtypes.html#list" title="(in Python v3.13)"><span class="pre">list</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3.13/builtins/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a><span class="p"><span class="pre">]</span></span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[]</span></span><a class="headerlink" href="#photon_platform.clerk.agents.SyncReport.errors" title="Link to this definition">¶</a></dt>
+        <dd></dd></dl>
+
+        <dl class="py property">
+        <dt class="sig sig-object py" id="photon_platform.clerk.agents.SyncReport.ok">
+        <span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">ok</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3.13/builtins/functions.html#bool" title="(in Python v3.13)"><span class="pre">bool</span></a></span><a class="headerlink" href="#photon_platform.clerk.agents.SyncReport.ok" title="Link to this definition">¶</a></dt>
+        <dd><p>Return True if no errors occurred during synchronization.</p>
+        </dd></dl>
+
+        <dl class="py method">
+        <dt class="sig sig-object py" id="photon_platform.clerk.agents.SyncReport.to_dict">
+        <span class="sig-name descname"><span class="pre">to_dict</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3.13/builtins/stdtypes.html#dict" title="(in Python v3.13)"><span class="pre">dict</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3.13/builtins/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#photon_platform.clerk.agents.SyncReport.to_dict" title="Link to this definition">¶</a></dt>
+        <dd><p>Serialize sync report to a JSON-friendly dictionary.</p>
+        </dd></dl>
+
+        </dd></dl>
+
+        <dl class="py class">
+        <dt class="sig sig-object py" id="photon_platform.clerk.agents.TargetRoot">
+        <span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">photon_platform.clerk.agents.</span></span><span class="sig-name descname"><span class="pre">TargetRoot</span></span><a class="headerlink" href="#photon_platform.clerk.agents.TargetRoot" title="Link to this definition">¶</a></dt>
+        <dd><p>A destination customization root (<cite>.agents/</cite> in a workspace or <cite>~/.gemini/config</cite>).</p>
+        <dl class="py attribute">
+        <dt class="sig sig-object py" id="photon_platform.clerk.agents.TargetRoot.label">
+        <span class="sig-name descname"><span class="pre">label</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3.13/builtins/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a></span><a class="headerlink" href="#photon_platform.clerk.agents.TargetRoot.label" title="Link to this definition">¶</a></dt>
+        <dd></dd></dl>
+
+        <dl class="py attribute">
+        <dt class="sig sig-object py" id="photon_platform.clerk.agents.TargetRoot.scope">
+        <span class="sig-name descname"><span class="pre">scope</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Literal</span><span class="p"><span class="pre">[</span></span><span class="s"><span class="pre">'workspaces'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'global'</span></span><span class="p"><span class="pre">]</span></span></span><a class="headerlink" href="#photon_platform.clerk.agents.TargetRoot.scope" title="Link to this definition">¶</a></dt>
+        <dd></dd></dl>
+
+        <dl class="py attribute">
+        <dt class="sig sig-object py" id="photon_platform.clerk.agents.TargetRoot.root_path">
+        <span class="sig-name descname"><span class="pre">root_path</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3.13/library/pathlib.html#pathlib.Path" title="(in Python v3.13)"><span class="pre">pathlib.Path</span></a></span><a class="headerlink" href="#photon_platform.clerk.agents.TargetRoot.root_path" title="Link to this definition">¶</a></dt>
+        <dd></dd></dl>
+
+        <dl class="py method">
+        <dt class="sig sig-object py" id="photon_platform.clerk.agents.TargetRoot.link_dir">
+        <span class="sig-name descname"><span class="pre">link_dir</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">kind</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="registry/index.html#photon_platform.clerk.agents.registry.CustomizationKind" title="photon_platform.clerk.agents.registry.CustomizationKind"><span class="pre">CustomizationKind</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3.13/library/pathlib.html#pathlib.Path" title="(in Python v3.13)"><span class="pre">pathlib.Path</span></a></span></span><a class="headerlink" href="#photon_platform.clerk.agents.TargetRoot.link_dir" title="Link to this definition">¶</a></dt>
+        <dd><p>Return the <cite>skills/</cite> or <cite>agents/</cite> subdirectory inside this target root.</p>
+        </dd></dl>
+
+        </dd></dl>
+
+        <dl class="py class">
+        <dt class="sig sig-object py" id="photon_platform.clerk.agents.ToolRepoSpec">
+        <span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">photon_platform.clerk.agents.</span></span><span class="sig-name descname"><span class="pre">ToolRepoSpec</span></span><a class="headerlink" href="#photon_platform.clerk.agents.ToolRepoSpec" title="Link to this definition">¶</a></dt>
+        <dd><p>Specification for a repository hosting canonical skills and subagent definitions.</p>
+        <dl class="py attribute">
+        <dt class="sig sig-object py" id="photon_platform.clerk.agents.ToolRepoSpec.rel_path">
+        <span class="sig-name descname"><span class="pre">rel_path</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3.13/builtins/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a></span><a class="headerlink" href="#photon_platform.clerk.agents.ToolRepoSpec.rel_path" title="Link to this definition">¶</a></dt>
+        <dd></dd></dl>
+
+        <dl class="py attribute">
+        <dt class="sig sig-object py" id="photon_platform.clerk.agents.ToolRepoSpec.expected_skills">
+        <span class="sig-name descname"><span class="pre">expected_skills</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3.13/builtins/stdtypes.html#tuple" title="(in Python v3.13)"><span class="pre">tuple</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3.13/builtins/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="p"><span class="pre">...</span></span><span class="p"><span class="pre">]</span></span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">()</span></span><a class="headerlink" href="#photon_platform.clerk.agents.ToolRepoSpec.expected_skills" title="Link to this definition">¶</a></dt>
+        <dd></dd></dl>
+
+        <dl class="py attribute">
+        <dt class="sig sig-object py" id="photon_platform.clerk.agents.ToolRepoSpec.expected_agents">
+        <span class="sig-name descname"><span class="pre">expected_agents</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3.13/builtins/stdtypes.html#tuple" title="(in Python v3.13)"><span class="pre">tuple</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3.13/builtins/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="p"><span class="pre">...</span></span><span class="p"><span class="pre">]</span></span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">()</span></span><a class="headerlink" href="#photon_platform.clerk.agents.ToolRepoSpec.expected_agents" title="Link to this definition">¶</a></dt>
+        <dd></dd></dl>
+
+        <dl class="py attribute">
+        <dt class="sig sig-object py" id="photon_platform.clerk.agents.ToolRepoSpec.excluded_skills">
+        <span class="sig-name descname"><span class="pre">excluded_skills</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3.13/builtins/stdtypes.html#frozenset" title="(in Python v3.13)"><span class="pre">frozenset</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3.13/builtins/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a><span class="p"><span class="pre">]</span></span></span><a class="headerlink" href="#photon_platform.clerk.agents.ToolRepoSpec.excluded_skills" title="Link to this definition">¶</a></dt>
+        <dd></dd></dl>
+
+        <dl class="py attribute">
+        <dt class="sig sig-object py" id="photon_platform.clerk.agents.ToolRepoSpec.excluded_agents">
+        <span class="sig-name descname"><span class="pre">excluded_agents</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3.13/builtins/stdtypes.html#frozenset" title="(in Python v3.13)"><span class="pre">frozenset</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3.13/builtins/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a><span class="p"><span class="pre">]</span></span></span><a class="headerlink" href="#photon_platform.clerk.agents.ToolRepoSpec.excluded_agents" title="Link to this definition">¶</a></dt>
+        <dd></dd></dl>
+
+        </dd></dl>
+
+        <dl class="py function">
+        <dt class="sig sig-object py" id="photon_platform.clerk.agents.build_target_roots">
+        <span class="sig-prename descclassname"><span class="pre">photon_platform.clerk.agents.</span></span><span class="sig-name descname"><span class="pre">build_target_roots</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">projects_dir</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3.13/library/pathlib.html#pathlib.Path" title="(in Python v3.13)"><span class="pre">pathlib.Path</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3.13/builtins/constants.html#None" title="(in Python v3.13)"><span class="pre">None</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">global_config_dir</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3.13/library/pathlib.html#pathlib.Path" title="(in Python v3.13)"><span class="pre">pathlib.Path</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3.13/builtins/constants.html#None" title="(in Python v3.13)"><span class="pre">None</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scope</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="registry/index.html#photon_platform.clerk.agents.registry.ScopeName" title="photon_platform.clerk.agents.registry.ScopeName"><span class="pre">ScopeName</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'all'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">workspace_names</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3.13/library/collections.abc.html#collections.abc.Sequence" title="(in Python v3.13)"><span class="pre">collections.abc.Sequence</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3.13/builtins/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">DEFAULT_WORKSPACE_NAMES</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3.13/builtins/stdtypes.html#list" title="(in Python v3.13)"><span class="pre">list</span></a><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#photon_platform.clerk.agents.TargetRoot" title="photon_platform.clerk.agents.TargetRoot"><span class="pre">TargetRoot</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#photon_platform.clerk.agents.build_target_roots" title="Link to this definition">¶</a></dt>
+        <dd><p>Build the ordered list of target customization roots for the requested scope.</p>
+        </dd></dl>
+
+        <dl class="py function">
+        <dt class="sig sig-object py" id="photon_platform.clerk.agents.check_status">
+        <span class="sig-prename descclassname"><span class="pre">photon_platform.clerk.agents.</span></span><span class="sig-name descname"><span class="pre">check_status</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">projects_dir</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3.13/library/pathlib.html#pathlib.Path" title="(in Python v3.13)"><span class="pre">pathlib.Path</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3.13/builtins/constants.html#None" title="(in Python v3.13)"><span class="pre">None</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">global_config_dir</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3.13/library/pathlib.html#pathlib.Path" title="(in Python v3.13)"><span class="pre">pathlib.Path</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3.13/builtins/constants.html#None" title="(in Python v3.13)"><span class="pre">None</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scope</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="registry/index.html#photon_platform.clerk.agents.registry.ScopeName" title="photon_platform.clerk.agents.registry.ScopeName"><span class="pre">ScopeName</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'all'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">specs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3.13/library/collections.abc.html#collections.abc.Sequence" title="(in Python v3.13)"><span class="pre">collections.abc.Sequence</span></a><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#photon_platform.clerk.agents.ToolRepoSpec" title="photon_platform.clerk.agents.ToolRepoSpec"><span class="pre">ToolRepoSpec</span></a><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">DEFAULT_TOOL_REPO_SPECS</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">workspace_names</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3.13/library/collections.abc.html#collections.abc.Sequence" title="(in Python v3.13)"><span class="pre">collections.abc.Sequence</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3.13/builtins/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">DEFAULT_WORKSPACE_NAMES</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#photon_platform.clerk.agents.StatusReport" title="photon_platform.clerk.agents.StatusReport"><span class="pre">StatusReport</span></a></span></span><a class="headerlink" href="#photon_platform.clerk.agents.check_status" title="Link to this definition">¶</a></dt>
+        <dd><p>Check canonical customization sources and symlink alignment across targets.</p>
+        </dd></dl>
+
+        <dl class="py function">
+        <dt class="sig sig-object py" id="photon_platform.clerk.agents.discover_customizations">
+        <span class="sig-prename descclassname"><span class="pre">photon_platform.clerk.agents.</span></span><span class="sig-name descname"><span class="pre">discover_customizations</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">projects_dir</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3.13/library/pathlib.html#pathlib.Path" title="(in Python v3.13)"><span class="pre">pathlib.Path</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3.13/builtins/constants.html#None" title="(in Python v3.13)"><span class="pre">None</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">specs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3.13/library/collections.abc.html#collections.abc.Sequence" title="(in Python v3.13)"><span class="pre">collections.abc.Sequence</span></a><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#photon_platform.clerk.agents.ToolRepoSpec" title="photon_platform.clerk.agents.ToolRepoSpec"><span class="pre">ToolRepoSpec</span></a><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">DEFAULT_TOOL_REPO_SPECS</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3.13/builtins/stdtypes.html#tuple" title="(in Python v3.13)"><span class="pre">tuple</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3.13/builtins/stdtypes.html#list" title="(in Python v3.13)"><span class="pre">list</span></a><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#photon_platform.clerk.agents.CustomizationItem" title="photon_platform.clerk.agents.CustomizationItem"><span class="pre">CustomizationItem</span></a><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3.13/builtins/stdtypes.html#list" title="(in Python v3.13)"><span class="pre">list</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3.13/builtins/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#photon_platform.clerk.agents.discover_customizations" title="Link to this definition">¶</a></dt>
+        <dd><p>Discover canonical skills and subagent definitions across configured tool repos.</p>
+        <dl class="field-list simple">
+        <dt class="field-odd">Parameters<span class="colon">:</span></dt>
+        <dd class="field-odd"><ul class="simple">
+        <li><p><strong>projects_dir</strong> – Base <cite>PROJECTS</cite> root containing <cite>&lt;org&gt;/&lt;repo&gt;</cite> folders.</p></li>
+        <li><p><strong>specs</strong> – Ordered sequence of tool repository specifications.</p></li>
+        </ul>
+        </dd>
+        <dt class="field-even">Returns<span class="colon">:</span></dt>
+        <dd class="field-even"><p>A tuple <cite>(items, collisions)</cite> of deduplicated <cite>CustomizationItem</cite> records and
+        collision warning messages.</p>
+        </dd>
+        </dl>
+        </dd></dl>
+
+        <dl class="py function">
+        <dt class="sig sig-object py" id="photon_platform.clerk.agents.sync_links">
+        <span class="sig-prename descclassname"><span class="pre">photon_platform.clerk.agents.</span></span><span class="sig-name descname"><span class="pre">sync_links</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">projects_dir</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3.13/library/pathlib.html#pathlib.Path" title="(in Python v3.13)"><span class="pre">pathlib.Path</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3.13/builtins/constants.html#None" title="(in Python v3.13)"><span class="pre">None</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">global_config_dir</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3.13/library/pathlib.html#pathlib.Path" title="(in Python v3.13)"><span class="pre">pathlib.Path</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3.13/builtins/constants.html#None" title="(in Python v3.13)"><span class="pre">None</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scope</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="registry/index.html#photon_platform.clerk.agents.registry.ScopeName" title="photon_platform.clerk.agents.registry.ScopeName"><span class="pre">ScopeName</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'all'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dry_run</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3.13/builtins/functions.html#bool" title="(in Python v3.13)"><span class="pre">bool</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">replace_copies</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3.13/builtins/functions.html#bool" title="(in Python v3.13)"><span class="pre">bool</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prune_unmanaged</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3.13/builtins/functions.html#bool" title="(in Python v3.13)"><span class="pre">bool</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">link_pending</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3.13/builtins/functions.html#bool" title="(in Python v3.13)"><span class="pre">bool</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">specs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3.13/library/collections.abc.html#collections.abc.Sequence" title="(in Python v3.13)"><span class="pre">collections.abc.Sequence</span></a><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#photon_platform.clerk.agents.ToolRepoSpec" title="photon_platform.clerk.agents.ToolRepoSpec"><span class="pre">ToolRepoSpec</span></a><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">DEFAULT_TOOL_REPO_SPECS</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">workspace_names</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3.13/library/collections.abc.html#collections.abc.Sequence" title="(in Python v3.13)"><span class="pre">collections.abc.Sequence</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3.13/builtins/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">DEFAULT_WORKSPACE_NAMES</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#photon_platform.clerk.agents.SyncReport" title="photon_platform.clerk.agents.SyncReport"><span class="pre">SyncReport</span></a></span></span><a class="headerlink" href="#photon_platform.clerk.agents.sync_links" title="Link to this definition">¶</a></dt>
+        <dd><p>Create or repair symlinks in workspace <cite>.agents/</cite> and <cite>~/.gemini/config/</cite>.</p>
+        <dl class="field-list simple">
+        <dt class="field-odd">Parameters<span class="colon">:</span></dt>
+        <dd class="field-odd"><ul class="simple">
+        <li><p><strong>projects_dir</strong> – Base <cite>PROJECTS</cite> root directory.</p></li>
+        <li><p><strong>global_config_dir</strong> – Global Antigravity config directory (<cite>~/.gemini/config</cite>).</p></li>
+        <li><p><strong>scope</strong> – Which targets to synchronize (<cite>“all”</cite>, <cite>“workspaces”</cite>, or <cite>“global”</cite>).</p></li>
+        <li><p><strong>dry_run</strong> – If True, report planned mutations without modifying the filesystem.</p></li>
+        <li><p><strong>replace_copies</strong> – If True, replace stale file/directory copies with symlinks.</p></li>
+        <li><p><strong>prune_unmanaged</strong> – If True, remove unmanaged entries in target directories.</p></li>
+        <li><p><strong>link_pending</strong> – If True, create symlinks even when a declared canonical file is pending.</p></li>
+        <li><p><strong>specs</strong> – Tool repository specifications.</p></li>
+        <li><p><strong>workspace_names</strong> – Workspace folder names under <cite>projects_dir</cite>.</p></li>
+        </ul>
+        </dd>
+        <dt class="field-even">Returns<span class="colon">:</span></dt>
+        <dd class="field-even"><p>A <cite>SyncReport</cite> summarizing all actions and any filesystem errors.</p>
+        </dd>
+        </dl>
+        </dd></dl>
+
+        </section>
+        </section>
+
+      </div>
+      <footer class="book-footer">
+        <div class="book-footer-ornament">&#10086;</div>
+        <div class="book-footer-nav">
+          <div class="book-nav-prev">
+            <a class="book-nav-btn" href="../__main__/index.html" title="photon_platform.clerk.__main__">&larr; <span class="nav-label">photon_platform.clerk.__main__</span></a>
+          </div>
+          <div class="book-nav-center">
+            <a class="book-toc-link" href="../../../../../index.html">photon-platform • clerk</a>
+          </div>
+          <div class="book-nav-next">
+            <a class="book-nav-btn" href="cli/index.html" title="photon_platform.clerk.agents.cli"><span class="nav-label">photon_platform.clerk.agents.cli</span> &rarr;</a>
+          </div>
+        </div>
+      </footer>
+    </article>
+  </main>
+  <div class="asides">
+    <aside class="aside-search">
+      <h3>Search</h3>
+      <div id="searchbox" role="search">
+        <form id="rtd-search-form" class="wy-form search-form" action="../../../../../search.html" method="get">
+          <div class="search-field">
+            <input type="search" name="q" placeholder="Search docs..." aria-label="Search docs" autocomplete="off" />
+            <button type="submit" class="search-submit" aria-label="Search" title="Search">
+              <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              </svg>
+            </button>
+          </div>
+          <input type="hidden" name="check_keywords" value="yes" />
+          <input type="hidden" name="area" value="default" />
+        </form>
+      </div>
+    </aside>
+  </div>
+  <footer>
+    <div class="footer-nav">
+      <ul>
+        <li><a href="../../../../../about.html"  >about</a></li>
+      </ul>
+    </div>
+    <hr />
+    <div role="contentinfo">
+      <p>
+        &copy; Copyright 2026, photon-platform.
+      </p>
+    </div>
+  </footer>
+
+  <script src="../../../../../_static/jquery.js?v=5d32c60e"></script>
+  <script src="../../../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+  <script src="../../../../../_static/documentation_options.js?v=92734c54"></script>
+  <script src="../../../../../_static/doctools.js?v=fd6eb6e6"></script>
+  <script src="../../../../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+  <script src="../../../../../_static/js/collection_controls.js?v=b6b5297a"></script>
+  <script src="../../../../../_static/js/geometor_interactive.js?v=b2892320"></script>
+  <script src="../../../../../_static/js/search_highlight.js"></script>
+
+</body>
+</html>
