@@ -1,7 +1,7 @@
 ---
 name: clerk
 description: Repository, git workflow, quality verification, and release curation subagent for PHOTON Platform, GEOMETOR, and phi ARCHITECT workspaces.
-model: inherit
+model: flash
 enable_write_tools: true
 enable_mcp_tools: false
 ---

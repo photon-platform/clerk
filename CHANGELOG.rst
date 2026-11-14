@@ -1,6 +1,14 @@
 changelog
 =========
 
+0.1.3
+-----
+*2026-11-13*
+
+**changed**
+
+- Update canonical ``clerk`` agent model to ``flash``.
+
 0.1.2
 -----
 *2026-11-12*
