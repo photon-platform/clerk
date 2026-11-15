@@ -1,13 +1,10 @@
-"""
-init
-==========
+"""Project scaffolding and archetype initialization for Clerk."""
 
-PHOTON platform
----------------
+from __future__ import annotations
 
-tools for creating and initializing Python projects
+from .progenitor import ARCHETYPES, create_project
 
-"""
-
-from .progenitor import create_project
-
+__all__ = [
+    "ARCHETYPES",
+    "create_project",
+]

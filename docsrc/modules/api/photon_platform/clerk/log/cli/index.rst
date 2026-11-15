@@ -3,6 +3,11 @@ photon_platform.clerk.log.cli
 
 .. py:module:: photon_platform.clerk.log.cli
 
+.. autoapi-nested-parse::
+
+   CLI command for creating Sphinx log entries.
+
+
 
 Functions
 ---------
@@ -15,8 +20,8 @@ Functions
 Module Contents
 ---------------
 
-.. py:function:: log(ctx, title, excerpt, tags, category, image)
+.. py:function:: log(ctx: click.Context, title: str, excerpt: str, tags: str, category: str, image: str, author: str) -> None
 
-   Creates a new log entry.
+   Create a new chronological log entry under ``docsrc/log/``.
 
 

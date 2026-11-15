@@ -11,7 +11,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..700;1,400..700&family=Fira+Sans+Condensed:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600;1,700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" type="text/css" href="../../../../../../_static/pygments.css?v=ea5fcf70" />
-  <link rel="stylesheet" type="text/css" href="../../../../../../_static/css/styles.css?v=c5e95cff" />
+  <link rel="stylesheet" type="text/css" href="../../../../../../_static/css/styles.css?v=ec8980ef" />
   <link rel="stylesheet" type="text/css" href="../../../../../../_static/graphviz.css?v=4ae1632d" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" />
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
@@ -81,12 +81,13 @@
       <div class="content body book-content" role="main">
         <section class="level-1" id="module-photon_platform.clerk.build.modulator">
         <span id="photon-platform-clerk-build-modulator"></span><h1>photon_platform.clerk.build.modulator<a class="headerlink" href="#module-photon_platform.clerk.build.modulator" title="Link to this heading">¶</a></h1>
+        <p>Python namespace package and module scaffolder for Clerk.</p>
         <section class="level-2" id="classes">
         <h2>Classes<a class="headerlink" href="#classes" title="Link to this heading">¶</a></h2>
         <table class="autosummary longtable docutils align-default">
         <tbody>
         <tr class="row-odd"><td><p><a class="reference internal" href="#photon_platform.clerk.build.modulator.Modulator" title="photon_platform.clerk.build.modulator.Modulator"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Modulator</span></code></a></p></td>
-        <td><p></p></td>
+        <td><p>Generate Python 3.13 namespace modules and CLI entry points.</p></td>
         </tr>
         </tbody>
         </table>
@@ -96,7 +97,8 @@
         <dl class="py class">
         <dt class="sig sig-object py" id="photon_platform.clerk.build.modulator.Modulator">
         <span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">photon_platform.clerk.build.modulator.</span></span><span class="sig-name descname"><span class="pre">Modulator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">project_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">pathlib.Path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">namespace</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#photon_platform.clerk.build.modulator.Modulator" title="Link to this definition">¶</a></dt>
-        <dd><dl class="py attribute">
+        <dd><p>Generate Python 3.13 namespace modules and CLI entry points.</p>
+        <dl class="py attribute">
         <dt class="sig sig-object py" id="photon_platform.clerk.build.modulator.Modulator.project_path">
         <span class="sig-name descname"><span class="pre">project_path</span></span><a class="headerlink" href="#photon_platform.clerk.build.modulator.Modulator.project_path" title="Link to this definition">¶</a></dt>
         <dd></dd></dl>
@@ -113,28 +115,96 @@
 
         <dl class="py method">
         <dt class="sig sig-object py" id="photon_platform.clerk.build.modulator.Modulator.create_module">
-        <span class="sig-name descname"><span class="pre">create_module</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">module_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#photon_platform.clerk.build.modulator.Modulator.create_module" title="Link to this definition">¶</a></dt>
-        <dd></dd></dl>
+        <span class="sig-name descname"><span class="pre">create_module</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">module_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="keyword-only-separator o"><abbr title="Keyword-only parameters separator (PEP 3102)"><span class="pre">*</span></abbr></span></em>, <em class="sig-param"><span class="n"><span class="pre">description</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cli_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">author</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'phi</span> <span class="pre">ARCHITECT'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">archetype</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'code'</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">pathlib.Path</span></span></span><a class="headerlink" href="#photon_platform.clerk.build.modulator.Modulator.create_module" title="Link to this definition">¶</a></dt>
+        <dd><p>Scaffold <code class="docutils literal notranslate"><span class="pre">src/&lt;namespace&gt;/&lt;module_name&gt;/</span></code> with <code class="docutils literal notranslate"><span class="pre">__init__</span></code>, <code class="docutils literal notranslate"><span class="pre">app</span></code>, and <code class="docutils literal notranslate"><span class="pre">__main__</span></code>.</p>
+        <dl class="field-list simple">
+        <dt class="field-odd">Parameters<span class="colon">:</span></dt>
+        <dd class="field-odd"><ul class="simple">
+        <li><p><strong>module_name</strong> – Python module or dotted submodule identifier.</p></li>
+        <li><p><strong>description</strong> – Human-readable package summary for module docstrings and <code class="docutils literal notranslate"><span class="pre">--help</span></code>.</p></li>
+        <li><p><strong>cli_name</strong> – Console-script display name (defaults to <code class="docutils literal notranslate"><span class="pre">module_name</span></code>).</p></li>
+        <li><p><strong>author</strong> – Author name for metadata.</p></li>
+        <li><p><strong>archetype</strong> – Repository archetype (<code class="docutils literal notranslate"><span class="pre">&quot;code&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;codex&quot;</span></code>, or <code class="docutils literal notranslate"><span class="pre">&quot;catalog&quot;</span></code>).</p></li>
+        </ul>
+        </dd>
+        <dt class="field-even">Returns<span class="colon">:</span></dt>
+        <dd class="field-even"><p>Directory path of the created Python package.</p>
+        </dd>
+        </dl>
+        </dd></dl>
 
         <dl class="py method">
         <dt class="sig sig-object py" id="photon_platform.clerk.build.modulator.Modulator.create_submodule">
-        <span class="sig-name descname"><span class="pre">create_submodule</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">module_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">submodule_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#photon_platform.clerk.build.modulator.Modulator.create_submodule" title="Link to this definition">¶</a></dt>
-        <dd></dd></dl>
+        <span class="sig-name descname"><span class="pre">create_submodule</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">module_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">submodule_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">pathlib.Path</span></span></span><a class="headerlink" href="#photon_platform.clerk.build.modulator.Modulator.create_submodule" title="Link to this definition">¶</a></dt>
+        <dd><p>Create a nested submodule under <code class="docutils literal notranslate"><span class="pre">module_name</span></code>.</p>
+        <dl class="field-list simple">
+        <dt class="field-odd">Parameters<span class="colon">:</span></dt>
+        <dd class="field-odd"><ul class="simple">
+        <li><p><strong>module_name</strong> – Parent package name.</p></li>
+        <li><p><strong>submodule_name</strong> – Child submodule name.</p></li>
+        </ul>
+        </dd>
+        <dt class="field-even">Returns<span class="colon">:</span></dt>
+        <dd class="field-even"><p>Directory path of the created submodule.</p>
+        </dd>
+        </dl>
+        </dd></dl>
 
         <dl class="py method">
         <dt class="sig sig-object py" id="photon_platform.clerk.build.modulator.Modulator.create_class">
-        <span class="sig-name descname"><span class="pre">create_class</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">module_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">class_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#photon_platform.clerk.build.modulator.Modulator.create_class" title="Link to this definition">¶</a></dt>
-        <dd></dd></dl>
+        <span class="sig-name descname"><span class="pre">create_class</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">module_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">class_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">pathlib.Path</span></span></span><a class="headerlink" href="#photon_platform.clerk.build.modulator.Modulator.create_class" title="Link to this definition">¶</a></dt>
+        <dd><p>Create a standalone Python 3.13 class module stub.</p>
+        <dl class="field-list simple">
+        <dt class="field-odd">Parameters<span class="colon">:</span></dt>
+        <dd class="field-odd"><ul class="simple">
+        <li><p><strong>module_name</strong> – Target package name under <code class="docutils literal notranslate"><span class="pre">src/&lt;namespace&gt;/</span></code>.</p></li>
+        <li><p><strong>class_name</strong> – Class name to scaffold.</p></li>
+        </ul>
+        </dd>
+        <dt class="field-even">Returns<span class="colon">:</span></dt>
+        <dd class="field-even"><p>Filesystem path of the created class module.</p>
+        </dd>
+        </dl>
+        </dd></dl>
 
         <dl class="py method">
         <dt class="sig sig-object py" id="photon_platform.clerk.build.modulator.Modulator.create_function">
-        <span class="sig-name descname"><span class="pre">create_function</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">module_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">function_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">args</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">return_type</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#photon_platform.clerk.build.modulator.Modulator.create_function" title="Link to this definition">¶</a></dt>
-        <dd></dd></dl>
+        <span class="sig-name descname"><span class="pre">create_function</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">module_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">function_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">args</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">return_type</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">pathlib.Path</span></span></span><a class="headerlink" href="#photon_platform.clerk.build.modulator.Modulator.create_function" title="Link to this definition">¶</a></dt>
+        <dd><p>Append a typed function stub to <code class="docutils literal notranslate"><span class="pre">&lt;module_name&gt;.py</span></code>.</p>
+        <dl class="field-list simple">
+        <dt class="field-odd">Parameters<span class="colon">:</span></dt>
+        <dd class="field-odd"><ul class="simple">
+        <li><p><strong>module_name</strong> – Target package name under <code class="docutils literal notranslate"><span class="pre">src/&lt;namespace&gt;/</span></code>.</p></li>
+        <li><p><strong>function_name</strong> – Function identifier.</p></li>
+        <li><p><strong>args</strong> – Parameter signature string.</p></li>
+        <li><p><strong>return_type</strong> – Return type annotation string.</p></li>
+        </ul>
+        </dd>
+        <dt class="field-even">Returns<span class="colon">:</span></dt>
+        <dd class="field-even"><p>Filesystem path of the updated module file.</p>
+        </dd>
+        </dl>
+        </dd></dl>
 
         <dl class="py method">
         <dt class="sig sig-object py" id="photon_platform.clerk.build.modulator.Modulator.create_class_method">
-        <span class="sig-name descname"><span class="pre">create_class_method</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">module_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">class_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">method_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">args</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">return_type</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#photon_platform.clerk.build.modulator.Modulator.create_class_method" title="Link to this definition">¶</a></dt>
-        <dd></dd></dl>
+        <span class="sig-name descname"><span class="pre">create_class_method</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">module_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">class_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">method_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">args</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">return_type</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">pathlib.Path</span></span></span><a class="headerlink" href="#photon_platform.clerk.build.modulator.Modulator.create_class_method" title="Link to this definition">¶</a></dt>
+        <dd><p>Append a typed method stub to an existing class file.</p>
+        <dl class="field-list simple">
+        <dt class="field-odd">Parameters<span class="colon">:</span></dt>
+        <dd class="field-odd"><ul class="simple">
+        <li><p><strong>module_name</strong> – Target package name under <code class="docutils literal notranslate"><span class="pre">src/&lt;namespace&gt;/</span></code>.</p></li>
+        <li><p><strong>class_name</strong> – Target class module name.</p></li>
+        <li><p><strong>method_name</strong> – Method identifier.</p></li>
+        <li><p><strong>args</strong> – Parameter signature string (excluding <code class="docutils literal notranslate"><span class="pre">self</span></code>).</p></li>
+        <li><p><strong>return_type</strong> – Return type annotation string.</p></li>
+        </ul>
+        </dd>
+        <dt class="field-even">Returns<span class="colon">:</span></dt>
+        <dd class="field-even"><p>Filesystem path of the updated class file.</p>
+        </dd>
+        </dl>
+        </dd></dl>
 
         </dd></dl>
 
@@ -194,7 +264,7 @@
 
   <script src="../../../../../../_static/jquery.js?v=5d32c60e"></script>
   <script src="../../../../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-  <script src="../../../../../../_static/documentation_options.js?v=fd825880"></script>
+  <script src="../../../../../../_static/documentation_options.js?v=938c9ccc"></script>
   <script src="../../../../../../_static/doctools.js?v=fd6eb6e6"></script>
   <script src="../../../../../../_static/sphinx_highlight.js?v=6ffebe34"></script>
   <script src="../../../../../../_static/js/collection_controls.js?v=b6b5297a"></script>

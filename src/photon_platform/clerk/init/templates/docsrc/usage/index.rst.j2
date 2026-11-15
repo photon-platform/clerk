@@ -2,13 +2,14 @@
 :order: 20
 
 =====
-usage
+Usage
 =====
 
-.. include:: init.rst
+Run the ``{{ github_repo_id }}`` command-line interface or verify the repository locally with ``uv`` on Python 3.13:
 
-guides
-------
+.. code-block:: bash
 
-.. collection::
-   :sort: order
+   {{ github_repo_id }} --help
+   uv run --no-sync pytest
+   ruff check src tests demos
+   publish build

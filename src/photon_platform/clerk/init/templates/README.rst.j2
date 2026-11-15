@@ -1,50 +1,51 @@
+{{ '=' * (github_repo_id | length) }}
 {{ github_repo_id }}
-{{ '=' * github_repo_id|length }}
+{{ '=' * (github_repo_id | length) }}
 
-{# TODO: set description #}
 {{ description }}
 
-Features
---------
+{% if archetype == "codex" -%}
+Edition Overview
+----------------
 
-.. todo:: TODO: insert features
+- **Treatise**: *{{ book_title }}*
+- **Author**: {{ book_author }}
+- **Primary Edition Track**: ``docsrc/{{ edition_slug }}/`` (``:layout: book``)
+- **Apparatus**: ``resources/persons.json``, ``resources/citations.json``, ``resources/glossary.json``
+{% elif archetype == "catalog" -%}
+Catalog Overview
+----------------
 
-Installation
-------------
+- **Reference Work**: *{{ book_title }}* ({{ book_author }})
+- **Catalog Track**: ``docsrc/catalog/`` (``:layout: book``)
+- **Symbolic Manifest & Concordance**: ``resources/catalog_manifest.json``, ``resources/concordance.json``
+{% endif -%}
+Installation & Verification
+---------------------------
 
-You can install **{{ github_repo_id }}** using pip:
+Managed with ``uv`` on Python 3.13:
 
 .. code-block:: bash
 
-   pip install {{ github_id }}-{{ github_repo_id }}
+   uv run --no-sync pytest
+   ruff check src tests demos
+   publish build
 
 Usage
 -----
 
-{# TODO: if app set app_name #}
-
-After installation, you can use the ``{{ github_repo_id }}`` command to create a new project:
-
 .. code-block:: bash
 
-   {{ github_repo_id }} 
+   {{ github_repo_id }} --help
 
-.. todo:: TODO: list arguments
+Links
+-----
 
-Dependencies
-------------
-
-**{{ github_repo_id }}** depends on the following Python packages:
-
-.. todo:: TODO: read from pyproject.toml 
-
-Contributing
-------------
-
-Contributions are welcome! Please see our [GitHub issues](https://github.com/{{github_id}}/{{github_repo_id}}/issues) for ways to contribute.
+- **Documentation**: https://{{ github_id }}.github.io/{{ github_repo_id }}
+- **Repository**: https://github.com/{{ github_id }}/{{ github_repo_id }}
+- **Issues**: https://github.com/{{ github_id }}/{{ github_repo_id }}/issues
 
 License
 -------
 
-**{{github_repo_id}}** is licensed under the MIT License. See the `LICENSE` file for more details.
-
+Licensed under the MIT License. See ``LICENSE`` for details.

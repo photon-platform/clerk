@@ -1,15 +1,14 @@
 :navigation: header
-:order: 40
+:order: 90
 
 =======
-modules
+Modules
 =======
 
-API reference for ``{{ org_slug }}.{{ repo_slug }}``.
+API summary for ``{{ package_namespace }}.{{ package_name }}``:
 
-.. autosummary::
-   :toctree: _autosummary
-   :template: custom-module-template.rst
-   :recursive:
-
-   {{ org_slug }}.{{ repo_slug }}
+- :mod:`{{ package_namespace }}.{{ package_name }}` — Public package interface exporting ``__version__`` and :func:`~{{ package_namespace }}.{{ package_name }}.app.run`.
+- :mod:`{{ package_namespace }}.{{ package_name }}.app` — Command-line parser (:func:`~{{ package_namespace }}.{{ package_name }}.app.build_parser`) and entry point (:func:`~{{ package_namespace }}.{{ package_name }}.app.main`).
+{% if archetype == "catalog" -%}
+- :mod:`{{ package_namespace }}.{{ package_name }}.catalog` — Typed catalog manifest descriptor (:class:`~{{ package_namespace }}.{{ package_name }}.catalog.CatalogEntrySpec`), loader (:func:`~{{ package_namespace }}.{{ package_name }}.catalog.load_catalog_manifest`), and exact-algebra guard (:func:`~{{ package_namespace }}.{{ package_name }}.catalog.assert_no_floats`).
+{% endif -%}

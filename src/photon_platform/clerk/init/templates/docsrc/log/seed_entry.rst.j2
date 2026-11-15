@@ -1,0 +1,12 @@
+{% set entry_title = "Initialize " ~ github_repo_id ~ " (" ~ archetype ~ ")" -%}
+:date: {{ log_stamp }}
+:author: {{ author_name }}
+:type: log
+:categories: initialization
+:tags: init, {{ archetype }}
+
+{{ '=' * (entry_title | length) }}
+{{ entry_title }}
+{{ '=' * (entry_title | length) }}
+
+Initialized ``{{ package_namespace }}.{{ package_name }}`` ({{ archetype }} archetype) via ``clerk init``: {{ description }}.

@@ -5,9 +5,7 @@ photon_platform.clerk
 
 .. autoapi-nested-parse::
 
-   clerk
-
-
+   PHOTON Clerk — repository scaffolding, curation, logging, and workspace navigation.
 
 
 
@@ -42,6 +40,6 @@ Package Contents
 ----------------
 
 .. py:data:: __version__
-   :value: '0.1.4'
+   :value: '0.2.0'
 
 

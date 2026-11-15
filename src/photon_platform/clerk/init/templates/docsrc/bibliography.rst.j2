@@ -1,0 +1,17 @@
+:navigation: header
+:order: 6
+:nav_title: Bibliography
+
+.. _bibliography:
+
+============
+Bibliography
+============
+
+{% set cite_heading = "[" ~ package_name ~ "] " ~ book_title -%}
+.. _cite-primary-work:
+
+{{ cite_heading }}
+{{ '-' * (cite_heading | length) }}
+
+**{{ book_author }}**, *{{ book_title }}*.

@@ -1,6 +1,9 @@
-``{{ org_name }}-{{ project_name }}`` 
+{{ description }}
 
-
-    {{ description }}
-
-.. todo:: complete project description in intro.rst
+{% if archetype == "codex" -%}
+Primary Digital Scriptorium codex for *{{ book_title }}* ({{ book_author }}), structured under :ref:`{{ edition_slug }}-index` with scholarly apparatus in :ref:`persons` and :ref:`bibliography`.
+{% elif archetype == "catalog" -%}
+Exact symbolic mathematical catalog and cross-corpus concordance inspired by *{{ book_title }}* ({{ book_author }}), structured under :ref:`{{ package_name }}-catalog` with scholarly apparatus in :ref:`persons` and :ref:`bibliography`.
+{% else -%}
+Part of the **{{ org_title }}** workspace (``{{ package_namespace }}.{{ package_name }}``).
+{% endif -%}

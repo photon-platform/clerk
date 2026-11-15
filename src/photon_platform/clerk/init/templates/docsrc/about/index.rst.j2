@@ -1,0 +1,23 @@
+:navigation: header
+:order: 10
+
+=====
+About
+=====
+
+``{{ package_namespace }}.{{ package_name }}`` is developed and maintained by **{{ author_name }}** as part of the **{{ org_title }}** organization.
+
+{{ description }}
+
+Repository Architecture
+-----------------------
+
+- **Python Package**: ``src/{{ package_namespace }}/{{ package_name }}/`` (Python 3.13)
+{% if archetype == "codex" -%}
+- **Codex Edition Track**: ``docsrc/{{ edition_slug }}/`` (``:layout: book``)
+- **Scholarly Apparatus**: ``resources/persons.json``, ``resources/citations.json``, ``resources/glossary.json``
+{% elif archetype == "catalog" -%}
+- **Mathematical Catalog**: ``docsrc/catalog/`` (``:layout: book``)
+- **Manifest & Concordance**: ``resources/catalog_manifest.json``, ``resources/concordance.json``
+{% endif -%}
+- **Automated Verification**: ``tests/`` (``pytest`` + ``ruff``) and ``docsrc/`` (``publish build``)

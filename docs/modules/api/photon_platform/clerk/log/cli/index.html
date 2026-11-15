@@ -11,7 +11,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..700;1,400..700&family=Fira+Sans+Condensed:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600;1,700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" type="text/css" href="../../../../../../_static/pygments.css?v=ea5fcf70" />
-  <link rel="stylesheet" type="text/css" href="../../../../../../_static/css/styles.css?v=c5e95cff" />
+  <link rel="stylesheet" type="text/css" href="../../../../../../_static/css/styles.css?v=ec8980ef" />
   <link rel="stylesheet" type="text/css" href="../../../../../../_static/graphviz.css?v=4ae1632d" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" />
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
@@ -81,12 +81,13 @@
       <div class="content body book-content" role="main">
         <section class="level-1" id="module-photon_platform.clerk.log.cli">
         <span id="photon-platform-clerk-log-cli"></span><h1>photon_platform.clerk.log.cli<a class="headerlink" href="#module-photon_platform.clerk.log.cli" title="Link to this heading">¶</a></h1>
+        <p>CLI command for creating Sphinx log entries.</p>
         <section class="level-2" id="functions">
         <h2>Functions<a class="headerlink" href="#functions" title="Link to this heading">¶</a></h2>
         <table class="autosummary longtable docutils align-default">
         <tbody>
-        <tr class="row-odd"><td><p><a class="reference internal" href="#photon_platform.clerk.log.cli.log" title="photon_platform.clerk.log.cli.log"><code class="xref py py-obj docutils literal notranslate"><span class="pre">log</span></code></a>(ctx, title, excerpt, tags, category, image)</p></td>
-        <td><p>Creates a new log entry.</p></td>
+        <tr class="row-odd"><td><p><a class="reference internal" href="#photon_platform.clerk.log.cli.log" title="photon_platform.clerk.log.cli.log"><code class="xref py py-obj docutils literal notranslate"><span class="pre">log</span></code></a>(→ None)</p></td>
+        <td><p>Create a new chronological log entry under <code class="docutils literal notranslate"><span class="pre">docsrc/log/</span></code>.</p></td>
         </tr>
         </tbody>
         </table>
@@ -95,8 +96,8 @@
         <h2>Module Contents<a class="headerlink" href="#module-contents" title="Link to this heading">¶</a></h2>
         <dl class="py function">
         <dt class="sig sig-object py" id="photon_platform.clerk.log.cli.log">
-        <span class="sig-prename descclassname"><span class="pre">photon_platform.clerk.log.cli.</span></span><span class="sig-name descname"><span class="pre">log</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ctx</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">title</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">excerpt</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tags</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">category</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">image</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#photon_platform.clerk.log.cli.log" title="Link to this definition">¶</a></dt>
-        <dd><p>Creates a new log entry.</p>
+        <span class="sig-prename descclassname"><span class="pre">photon_platform.clerk.log.cli.</span></span><span class="sig-name descname"><span class="pre">log</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ctx</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">click.Context</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">title</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">excerpt</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tags</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">category</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">image</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">author</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#photon_platform.clerk.log.cli.log" title="Link to this definition">¶</a></dt>
+        <dd><p>Create a new chronological log entry under <code class="docutils literal notranslate"><span class="pre">docsrc/log/</span></code>.</p>
         </dd></dl>
 
         </section>
@@ -155,7 +156,7 @@
 
   <script src="../../../../../../_static/jquery.js?v=5d32c60e"></script>
   <script src="../../../../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-  <script src="../../../../../../_static/documentation_options.js?v=fd825880"></script>
+  <script src="../../../../../../_static/documentation_options.js?v=938c9ccc"></script>
   <script src="../../../../../../_static/doctools.js?v=fd6eb6e6"></script>
   <script src="../../../../../../_static/sphinx_highlight.js?v=6ffebe34"></script>
   <script src="../../../../../../_static/js/collection_controls.js?v=b6b5297a"></script>
