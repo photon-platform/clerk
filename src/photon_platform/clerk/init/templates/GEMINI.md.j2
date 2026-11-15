@@ -1,0 +1,44 @@
+# {{ org_title }} • `{{ github_repo_id }}`
+
+{{ description }}
+
+---
+
+## 1. Repository Identity & Archetype
+
+- **Organization**: `{{ github_id }}` (`{{ org_title }}`)
+- **Package**: `{{ package_namespace }}.{{ package_name }}` (`src/{{ package_namespace }}/{{ package_name }}/`)
+- **Archetype**: `{{ archetype }}`
+{% if archetype in ("codex", "catalog") -%}
+- **Work**: *{{ book_title }}* — {{ book_author }}
+{% endif %}
+---
+
+## 2. Architectural & Editorial Mandates
+
+1. **Python 3.13 & Exact Symbolic Standards**:
+   - Every Python module begins with a module docstring followed immediately by `from __future__ import annotations`, built-in generic types (`list`, `dict`, `tuple`, `X | Y`), Google-style docstrings, and an explicit `__all__`.
+   - Zero `float` or `sympy.Float` approximations in symbolic geometry constructions.
+{% if archetype == "codex" -%}
+2. **Digital Scriptorium Codex Discipline (`codex`)**:
+   - **Multimodal Scan Vision Over OCR**: Always inspect 300 DPI archival page scans directly via `view_file`; never rely on `pdftotext`, `pypdf`, or embedded OCR text layers for transcription, formulas, or geometric labels.
+   - **Strict Content / Code Separation**: Keep `docsrc/{{ edition_slug }}/` (`:layout: book`) dedicated to faithful source transcription, translations, scholarly apparatus, and calibrated `.euclid-graphic` SVGs—never embed executable `py_file` scripts inside historical treatise tracks.
+   - **Git Hygiene**: Never commit `.pdf` files or raw raster scan directories (`resources/**/scans/*.png`) to git.
+{% elif archetype == "catalog" -%}
+2. **Mathematical Catalog & Copyright Discipline (`catalog`)**:
+   - **Zero Copyrighted Prose or Source Diagrams**: Never copy verbatim prose, chapter text, or scanned figures from modern copyrighted works. Author concise, original mathematical enunciations paired with 100% exact `SymPy` / `geometor.model` constructions and `.euclid-graphic` SVGs.
+   - **Atomic Concordance**: Record every extracted claim or construction in `resources/catalog_manifest.json` and cross-link equivalences to `geometor/divine`, `geometor/knott`, `geometor/elements`, and sister repositories in `resources/concordance.json`.
+   - **Git Hygiene**: Local study PDFs in `resources/pdfs/` remain strictly git-ignored (`*.pdf`).
+{% else -%}
+2. **Clean Module & Documentation Separation (`code`)**:
+   - Keep core implementation in `src/{{ package_namespace }}/{{ package_name }}/`, automated tests in `tests/`, runnable examples in `demos/`, and Sphinx Foundation documentation in `docsrc/`.
+{% endif %}
+---
+
+## 3. Verification Commands (Offline Sandbox Safe)
+
+```bash
+uv run --no-sync pytest
+ruff check src tests demos
+publish build
+```

@@ -1,0 +1,34 @@
+# Roadmap — `{{ github_id }}/{{ github_repo_id }}`
+
+## Phase 1 — Scaffold & Baseline (`v0.1.0`)
+
+- [x] Initialize `{{ archetype }}` repository via `clerk init` on Python 3.13.
+- [x] Establish baseline `pytest`, `ruff`, and `publish build` verification gates.
+
+{% if archetype == "codex" -%}
+## Phase 2 — Primary Source Acquisition & Structure Map
+
+- [ ] Stage primary witness scans and reference editions under git-ignored `resources/{{ edition_slug }}/`.
+- [ ] Populate complete chapter/folio mapping in `resources/{{ edition_slug }}/structure_map.json`.
+- [ ] Curate `resources/persons.json`, `resources/citations.json`, and `resources/glossary.json`.
+
+## Phase 3 — Multimodal Transcription, Translation & SVG Calibration
+
+- [ ] Transcribe diplomatic source text and synchronized English translation in `docsrc/{{ edition_slug }}/`.
+- [ ] Calibrate `.euclid-graphic` vector plates against archival witness diagrams.
+{% elif archetype == "catalog" -%}
+## Phase 2 — Atomic Inventory & Cross-Corpus Concordance
+
+- [ ] Catalog atomic theorems, identities, and geometric constructions in `resources/catalog_manifest.json`.
+- [ ] Map structural equivalences against `divine`, `knott`, `elements`, and sister repositories in `resources/concordance.json`.
+
+## Phase 3 — Exact Symbolic Models & Euclid-Graphic Plates
+
+- [ ] Implement 100% exact `SymPy` / `geometor.model` constructors and `@proposition` proofs (`assert_no_floats`).
+- [ ] Render `.euclid-graphic` SVGs and compile the `:layout: book` catalog in `docsrc/catalog/`.
+{% else -%}
+## Phase 2 — Core Domain Implementation
+
+- [ ] Expand `src/{{ package_namespace }}/{{ package_name }}/` domain APIs and CLI subcommands.
+- [ ] Add comprehensive unit tests in `tests/` and usage guides in `docsrc/usage/`.
+{% endif %}

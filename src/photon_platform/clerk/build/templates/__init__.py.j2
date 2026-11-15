@@ -1,7 +1,29 @@
-"""{{ description }}
+"""Public package interface for ``{{ namespace_name }}.{{ module_name }}``."""
 
-"""
+from __future__ import annotations
 
-__version__ = "0.0.1"
+{% if archetype == "catalog" -%}
+from .app import main, run
+from .catalog import CatalogEntrySpec, assert_no_floats, load_catalog_manifest
 
+__version__ = "0.1.0"
 
+__all__ = [
+    "CatalogEntrySpec",
+    "__version__",
+    "assert_no_floats",
+    "load_catalog_manifest",
+    "main",
+    "run",
+]
+{% else -%}
+from .app import main, run
+
+__version__ = "0.1.0"
+
+__all__ = [
+    "__version__",
+    "main",
+    "run",
+]
+{% endif -%}

@@ -1,10 +1,35 @@
+# Python packaging & bytecode
+__pycache__/
+*.py[cod]
+*$py.class
+build/
+dist/
 *.egg-info
 *.egg-info/
-dist/
-*.py[cod]
-*.swp
-.doctrees
-.ipynb_checkpoints
-__pycache__
+
+# Virtual environments & tool caches
+.venv/
+venv/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.coverage
+htmlcov/
+
+# Sphinx & Publish build artifacts
 docs/
 docsrc/modules/api/
+.doctrees/
+docsrc/.doctrees/
+
+# Archival reference PDFs & raster folio scans (never tracked in git)
+*.pdf
+resources/**/scans/*.png
+resources/**/scans/*.jpg
+resources/**/scans/*.tif
+
+# Editor & OS scratch files
+*.swp
+.DS_Store
+.ipynb_checkpoints/
+scratch/

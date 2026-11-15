@@ -2039,6 +2039,7 @@ body #search-results .context {
   --geom-font-sans: 'Fira Sans Condensed', 'Fira Sans', sans-serif;
   --geom-fg: #18181b;
   --geom-bg: #ffffff;
+  --geom-muted: #71717a;
   --geom-point-stroke: #ffffff;
   --geom-poly-fill: #000000;
   --geom-accent: #c88a1e;
@@ -2047,6 +2048,8 @@ body #search-results .context {
   --geom-assert: #16a34a;
   --geom-assert-bg: rgba(22, 163, 74, 0.10);
   --geom-assert-border: rgba(22, 163, 74, 0.50);
+  --geom-hyper: #2563eb;
+  --geom-rose: #be123c;
   --geom-coincide: #0891b2;
   --geom-coincide-bg: rgba(8, 145, 178, 0.12);
   --geom-coincide-border: rgba(8, 145, 178, 0.55);
@@ -2056,6 +2059,7 @@ body #search-results .context {
   :root {
     --geom-fg: #d6cfc5;
     --geom-bg: transparent;
+    --geom-muted: #a1a1aa;
     --geom-point-stroke: #1e1e20;
     --geom-poly-fill: #d6cfc5;
     --geom-accent: #e8b85a;
@@ -2064,6 +2068,8 @@ body #search-results .context {
     --geom-assert: #5ec27e;
     --geom-assert-bg: rgba(94, 194, 126, 0.12);
     --geom-assert-border: rgba(94, 194, 126, 0.55);
+    --geom-hyper: #60a5fa;
+    --geom-rose: #fb7185;
     --geom-coincide: #38bdf8;
     --geom-coincide-bg: rgba(56, 189, 248, 0.14);
     --geom-coincide-border: rgba(56, 189, 248, 0.60);
@@ -2101,6 +2107,7 @@ article.book-reading-pane {
   /* Geometric SVG Palette (Light lines matching text on dark codex background) */
   --geom-fg: var(--book-text, #d6cfc5);
   --geom-bg: transparent;
+  --geom-muted: #a1a1aa;
   --geom-point-stroke: var(--book-bg, #1e1e20);
   --geom-poly-fill: var(--book-text, #d6cfc5);
   --geom-accent: #e8b85a;
@@ -2109,6 +2116,8 @@ article.book-reading-pane {
   --geom-assert: #5ec27e;
   --geom-assert-bg: rgba(94, 194, 126, 0.12);
   --geom-assert-border: rgba(94, 194, 126, 0.55);
+  --geom-hyper: #60a5fa;
+  --geom-rose: #fb7185;
   --geom-coincide: #38bdf8;
   --geom-coincide-bg: rgba(56, 189, 248, 0.14);
   --geom-coincide-border: rgba(56, 189, 248, 0.60);
@@ -2118,6 +2127,7 @@ body.light-mode,
 [data-theme="light"] {
   --geom-fg: #18181b;
   --geom-bg: #ffffff;
+  --geom-muted: #71717a;
   --geom-point-stroke: #ffffff;
   --geom-poly-fill: #000000;
   --geom-accent: #c88a1e;
@@ -2126,6 +2136,8 @@ body.light-mode,
   --geom-assert: #16a34a;
   --geom-assert-bg: rgba(22, 163, 74, 0.10);
   --geom-assert-border: rgba(22, 163, 74, 0.50);
+  --geom-hyper: #2563eb;
+  --geom-rose: #be123c;
   --geom-coincide: #0891b2;
   --geom-coincide-bg: rgba(8, 145, 178, 0.12);
   --geom-coincide-border: rgba(8, 145, 178, 0.55);
@@ -2138,10 +2150,13 @@ article.book-reading-pane,
 :root {
     --geom-fg: #000000;
     --geom-bg: #ffffff;
+    --geom-muted: #52525b;
     --geom-point-stroke: #ffffff;
     --geom-poly-fill: #000000;
     --geom-accent: #b47814;
     --geom-assert: #15803d;
+    --geom-hyper: #1d4ed8;
+    --geom-rose: #9f1239;
     --geom-coincide: #0e7490;
   }
 }
@@ -2488,7 +2503,7 @@ article.book-layout nav a::before, article.book-layout nav a::after,
   /* Tables (Translation Notes, Comparative Apparatus, Scan Inventory) */
   /* Chapter Table of Contents (.. contents:: / Conspectus Capitis) */
   /* Front Matter / 1954 Monograph Title Page Reconstruction (.title-page) */
-  /* Conspectus Totius Operis (Book Index Table of Contents) */
+  /* Book Index Table of Contents (English & Latin Hoenen Exemplar) */
   /* Scroll offset for sticky book header and :target highlights */
   /* Semantic Apparatus Links & Spans (:cite:, :term:, :person:) */
   /* Footnotes (Docutils HTML5 aside.footnote & inline a.footnote-reference) */
@@ -4181,6 +4196,10 @@ figure.photon-svg svg {
   margin: 0 auto;
 }
 
+figure.photon-svg svg:not([width]) {
+  width: 42rem;
+}
+
 figure.photon-picture.diagram-right,
 figure.photon-svg.diagram-right {
   float: right;
@@ -4215,7 +4234,8 @@ svg.euclid-graphic.euclid-thumbnail {
 svg.euclid-graphic .geom-line,
 svg.euclid-graphic .line,
 svg.euclid-graphic .element,
-svg.euclid-graphic .graphic-seg {
+svg.euclid-graphic .graphic-seg,
+svg.euclid-graphic :where(.geom-segment, .struct-segment, .Line, .Segment, .construct, .line-primary) {
   stroke: var(--geom-fg, #d6cfc5);
   stroke-width: 1.8;
   stroke-linecap: round;
@@ -4235,7 +4255,8 @@ svg.euclid-graphic .geom-bold {
 
 svg.euclid-graphic .geom-circle,
 svg.euclid-graphic .geom-curve,
-svg.euclid-graphic .geom-ellipse {
+svg.euclid-graphic .geom-ellipse,
+svg.euclid-graphic :where(.Circle, .Curve, .conic-curve, .conic-locus) {
   stroke: var(--geom-fg, #d6cfc5);
   stroke-width: 1.8;
   stroke-linecap: round;
@@ -4257,7 +4278,8 @@ svg.euclid-graphic .geom-line-dashed,
 svg.euclid-graphic .geom-arc-dashed,
 svg.euclid-graphic .geom-aux,
 svg.euclid-graphic .geom-Auxiliary,
-svg.euclid-graphic .geom-construction {
+svg.euclid-graphic .geom-construction,
+svg.euclid-graphic :where(.aux-line, .aux-segment, .aux-circle, .auxiliary, .extension, .guide, .guide-line, .line-guide) {
   stroke: var(--geom-fg, #d6cfc5);
   stroke-width: 1.5;
   stroke-dasharray: 4, 3;
@@ -4265,6 +4287,46 @@ svg.euclid-graphic .geom-construction {
   stroke-linejoin: round;
   fill: none;
   transition: stroke 0.15s ease, stroke-width 0.15s ease;
+}
+
+svg.euclid-graphic :where(.geom-faint, .geom-muted, .geom-grid, .grid-seg) {
+  stroke: var(--geom-fg, #d6cfc5);
+  stroke-width: 1.1;
+  stroke-linecap: round;
+  fill: none;
+  opacity: 0.55;
+}
+
+svg.euclid-graphic :where(.geom-accent-line, .geom-accent, .accent-line, .line-accent, .golden-segment, .golden-seg, .golden-major, .golden-minor, .geom-circle-accent) {
+  stroke: var(--geom-accent, #e8b85a);
+  stroke-width: 2.2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  fill: none;
+}
+
+svg.euclid-graphic :where(.geom-assert-line, .geom-assert, .line-result, .geom-circle-assert) {
+  stroke: var(--geom-assert, #5ec27e);
+  stroke-width: 2.1;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  fill: none;
+}
+
+svg.euclid-graphic :where(.geom-hyper-line, .geom-hyper, .geom-circle-hyper) {
+  stroke: var(--geom-hyper, #60a5fa);
+  stroke-width: 2.1;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  fill: none;
+}
+
+svg.euclid-graphic :where(.geom-rose-line, .geom-rose, .geom-circle-rose) {
+  stroke: var(--geom-rose, #fb7185);
+  stroke-width: 2.0;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  fill: none;
 }
 
 svg.euclid-graphic .geom-arc-dotted {
@@ -4302,11 +4364,44 @@ svg.euclid-graphic .grid-line {
 
 svg.euclid-graphic .geom-polygon,
 svg.euclid-graphic .poly,
-svg.euclid-graphic .graphic-poly {
+svg.euclid-graphic .graphic-poly,
+svg.euclid-graphic :where(.Polygon) {
   fill: var(--geom-poly-fill, #d6cfc5);
   fill-opacity: 0.04;
   stroke: none;
   transition: fill-opacity 0.15s ease, fill 0.15s ease, stroke 0.15s ease;
+}
+
+svg.euclid-graphic :where(.geom-polygon-accent, .golden-poly) {
+  fill: var(--geom-accent, #e8b85a);
+  fill-opacity: 0.12;
+  stroke: var(--geom-accent, #e8b85a);
+  stroke-width: 1.8;
+  stroke-linejoin: round;
+}
+
+svg.euclid-graphic :where(.geom-polygon-assert, .geom-poly-ok) {
+  fill: var(--geom-assert, #5ec27e);
+  fill-opacity: 0.12;
+  stroke: var(--geom-assert, #5ec27e);
+  stroke-width: 1.8;
+  stroke-linejoin: round;
+}
+
+svg.euclid-graphic :where(.geom-polygon-hyper) {
+  fill: var(--geom-hyper, #60a5fa);
+  fill-opacity: 0.12;
+  stroke: var(--geom-hyper, #60a5fa);
+  stroke-width: 1.6;
+  stroke-linejoin: round;
+}
+
+svg.euclid-graphic :where(.geom-polygon-rose) {
+  fill: var(--geom-rose, #fb7185);
+  fill-opacity: 0.12;
+  stroke: var(--geom-rose, #fb7185);
+  stroke-width: 1.6;
+  stroke-linejoin: round;
 }
 
 svg.euclid-graphic .geom-polygon-bordered,
@@ -4355,11 +4450,36 @@ svg.euclid-graphic .geom-tick-mark {
 }
 
 svg.euclid-graphic .geom-point,
-svg.euclid-graphic .point {
+svg.euclid-graphic .point,
+svg.euclid-graphic :where(.Point, .pt, .pt-given) {
   fill: var(--geom-fg, #d6cfc5);
   stroke: var(--geom-point-stroke, #1e1e20);
   stroke-width: 1;
   transition: fill 0.15s ease, r 0.15s ease;
+}
+
+svg.euclid-graphic :where(.geom-point-accent, .pt-accent, .golden-point) {
+  fill: var(--geom-accent, #e8b85a);
+  stroke: var(--geom-point-stroke, #1e1e20);
+  stroke-width: 1.2;
+}
+
+svg.euclid-graphic :where(.geom-point-assert, .pt-emerald) {
+  fill: var(--geom-assert, #5ec27e);
+  stroke: var(--geom-point-stroke, #1e1e20);
+  stroke-width: 1.2;
+}
+
+svg.euclid-graphic :where(.geom-point-hyper) {
+  fill: var(--geom-hyper, #60a5fa);
+  stroke: var(--geom-point-stroke, #1e1e20);
+  stroke-width: 1.2;
+}
+
+svg.euclid-graphic :where(.geom-point-rose) {
+  fill: var(--geom-rose, #fb7185);
+  stroke: var(--geom-point-stroke, #1e1e20);
+  stroke-width: 1.2;
 }
 
 svg.euclid-graphic .geom-dot {
@@ -4392,10 +4512,10 @@ svg.euclid-graphic .geom-label-roman {
 
 svg.euclid-graphic .geom-label-sm {
   font-family: var(--geom-font-sans, "Fira Sans Condensed", "Fira Sans", sans-serif);
-  font-size: 11px;
+  font-size: 11.5px;
   font-weight: 700;
   font-style: normal;
-  fill: var(--geom-fg, #d6cfc5);
+  fill: var(--geom-muted, #a1a1aa);
   stroke: none;
   user-select: none;
 }
@@ -4407,6 +4527,46 @@ svg.euclid-graphic .geom-label-sub {
   font-weight: 700;
   fill: var(--geom-fg, #d6cfc5);
   stroke: none;
+}
+
+svg.euclid-graphic :where(.geom-label-accent) {
+  font-family: var(--geom-font-sans, "Fira Sans Condensed", "Fira Sans", sans-serif);
+  font-size: 12.5px;
+  font-weight: 700;
+  font-style: normal;
+  fill: var(--geom-accent, #e8b85a);
+  stroke: none;
+  user-select: none;
+}
+
+svg.euclid-graphic :where(.geom-label-assert) {
+  font-family: var(--geom-font-sans, "Fira Sans Condensed", "Fira Sans", sans-serif);
+  font-size: 12.5px;
+  font-weight: 700;
+  font-style: normal;
+  fill: var(--geom-assert, #5ec27e);
+  stroke: none;
+  user-select: none;
+}
+
+svg.euclid-graphic :where(.geom-label-hyper) {
+  font-family: var(--geom-font-sans, "Fira Sans Condensed", "Fira Sans", sans-serif);
+  font-size: 12.5px;
+  font-weight: 700;
+  font-style: normal;
+  fill: var(--geom-hyper, #60a5fa);
+  stroke: none;
+  user-select: none;
+}
+
+svg.euclid-graphic :where(.geom-label-rose) {
+  font-family: var(--geom-font-sans, "Fira Sans Condensed", "Fira Sans", sans-serif);
+  font-size: 12.5px;
+  font-weight: 700;
+  font-style: normal;
+  fill: var(--geom-rose, #fb7185);
+  stroke: none;
+  user-select: none;
 }
 
 svg.euclid-graphic[data-graphic-id="0003.g1"] {

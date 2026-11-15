@@ -2,34 +2,57 @@
 name = "{{ github_id }}-{{ github_repo_id }}"
 dynamic = ["version"]
 authors = [
-  { name="phi ARCHITECT", email="github@phiarchitect.com" },
+  { name = {{ author_name | tojson }}, email = {{ author_email | tojson }} },
 ]
-description = "{{ description }}"
+description = {{ description | tojson }}
 readme = "README.rst"
 requires-python = ">=3.13"
+license = { file = "LICENSE" }
 classifiers = [
     "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.13",
     "License :: OSI Approved :: MIT License",
     "Operating System :: OS Independent",
 ]
+{% if archetype == "catalog" and org_title == "GEOMETOR" -%}
+dependencies = [
+    "sympy",
+    "geometor-model",
+]
+{% else -%}
 dependencies = []
-
+{% endif %}
 [project.scripts]
-{{ github_repo_id }} = "{{ package_namespace }}.{{ package_name }}.__main__:run"
+{{ github_repo_id }} = "{{ package_namespace }}.{{ package_name }}.__main__:main"
 
 [build-system]
-requires = ["setuptools", "setuptools-scm"]
+requires = ["setuptools>=68"]
 build-backend = "setuptools.build_meta"
 
 [tool.setuptools.packages.find]
 where = ["src"]
-include = ["{{ package_namespace }}"]
+include = ["{{ package_namespace }}*"]
 namespaces = true
 
 [tool.setuptools.dynamic]
-version = {attr = "{{ package_namespace }}.{{ package_name }}.__version__"}
+version = { attr = "{{ package_namespace }}.{{ package_name }}.__version__" }
 
 [project.urls]
 "Website" = "https://{{ github_id }}.github.io/{{ github_repo_id }}"
 "Repository" = "https://github.com/{{ github_id }}/{{ github_repo_id }}"
 "Issues" = "https://github.com/{{ github_id }}/{{ github_repo_id }}/issues"
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
+
+[tool.ruff]
+target-version = "py313"
+line-length = 100
+src = ["src", "tests", "demos"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "ANN", "D"]
+
+[tool.ruff.lint.pydocstyle]
+convention = "google"

@@ -11,7 +11,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..700;1,400..700&family=Fira+Sans+Condensed:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600;1,700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" type="text/css" href="../../../../../../_static/pygments.css?v=ea5fcf70" />
-  <link rel="stylesheet" type="text/css" href="../../../../../../_static/css/styles.css?v=c5e95cff" />
+  <link rel="stylesheet" type="text/css" href="../../../../../../_static/css/styles.css?v=ec8980ef" />
   <link rel="stylesheet" type="text/css" href="../../../../../../_static/graphviz.css?v=4ae1632d" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" />
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
@@ -81,7 +81,7 @@
       <div class="content body book-content" role="main">
         <section class="level-1" id="module-photon_platform.clerk.log.logger">
         <span id="photon-platform-clerk-log-logger"></span><h1>photon_platform.clerk.log.logger<a class="headerlink" href="#module-photon_platform.clerk.log.logger" title="Link to this heading">¶</a></h1>
-        <p>PHOTON logger</p>
+        <p>PHOTON chronological Sphinx log entry generator.</p>
         <section class="level-2" id="attributes">
         <h2>Attributes<a class="headerlink" href="#attributes" title="Link to this heading">¶</a></h2>
         <table class="autosummary longtable docutils align-default">
@@ -96,8 +96,8 @@
         <h2>Functions<a class="headerlink" href="#functions" title="Link to this heading">¶</a></h2>
         <table class="autosummary longtable docutils align-default">
         <tbody>
-        <tr class="row-odd"><td><p><a class="reference internal" href="#photon_platform.clerk.log.logger.create_log_entry" title="photon_platform.clerk.log.logger.create_log_entry"><code class="xref py py-obj docutils literal notranslate"><span class="pre">create_log_entry</span></code></a>(project_root, title, excerpt, tags, ...)</p></td>
-        <td><p>Creates a new log entry in docsrc/log.</p></td>
+        <tr class="row-odd"><td><p><a class="reference internal" href="#photon_platform.clerk.log.logger.create_log_entry" title="photon_platform.clerk.log.logger.create_log_entry"><code class="xref py py-obj docutils literal notranslate"><span class="pre">create_log_entry</span></code></a>(→ str)</p></td>
+        <td><p>Create a timestamped RST log entry in <code class="docutils literal notranslate"><span class="pre">&lt;project_root&gt;/docsrc/log/</span></code>.</p></td>
         </tr>
         </tbody>
         </table>
@@ -111,8 +111,24 @@
 
         <dl class="py function">
         <dt class="sig sig-object py" id="photon_platform.clerk.log.logger.create_log_entry">
-        <span class="sig-prename descclassname"><span class="pre">photon_platform.clerk.log.logger.</span></span><span class="sig-name descname"><span class="pre">create_log_entry</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">project_root</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">title</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">excerpt</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tags</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">category</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">image</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#photon_platform.clerk.log.logger.create_log_entry" title="Link to this definition">¶</a></dt>
-        <dd><p>Creates a new log entry in docsrc/log.</p>
+        <span class="sig-prename descclassname"><span class="pre">photon_platform.clerk.log.logger.</span></span><span class="sig-name descname"><span class="pre">create_log_entry</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">project_root</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">pathlib.Path</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">title</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">excerpt</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tags</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">collections.abc.Iterable</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">category</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">image</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">author</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'phi</span> <span class="pre">ARCHITECT'</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#photon_platform.clerk.log.logger.create_log_entry" title="Link to this definition">¶</a></dt>
+        <dd><p>Create a timestamped RST log entry in <code class="docutils literal notranslate"><span class="pre">&lt;project_root&gt;/docsrc/log/</span></code>.</p>
+        <dl class="field-list simple">
+        <dt class="field-odd">Parameters<span class="colon">:</span></dt>
+        <dd class="field-odd"><ul class="simple">
+        <li><p><strong>project_root</strong> – Root directory of the target repository.</p></li>
+        <li><p><strong>title</strong> – Heading title for the log entry.</p></li>
+        <li><p><strong>excerpt</strong> – Short introductory body or summary text.</p></li>
+        <li><p><strong>tags</strong> – Comma-separated tag string or iterable of tag strings.</p></li>
+        <li><p><strong>category</strong> – Optional log category string.</p></li>
+        <li><p><strong>image</strong> – Optional relative image path.</p></li>
+        <li><p><strong>author</strong> – Author credit recorded in the <code class="docutils literal notranslate"><span class="pre">:author:</span></code> field list.</p></li>
+        </ul>
+        </dd>
+        <dt class="field-even">Returns<span class="colon">:</span></dt>
+        <dd class="field-even"><p>Filesystem path string to the generated <code class="docutils literal notranslate"><span class="pre">index.rst</span></code> log file.</p>
+        </dd>
+        </dl>
         </dd></dl>
 
         </section>
@@ -171,7 +187,7 @@
 
   <script src="../../../../../../_static/jquery.js?v=5d32c60e"></script>
   <script src="../../../../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-  <script src="../../../../../../_static/documentation_options.js?v=fd825880"></script>
+  <script src="../../../../../../_static/documentation_options.js?v=938c9ccc"></script>
   <script src="../../../../../../_static/doctools.js?v=fd6eb6e6"></script>
   <script src="../../../../../../_static/sphinx_highlight.js?v=6ffebe34"></script>
   <script src="../../../../../../_static/js/collection_controls.js?v=b6b5297a"></script>

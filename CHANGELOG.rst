@@ -1,6 +1,20 @@
 changelog
 =========
 
+0.2.0
+-----
+*2026-11-15*
+
+**added**
+
+- Add ``--type code | codex | catalog`` repository archetypes to ``clerk init`` along with ``--edition``, ``--title``, ``--book-author``, ``--org``, and ``--git/--no-git`` options.
+- Generate ``GEMINI.md``, ``ROADMAP.md``, baseline ``tests/test_<package>.py``, ``:layout: book`` codex/catalog tracks, and ``CatalogEntrySpec`` / ``assert_no_floats`` helpers out-of-the-box.
+
+**fixed**
+
+- Enforce Jinja2 ``StrictUndefined`` across ``progenitor``, ``Modulator``, and ``logger`` templates, resolving undefined template variables, hyphenated package identifier collisions, broken ``Modulator`` class-import stubs, offline ``intersphinx_mapping`` timeouts, and ``clerk log`` tag/date rendering.
+- Fix ``determine_context`` org detection when invoked directly at ``~/PROJECTS/<org>`` containing an org-level ``pyproject.toml`` workspace manifest.
+
 0.1.4
 -----
 *2026-11-15*

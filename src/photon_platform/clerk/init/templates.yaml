@@ -1,3 +1,4 @@
+# Common repository root files
 - target: CHANGELOG.rst
   template: CHANGELOG.rst.j2
 - target: LICENSE
@@ -6,49 +7,94 @@
   template: pyproject.toml.j2
 - target: README.rst
   template: README.rst.j2
+- target: GEMINI.md
+  template: GEMINI.md.j2
+- target: ROADMAP.md
+  template: ROADMAP.md.j2
 - target: .gitignore
   template: .gitignore.j2
+- target: .github/workflows/action.yml
+  template: action.yml.j2
 
+# Baseline tests & runnable demo
+- target: tests/test_{{ package_name }}.py
+  template: tests/test_package.py.j2
 - target: demos/demo.py
   template: demos/demo.py.j2
 
+# Common Sphinx Foundation documentation
 - target: docsrc/_static/css/custom.css
   template: docsrc/_static/css/custom.css.j2
-
 - target: docsrc/conf.py
   template: docsrc/conf.py.j2
-
 - target: docsrc/index.rst
   template: docsrc/index.rst.j2
 - target: docsrc/intro.rst
   template: docsrc/intro.rst.j2
-- target: docsrc/glossary.rst
-  template: docsrc/glossary.rst.j2
-- target: docsrc/changelog.rst
-  template: docsrc/changelog.rst.j2
-- target: docsrc/todos/index.rst
-  template: docsrc/todos/index.rst.j2
-- target: docsrc/log/index.rst
-  template: docsrc/log/index.rst.j2
-- target: docsrc/connect.rst
-  template: docsrc/connect.rst.j2
-- target: docsrc/about.rst
-  template: docsrc/about.rst.j2
-
+- target: docsrc/about/index.rst
+  template: docsrc/about/index.rst.j2
+- target: docsrc/usage/index.rst
+  template: docsrc/usage/index.rst.j2
 - target: docsrc/demos/index.rst
   template: docsrc/demos/index.rst.j2
 - target: docsrc/demos/demo.rst
   template: docsrc/demos/demo.rst.j2
-
-- target: docsrc/mission/index.rst
-  template: docsrc/mission/index.rst.j2
-- target: docsrc/refs/index.rst
-  template: docsrc/refs/index.rst.j2
+- target: docsrc/log/index.rst
+  template: docsrc/log/index.rst.j2
+- target: docsrc/log/{{ log_stamp }}/index.rst
+  template: docsrc/log/seed_entry.rst.j2
 - target: docsrc/modules/index.rst
   template: docsrc/modules/index.rst.j2
-- target: docsrc/usage/index.rst
-  template: docsrc/usage/index.rst.j2
+- target: docsrc/glossary.rst
+  template: docsrc/glossary.rst.j2
+- target: docsrc/connect.rst
+  template: docsrc/connect.rst.j2
+- target: docsrc/todos/index.rst
+  template: docsrc/todos/index.rst.j2
+- target: docsrc/changelog.rst
+  template: docsrc/changelog.rst.j2
 
-- target: .github/workflows/action.yml
-  template: action.yml.j2
+# Shared scholarly apparatus for codex & catalog archetypes
+- target: resources/persons.json
+  template: resources/persons.json.j2
+  archetypes: [codex, catalog]
+- target: resources/citations.json
+  template: resources/citations.json.j2
+  archetypes: [codex, catalog]
+- target: resources/glossary.json
+  template: resources/glossary.json.j2
+  archetypes: [codex, catalog]
+- target: docsrc/persons.rst
+  template: docsrc/persons.rst.j2
+  archetypes: [codex, catalog]
+- target: docsrc/bibliography.rst
+  template: docsrc/bibliography.rst.j2
+  archetypes: [codex, catalog]
 
+# Historical Treatise Codex (--type codex) extras
+- target: resources/{{ edition_slug }}/pdfs/.gitkeep
+  template: resources/gitkeep.j2
+  archetypes: [codex]
+- target: resources/{{ edition_slug }}/structure_map.json
+  template: resources/structure_map.json.j2
+  archetypes: [codex]
+- target: docsrc/{{ edition_slug }}/index.rst
+  template: docsrc/codex/index.rst.j2
+  archetypes: [codex]
+
+# Mathematical Catalog & Concordance (--type catalog) extras
+- target: resources/pdfs/.gitkeep
+  template: resources/gitkeep.j2
+  archetypes: [catalog]
+- target: resources/catalog_manifest.json
+  template: resources/catalog_manifest.json.j2
+  archetypes: [catalog]
+- target: resources/concordance.json
+  template: resources/concordance.json.j2
+  archetypes: [catalog]
+- target: src/{{ package_namespace }}/{{ package_name }}/catalog.py
+  template: src/catalog.py.j2
+  archetypes: [catalog]
+- target: docsrc/catalog/index.rst
+  template: docsrc/catalog/index.rst.j2
+  archetypes: [catalog]
