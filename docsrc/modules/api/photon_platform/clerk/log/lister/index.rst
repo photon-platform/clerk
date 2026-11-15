@@ -33,44 +33,27 @@ Module Contents
    :value: 'log.rst.j2'
 
 
-.. py:class:: Lister(driver_class: Type[textual.driver.Driver] | None = None, css_path: textual._path.CSSPathType | None = None, watch_css: bool = False, ansi_color: bool = False)
+.. py:class:: Lister
 
    Bases: :py:obj:`textual.app.App`
-
-
-   The base class for Textual Applications.
 
 
    .. py:attribute:: CSS_PATH
       :value: 'logger.css'
 
 
-      File paths to load CSS from.
-
 
    .. py:attribute:: TITLE
       :value: 'PHOTON • log lister'
 
-
-      A class variable to set the *default* title for the application.
-
-      To update the title while the app is running, you can set the [title][textual.app.App.title] attribute.
-      See also [the `Screen.TITLE` attribute][textual.screen.Screen.TITLE].
 
 
    .. py:attribute:: BINDINGS
       :value: [('ctrl+s', 'save', 'save'), ('ctrl+p', 'screenshot', 'screenshot'), ('ctrl+q', 'quit', 'quit')]
 
 
-      The default key bindings.
-
 
    .. py:method:: compose() -> textual.app.ComposeResult
-
-      Yield child widgets for a container.
-
-      This method should be implemented in a subclass.
-
 
 
    .. py:method:: on_button_pressed(event: textual.widgets.Button.Pressed) -> None

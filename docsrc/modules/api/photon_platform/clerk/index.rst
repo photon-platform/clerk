@@ -18,6 +18,7 @@ Submodules
    :maxdepth: 1
 
    /modules/api/photon_platform/clerk/__main__/index
+   /modules/api/photon_platform/clerk/agents/index
    /modules/api/photon_platform/clerk/build/index
    /modules/api/photon_platform/clerk/clerk/index
    /modules/api/photon_platform/clerk/context/index
@@ -25,6 +26,8 @@ Submodules
    /modules/api/photon_platform/clerk/gather/index
    /modules/api/photon_platform/clerk/init/index
    /modules/api/photon_platform/clerk/log/index
+   /modules/api/photon_platform/clerk/navigator/index
+   /modules/api/photon_platform/clerk/track/index
 
 
 Attributes
@@ -39,6 +42,6 @@ Package Contents
 ----------------
 
 .. py:data:: __version__
-   :value: '0.0.11'
+   :value: '0.1.4'
 
 

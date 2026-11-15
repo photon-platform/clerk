@@ -1,6 +1,14 @@
 changelog
 =========
 
+0.1.4
+-----
+*2026-11-15*
+
+**added**
+
+- Provision canonical ``geometor`` and ``photon-platform`` ``logo.png`` and ``favicon.ico`` brand assets in ``docsrc/_static/`` during ``clerk init`` project scaffolding, and add ``clerk``'s own ``docsrc/_static/logo.png`` and ``favicon.ico``.
+
 0.1.3
 -----
 *2026-11-13*
