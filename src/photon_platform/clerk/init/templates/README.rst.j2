@@ -1,51 +1,73 @@
-{{ '=' * (github_repo_id | length) }}
-{{ github_repo_id }}
-{{ '=' * (github_repo_id | length) }}
+{% set masthead = org_title ~ " • " ~ github_repo_id -%}
+{{ masthead }}
+{{ "=" * (masthead | length) }}
 
-{{ description }}
+**Visit the Online Archive:** {{ live_url }}
 
-{% if archetype == "codex" -%}
-Edition Overview
-----------------
+**{{ description }}**
 
-- **Treatise**: *{{ book_title }}*
-- **Author**: {{ book_author }}
-- **Primary Edition Track**: ``docsrc/{{ edition_slug }}/`` (``:layout: book``)
-- **Apparatus**: ``resources/persons.json``, ``resources/citations.json``, ``resources/glossary.json``
-{% elif archetype == "catalog" -%}
-Catalog Overview
-----------------
-
-- **Reference Work**: *{{ book_title }}* ({{ book_author }})
-- **Catalog Track**: ``docsrc/catalog/`` (``:layout: book``)
-- **Symbolic Manifest & Concordance**: ``resources/catalog_manifest.json``, ``resources/concordance.json``
-{% endif -%}
-Installation & Verification
----------------------------
-
-Managed with ``uv`` on Python 3.13:
-
-.. code-block:: bash
-
-   uv run --no-sync pytest
-   ruff check src tests demos
-   publish build
-
-Usage
------
-
-.. code-block:: bash
-
-   {{ github_repo_id }} --help
-
-Links
------
-
-- **Documentation**: https://{{ github_id }}.github.io/{{ github_repo_id }}
-- **Repository**: https://github.com/{{ github_id }}/{{ github_repo_id }}
-- **Issues**: https://github.com/{{ github_id }}/{{ github_repo_id }}/issues
-
-License
+Mission
 -------
 
-Licensed under the MIT License. See ``LICENSE`` for details.
+{% if org_title == "GEOMETOR" and archetype == "codex" -%}
+``{{ github_id }}/{{ github_repo_id }}`` is part of the interconnected `GEOMETOR <https://geometor.com>`_ semantic digital archive. It liberates the works of **{{ book_author }}** from static print pagination—breaking treatises into addressable semantic units with calibrated theme-adaptive vector diagrams, primary-source folio provenance, and cross-corpus citations speaking one shared geometric language.
+{% elif org_title == "GEOMETOR" and archetype == "catalog" -%}
+``{{ github_id }}/{{ github_repo_id }}`` is part of the interconnected `GEOMETOR <https://geometor.com>`_ semantic digital archive. Grounded in *{{ book_title }}* ({{ book_author }}), it models mathematical structures as atomic, one-item-per-page symbolic constructions in exact ``SymPy`` algebra linked across 2,400 years of geometric treatises.
+{% elif org_title == "GEOMETOR" -%}
+``{{ github_id }}/{{ github_repo_id }}`` is part of the interconnected `GEOMETOR <https://geometor.com>`_ semantic digital archive—providing exact symbolic geometry infrastructure, interactive visualization, and analytical tooling across the GEOMETOR ecosystem.
+{% else -%}
+``{{ github_id }}/{{ github_repo_id }}`` provides {{ summary }} within the **{{ org_title }}** platform.
+{% endif %}
+
+{% if archetype == "codex" -%}
+Books in This Archive
+---------------------
+
+- **`{{ book_title }} <{{ live_url }}{{ edition_slug }}/>`_** — Scholarly multi-track Book Codex of **{{ book_author }}** (``docsrc/{{ edition_slug }}/``).
+
+Repository Contents
+-------------------
+
+- ``docsrc/`` — De-paginated semantic reStructuredText tracks compiled by `PHOTON publish <https://github.com/photon-platform/publish>`_.
+- ``resources/`` — Primary-source folio scans, ``structure_map.json``, and structured scholarly registries (``persons.json``, ``citations.json``, ``glossary.json``).
+- ``src/{{ package_namespace }}/{{ package_name }}/`` — Edition utilities and verification helpers.
+{% elif archetype == "catalog" -%}
+Catalogs in This Archive
+------------------------
+
+- **`{{ book_title }} <{{ live_url }}catalog/>`_** — Exact symbolic catalog & concordance inspired by **{{ book_author }}** (``docsrc/catalog/``).
+
+Repository Contents
+-------------------
+
+- ``docsrc/`` — One-item-per-page mathematical catalog RST pages and theme-adaptive SVG diagrams compiled by `PHOTON publish <https://github.com/photon-platform/publish>`_.
+- ``resources/`` — ``catalog_manifest.json``, ``concordance.json``, and structured registries (``persons.json``, ``citations.json``, ``glossary.json``).
+- ``src/{{ package_namespace }}/{{ package_name }}/`` — Exact ``SymPy`` symbolic catalog generators and algebraic invariant verifiers.
+{% else -%}
+Capabilities & Interactive Docs
+-------------------------------
+
+- **`Online Documentation & API <{{ live_url }}>`_** — Architecture, usage guides, demos, and module reference.
+
+Repository Contents
+-------------------
+
+- ``src/{{ package_namespace }}/{{ package_name }}/`` — Core Python 3.13 package implementation.
+- ``docsrc/`` — Sphinx documentation source compiled by `PHOTON publish <https://github.com/photon-platform/publish>`_.
+- ``tests/`` & ``demos/`` — Automated verification suite and runnable examples.
+{% endif %}
+
+Local Build & Verification
+--------------------------
+
+.. code-block:: bash
+
+   publish build
+   uv run --no-sync pytest
+   ruff check src tests demos
+{% if org_title == "GEOMETOR" %}
+Part of the GEOMETOR Knowledge Archive
+--------------------------------------
+
+Explore all **74 Book Codices** and **11 Mathematical Catalogs** at https://geometor.com/books/.
+{% endif %}

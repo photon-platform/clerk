@@ -20,5 +20,11 @@ jobs:
       - name: Deploy Sphinx documentation
         uses: photon-platform/action-deploy-sphinx-gh-pages@v20
         with:
+{% if archetype == "catalog" and org_title == "GEOMETOR" %}
+          modules_repo_urls: |
+            https://github.com/geometor/model.git
+            https://github.com/{{ github_id }}/{{ github_repo_id }}.git
+{% else %}
           modules_repo_urls: 'https://github.com/{{ github_id }}/{{ github_repo_id }}.git'
+{% endif %}
           python_version: '3.13'

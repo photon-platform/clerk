@@ -1,7 +1,17 @@
 {% if archetype == "codex" -%}
 .. container:: author-overline
 
-   the works of
+   semantic digital archive • the works of
+
+{% elif archetype == "catalog" -%}
+.. container:: author-overline
+
+   semantic digital archive • mathematical catalog
+
+{% elif org_title == "GEOMETOR" -%}
+.. container:: author-overline
+
+   semantic digital archive • symbolic module
 
 {% endif -%}
 {{ '=' * (home_heading | length) }}

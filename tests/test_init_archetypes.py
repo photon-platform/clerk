@@ -79,13 +79,18 @@ def test_archetype_scaffolds_pass_pytest_and_ruff(tmp_path: Path, archetype: str
     assert "None" not in (project_path / "pyproject.toml").read_text(encoding="utf-8")
     assert "Copyright (c)  " not in (project_path / "LICENSE").read_text(encoding="utf-8")
 
+    readme_txt = (project_path / "README.rst").read_text(encoding="utf-8")
+    assert f"GEOMETOR • {repo_id}" in readme_txt
+    assert f"**Visit the Online Archive:** https://geometor.github.io/{repo_id}/" in readme_txt
+
     if archetype == "codex":
+        assert "Euclid of Alexandria • De Proporzione Test • semantic digital archive" in readme_txt
         assert (project_path / "docsrc" / "tractatus" / "index.rst").is_file()
         codex_idx = (project_path / "docsrc" / "tractatus" / "index.rst").read_text(encoding="utf-8")
         assert ":type: book" in codex_idx
         assert "structure_map.json" not in codex_idx
         home_idx = (project_path / "docsrc" / "index.rst").read_text(encoding="utf-8")
-        assert "the works of" in home_idx
+        assert "semantic digital archive • the works of" in home_idx
         assert "Euclid of Alexandria" in home_idx
         conf_txt = (project_path / "docsrc" / "conf.py").read_text(encoding="utf-8")
         assert 'site_title = "Euclid of Alexandria"' in conf_txt
@@ -97,6 +102,13 @@ def test_archetype_scaffolds_pass_pytest_and_ruff(tmp_path: Path, archetype: str
         )
         assert smap["edition"] == "tractatus"
     elif archetype == "catalog":
+        assert "Euclid of Alexandria • De Proporzione Test • semantic digital archive" in readme_txt
+        home_idx = (project_path / "docsrc" / "index.rst").read_text(encoding="utf-8")
+        assert "semantic digital archive • mathematical catalog" in home_idx
+        action_txt = (project_path / ".github" / "workflows" / "action.yml").read_text(
+            encoding="utf-8"
+        )
+        assert "https://github.com/geometor/model.git" in action_txt
         assert (pkg_dir / "catalog.py").is_file()
         assert (project_path / "docsrc" / "catalog" / "index.rst").is_file()
         assert (project_path / "resources" / "catalog_manifest.json").is_file()

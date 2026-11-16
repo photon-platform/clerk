@@ -1,6 +1,14 @@
 changelog
 =========
 
+0.2.2
+-----
+*2026-11-16*
+
+**changed**
+
+- Upgrade ``clerk init`` templates (``progenitor.py``, ``README.rst.j2``, ``docsrc/index.rst.j2``, ``docsrc/intro.rst.j2``, ``action.yml.j2``) to the unified **Semantic Digital Archive** standard: ``GEOMETOR • <repo>`` storefront mastheads with top-of-page **Visit the Online Archive** CTA, ``•``-delimited ``semantic digital archive`` descriptions and topic pill defaults (``books``, ``catalogs``, ``people``, ``modules``), harmonized ``semantic digital archive • ...`` Homepage overlines and opening narratives, and ``geometor/model.git`` CI wiring for catalog scaffolds.
+
 0.2.1
 -----
 *2026-11-15*

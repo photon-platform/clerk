@@ -57,6 +57,15 @@ def _copy_brand_assets(
             shutil.copy2(src, target_static / filename)
 
 
+def _default_topics(archetype: str, has_explicit_book_author: bool) -> list[str]:
+    """Return canonical GitHub topic pills for the given repository archetype."""
+    if archetype == "codex":
+        return ["books", "people"] if has_explicit_book_author else ["books"]
+    if archetype == "catalog":
+        return ["catalogs", "people"] if has_explicit_book_author else ["catalogs"]
+    return ["modules"]
+
+
 def _default_description(
     archetype: str,
     org_title: str,
@@ -66,21 +75,18 @@ def _default_description(
     has_explicit_book_author: bool,
 ) -> str:
     """Construct a clean default repository description when none is supplied."""
-    if archetype == "codex":
-        if has_explicit_book_author:
-            return (
-                f"Folio-verified Digital Scriptorium codex of {resolved_title} "
-                f"by {resolved_book_author}"
-            )
-        return f"Folio-verified Digital Scriptorium codex for {resolved_title}"
-    if archetype == "catalog":
-        if has_explicit_book_author:
-            return (
-                f"Exact symbolic mathematical catalog and concordance inspired by "
-                f"{resolved_title} ({resolved_book_author})"
-            )
-        return f"Exact symbolic mathematical catalog and concordance for {resolved_title}"
-    return f"{org_title} {github_repo_id} package"
+    if org_title == "GEOMETOR":
+        if archetype == "codex":
+            if has_explicit_book_author:
+                return f"{resolved_book_author} • {resolved_title} • semantic digital archive"
+            return f"{resolved_title} • semantic digital archive"
+        if archetype == "catalog":
+            if has_explicit_book_author:
+                return f"{resolved_book_author} • {resolved_title} • semantic digital archive"
+            return f"{resolved_title} • Mathematical Catalog • semantic digital archive"
+        return f"{resolved_title} • GEOMETOR symbolic module"
+    return f"{org_title} • {github_repo_id} package"
+
 
 
 def create_project(
@@ -206,6 +212,8 @@ def create_project(
         "book_author": resolved_book_author,
         "site_title": human_site_title,
         "home_heading": human_site_title,
+        "live_url": f"https://{str(github_id).strip()}.github.io/{repo_folder_name}/",
+        "github_topics": _default_topics(normalized_archetype, has_explicit_book_author),
     }
 
     env = Environment(

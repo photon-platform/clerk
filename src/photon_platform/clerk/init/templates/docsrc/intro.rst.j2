@@ -1,7 +1,9 @@
 {% if archetype == "codex" -%}
-The mission of this project is to capture a semantic digital library of the works of **{{ book_author }}** — {{ summary }}.
+Within the interconnected `GEOMETOR <https://geometor.com/books/>`_ semantic digital archive, the works of **{{ book_author }}** (*{{ book_title }}*) are liberated from static print bounds—decomposed into addressable propositions, calibrated vector diagrams, primary-source folio links, and cross-corpus citations speaking one shared geometric language.
 {% elif archetype == "catalog" -%}
-Exact symbolic mathematical catalog and cross-corpus concordance inspired by *{{ book_title }}* ({{ book_author }}).
+Grounded in *{{ book_title }}* (**{{ book_author }}**), this mathematical catalog models geometric structures as atomic, composable constructions in exact ``SymPy`` algebra—connecting symbolic synthesis directly to the historical treatises of the `GEOMETOR <https://geometor.com/books/>`_ semantic digital archive.
+{% elif org_title == "GEOMETOR" -%}
+**{{ home_heading }}** ({{ summary }}) provides exact symbolic computation and interactive tooling powering the interconnected `GEOMETOR <https://geometor.com/>`_ semantic digital archive.
 {% else -%}
 {{ description }}
 {% endif -%}
