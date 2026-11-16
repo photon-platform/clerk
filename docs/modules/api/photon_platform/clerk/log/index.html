@@ -6,12 +6,21 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>photon_platform.clerk.log &mdash; photon-platform • clerk</title>
+
+  <title>photon_platform.clerk.log — photon-platform • clerk</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta property="og:title" content="photon_platform.clerk.log" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="modules/api/photon_platform/clerk/log/index.html" />
+<meta property="og:site_name" content="photon-platform • clerk" />
+<meta property="og:description" content="Chronological Sphinx log entry utilities for Clerk. Submodules: photon_platform.clerk.log.cli, photon_platform.clerk.log.lister, photon_platform.clerk.log.logger. Functions: Package Contents:" />
+<meta name="description" content="Chronological Sphinx log entry utilities for Clerk. Submodules: photon_platform.clerk.log.cli, photon_platform.clerk.log.lister, photon_platform.clerk.log.logger. Functions: Package Contents:" />
+
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..700;1,400..700&family=Fira+Sans+Condensed:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600;1,700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" type="text/css" href="../../../../../_static/pygments.css?v=ea5fcf70" />
-  <link rel="stylesheet" type="text/css" href="../../../../../_static/css/styles.css?v=ec8980ef" />
+  <link rel="stylesheet" type="text/css" href="../../../../../_static/css/styles.css?v=81e79cc0" />
   <link rel="stylesheet" type="text/css" href="../../../../../_static/graphviz.css?v=4ae1632d" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" />
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
@@ -23,14 +32,14 @@
 <body class="book-theme-classical-serif">
   <header>
     <div class="logo">
-      <a href="../../../../../index.html">
-        <img src="../../../../../_static/logo.png" class="logo" alt="Logo"/>
+      <a href="../../../../../index.html" title="Home">
+        <img src="../../../../../_static/logo.png" class="logo" alt="PHOTON-PLATFORM clerk"/>
+        <div class="org-repo">
+          <span class="org">PHOTON-PLATFORM</span>
+          <span class="sep" aria-hidden="true">&bull;</span>
+          <span class="repo">clerk</span>
+        </div>
       </a>
-      <div class="org-repo">
-        <span class="org">photon-platform</span>
-        •
-        <span class="repo">clerk</span>
-      </div>
     </div>
     <nav aria-label="Header">
       <input type="checkbox" id="nav-Header-toggle" >
@@ -55,16 +64,6 @@
   <main class="book-main">
     <article class="book-layout book-reading-pane">
       <header class="book-header">
-        <div class="book-header-bar">
-          <div class="book-header-identity">
-            <a class="book-portal-link" href="../../../../../index.html" title="Return to Project Portal">&larr; clerk</a>
-            <span class="book-header-sep">/</span>
-            <a class="book-title-link" href="../../../../../index.html">photon-platform • clerk</a>
-          </div>
-          <div class="book-header-breadcrumbs book-header-badges" role="navigation" aria-label="Breadcrumbs">
-            <a class="book-crumb-link" href="../../../../index.html">modules</a>
-          </div>
-        </div>
         <div class="book-header-nav">
           <div class="book-nav-prev">
             <a class="book-nav-btn" href="../init/progenitor/index.html" title="photon_platform.clerk.init.progenitor">&larr; <span class="nav-label">Prev</span></a>
@@ -104,7 +103,7 @@
         <h2>Package Contents<a class="headerlink" href="#package-contents" title="Link to this heading">¶</a></h2>
         <dl class="py function">
         <dt class="sig sig-object py" id="photon_platform.clerk.log.create_log_entry">
-        <span class="sig-prename descclassname"><span class="pre">photon_platform.clerk.log.</span></span><span class="sig-name descname"><span class="pre">create_log_entry</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">project_root</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">pathlib.Path</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">title</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">excerpt</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tags</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">collections.abc.Iterable</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">category</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">image</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">author</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'phi</span> <span class="pre">ARCHITECT'</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#photon_platform.clerk.log.create_log_entry" title="Link to this definition">¶</a></dt>
+        <span class="sig-prename descclassname"><span class="pre">photon_platform.clerk.log.</span></span><span class="sig-name descname"><span class="pre">create_log_entry</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">project_root</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3.13/library/pathlib.html#pathlib.Path" title="(in Python v3.13)"><span class="pre">pathlib.Path</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3.13/builtins/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">title</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3.13/builtins/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">excerpt</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3.13/builtins/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tags</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3.13/builtins/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3.13/library/collections.abc.html#collections.abc.Iterable" title="(in Python v3.13)"><span class="pre">collections.abc.Iterable</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3.13/builtins/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3.13/builtins/constants.html#None" title="(in Python v3.13)"><span class="pre">None</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">category</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3.13/builtins/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">image</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3.13/builtins/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">author</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3.13/builtins/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'phi</span> <span class="pre">ARCHITECT'</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3.13/builtins/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a></span></span><a class="headerlink" href="#photon_platform.clerk.log.create_log_entry" title="Link to this definition">¶</a></dt>
         <dd><p>Create a timestamped RST log entry in <code class="docutils literal notranslate"><span class="pre">&lt;project_root&gt;/docsrc/log/</span></code>.</p>
         <dl class="field-list simple">
         <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -132,13 +131,13 @@
         <div class="book-footer-ornament">&#10086;</div>
         <div class="book-footer-nav">
           <div class="book-nav-prev">
-            <a class="book-nav-btn" href="../init/progenitor/index.html" title="photon_platform.clerk.init.progenitor">&larr; <span class="nav-label">photon_platform.clerk.init.progenitor</span></a>
+            <a class="book-nav-btn" href="../init/progenitor/index.html" title="photon_platform.clerk.init.progenitor">&larr; <span class="nav-label">Prev</span></a>
           </div>
           <div class="book-nav-center">
             <a class="book-toc-link" href="../../../../../index.html">photon-platform • clerk</a>
           </div>
           <div class="book-nav-next">
-            <a class="book-nav-btn" href="cli/index.html" title="photon_platform.clerk.log.cli"><span class="nav-label">photon_platform.clerk.log.cli</span> &rarr;</a>
+            <a class="book-nav-btn" href="cli/index.html" title="photon_platform.clerk.log.cli"><span class="nav-label">Next</span> &rarr;</a>
           </div>
         </div>
       </footer>
@@ -180,7 +179,7 @@
 
   <script src="../../../../../_static/jquery.js?v=5d32c60e"></script>
   <script src="../../../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-  <script src="../../../../../_static/documentation_options.js?v=938c9ccc"></script>
+  <script src="../../../../../_static/documentation_options.js?v=37f418d5"></script>
   <script src="../../../../../_static/doctools.js?v=fd6eb6e6"></script>
   <script src="../../../../../_static/sphinx_highlight.js?v=6ffebe34"></script>
   <script src="../../../../../_static/js/collection_controls.js?v=b6b5297a"></script>

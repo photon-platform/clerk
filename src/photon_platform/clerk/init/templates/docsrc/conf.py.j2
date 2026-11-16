@@ -61,9 +61,10 @@ for _sister in (
 
 {% endif -%}
 html_theme = "foundation"
-html_title = {{ site_title | tojson }}
-blog_title = {{ site_title | tojson }}
-project = {{ site_title | tojson }}
+site_title = {{ site_title | tojson }}
+html_title = f"{site_title} • {org_name}"
+blog_title = site_title
+project = site_title
 html_static_path: list[str] = ["_static"]
 autoapi_add_toctree_entry = False
 if "intro.rst" not in exclude_patterns:  # noqa: F405

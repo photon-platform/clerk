@@ -1,9 +1,7 @@
-{{ description }}
-
 {% if archetype == "codex" -%}
-Primary Digital Scriptorium codex for *{{ book_title }}* ({{ book_author }}), structured under :ref:`{{ edition_slug }}-index` with scholarly apparatus in :ref:`persons` and :ref:`bibliography`.
+The mission of this project is to capture a semantic digital library of the works of **{{ book_author }}** — {{ summary }}.
 {% elif archetype == "catalog" -%}
-Exact symbolic mathematical catalog and cross-corpus concordance inspired by *{{ book_title }}* ({{ book_author }}), structured under :ref:`{{ package_name }}-catalog` with scholarly apparatus in :ref:`persons` and :ref:`bibliography`.
+Exact symbolic mathematical catalog and cross-corpus concordance inspired by *{{ book_title }}* ({{ book_author }}).
 {% else -%}
-Part of the **{{ org_title }}** workspace (``{{ package_namespace }}.{{ package_name }}``).
+{{ description }}
 {% endif -%}

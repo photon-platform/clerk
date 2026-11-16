@@ -1,5 +1,17 @@
-{{ '=' * (github_repo_id | length) }}
-{{ github_repo_id }}
-{{ '=' * (github_repo_id | length) }}
+{% if archetype == "codex" -%}
+.. container:: author-overline
+
+   the works of
+
+{% endif -%}
+{{ '=' * (home_heading | length) }}
+{{ home_heading }}
+{{ '=' * (home_heading | length) }}
 
 .. include:: intro.rst
+{% if archetype in ("codex", "catalog") %}
+
+.. collection::
+   :type: book
+   :sort: order
+{% endif %}

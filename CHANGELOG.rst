@@ -1,6 +1,14 @@
 changelog
 =========
 
+0.2.1
+-----
+*2026-11-15*
+
+**changed**
+
+- Align ``clerk init`` templates (``progenitor.py``, ``conf.py.j2``, ``index.rst.j2``, ``intro.rst.j2``, ``codex/index.rst.j2``, ``catalog/index.rst.j2``, ``about/index.rst.j2``) with the Digital Scriptorium Book Codex contract: human-first ``A–Z`` ``site_title`` metadata, *"the works of / ``<FULL NAME>``"* Author Home Pages with ``.. collection::``, clean Book Title Pages (moving ``structure_map.json`` / provenance details to ``About``), standardized 3-part GEOMETOR Mission in ``About``, and automatic ``1200x630`` ``_static/social/`` banner generation.
+
 0.2.0
 -----
 *2026-11-15*

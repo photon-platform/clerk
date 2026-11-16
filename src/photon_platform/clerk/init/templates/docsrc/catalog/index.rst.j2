@@ -1,29 +1,19 @@
 :navigation: header
 :order: 1
-:nav_title: Mathematical Catalog
+:type: book
+:nav_title: {{ book_title }}
+:breadcrumb_title: {{ book_title }}
 :layout: book
 :book_title: {{ book_title }}
 :author: {{ book_author }}
 
 .. _{{ package_name }}-catalog:
 
-====================
-Mathematical Catalog
-====================
+{{ '=' * (book_title | length) }}
+{{ book_title }}
+{{ '=' * (book_title | length) }}
 
-.. rubric:: Exact Symbolic Synthesis & Concordance — Inspired by *{{ book_title }}* ({{ book_author }})
+.. rubric:: Exact Symbolic Synthesis & Concordance — {{ book_author }}
 
-.. container:: title-page
-
-   | **Reference Work:** *{{ book_title }}* ({{ book_author }})
-   | **Digital Synthesis:** {{ org_title }} (100% Exact ``SymPy`` Algebra & ``.euclid-graphic`` Vector Plates)
-
-{{ description }}
-
-Catalog Organization
---------------------
-
-- **Catalog Manifest**: ``resources/catalog_manifest.json``
-- **Cross-Corpus Concordance**: ``resources/concordance.json``
-- **People**: :ref:`persons`
-- **Bibliography**: :ref:`bibliography`
+.. collection:: catalog
+   :sort: order

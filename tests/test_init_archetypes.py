@@ -81,6 +81,14 @@ def test_archetype_scaffolds_pass_pytest_and_ruff(tmp_path: Path, archetype: str
 
     if archetype == "codex":
         assert (project_path / "docsrc" / "tractatus" / "index.rst").is_file()
+        codex_idx = (project_path / "docsrc" / "tractatus" / "index.rst").read_text(encoding="utf-8")
+        assert ":type: book" in codex_idx
+        assert "structure_map.json" not in codex_idx
+        home_idx = (project_path / "docsrc" / "index.rst").read_text(encoding="utf-8")
+        assert "the works of" in home_idx
+        assert "Euclid of Alexandria" in home_idx
+        conf_txt = (project_path / "docsrc" / "conf.py").read_text(encoding="utf-8")
+        assert 'site_title = "Euclid of Alexandria"' in conf_txt
         assert (project_path / "resources" / "tractatus" / "structure_map.json").is_file()
         smap = json.loads(
             (project_path / "resources" / "tractatus" / "structure_map.json").read_text(

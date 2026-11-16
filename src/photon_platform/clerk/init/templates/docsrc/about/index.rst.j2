@@ -5,16 +5,40 @@
 About
 =====
 
-``{{ package_namespace }}.{{ package_name }}`` is developed and maintained by **{{ author_name }}** as part of the **{{ org_title }}** organization.
+.. rubric:: Extracting Historical Semantic Knowledge & Repurposing It for Exact Symbolic Reasoning
+
+About This Edition
+------------------
 
 {{ description }}
 
-Repository Architecture
------------------------
+{% if archetype == "codex" -%}
+Primary Digital Scriptorium codex for *{{ book_title }}* ({{ book_author }}), structured under :ref:`{{ edition_slug }}-index` with prosopographical and bibliographic apparatus in :ref:`persons` and :ref:`bibliography`.
+{% elif archetype == "catalog" -%}
+Exact symbolic mathematical catalog and cross-corpus concordance inspired by *{{ book_title }}* ({{ book_author }}), structured under :ref:`{{ package_name }}-catalog` with scholarly apparatus in :ref:`persons` and :ref:`bibliography`.
+{% else -%}
+``{{ package_namespace }}.{{ package_name }}`` is developed and maintained by **{{ author_name }}** as part of the **{{ org_title }}** organization.
+{% endif %}
+
+{% if org_title == "GEOMETOR" -%}
+The GEOMETOR Mission
+--------------------
+
+The GEOMETOR project, directed by **phi ARCHITECT**, is dedicated to the systematic recovery, exact formalization, and dynamic re-expression of foundational geometric and philosophical knowledge:
+
+- **Extracting Historical Semantic Knowledge**: Recovering the deductive structure of classical geometric, axiomatic, and philosophical treatises—elevating verbatim primary prose, primary-source folio scans (``publish folio``), and calibrated ``.euclid-graphic`` diagrams into addressable semantic graphs.
+- **Exact Symbolic Grounding (``geometor.model``)**: Anchoring geometric constructions in 100% exact symbolic algebra (``SymPy``) and Rational Trigonometry invariants over closed-form radical fields.
+- **Repurposing Knowledge Across Mediums**: Deploying extracted structures across multi-track **Book Codices**, EPUB 3 editions, computable canons, interactive SVG laboratories, and visual broadcasts.
+
+{% endif -%}
+Sources, Provenance & Repository Architecture
+---------------------------------------------
 
 - **Python Package**: ``src/{{ package_namespace }}/{{ package_name }}/`` (Python 3.13)
 {% if archetype == "codex" -%}
 - **Codex Edition Track**: ``docsrc/{{ edition_slug }}/`` (``:layout: book``)
+- **Edition Structure Map**: ``resources/{{ edition_slug }}/structure_map.json``
+- **Archival PDFs & Folios**: ``resources/{{ edition_slug }}/pdfs/`` (parsed via ``publish folio-ingest``)
 - **Scholarly Apparatus**: ``resources/persons.json``, ``resources/citations.json``, ``resources/glossary.json``
 {% elif archetype == "catalog" -%}
 - **Mathematical Catalog**: ``docsrc/catalog/`` (``:layout: book``)

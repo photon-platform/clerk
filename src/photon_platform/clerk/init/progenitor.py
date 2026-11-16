@@ -175,6 +175,11 @@ def create_project(
         "github@geometor.com" if org_title == "GEOMETOR" else "github@phiarchitect.com"
     )
 
+    if normalized_archetype == "codex" and has_explicit_book_author:
+        human_site_title = resolved_book_author
+    else:
+        human_site_title = resolved_title
+
     template_variables: dict[str, Any] = {
         "author": clean_author,
         "author_name": clean_author,
@@ -199,7 +204,8 @@ def create_project(
         "edition_slug": clean_edition,
         "book_title": resolved_title,
         "book_author": resolved_book_author,
-        "site_title": f"{org_title} • {repo_folder_name}",
+        "site_title": human_site_title,
+        "home_heading": human_site_title,
     }
 
     env = Environment(
@@ -224,6 +230,12 @@ def create_project(
         target.write_text(template.render(template_variables), encoding="utf-8")
 
     _copy_brand_assets(project_path, str(github_id).strip(), clean_namespace, script_dir)
+    try:
+        from photon_platform.publish.social_meta import generate_repo_social_banners
+
+        generate_repo_social_banners(project_path)
+    except ImportError:
+        pass
 
     if git_init:
         subprocess.run(

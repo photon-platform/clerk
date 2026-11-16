@@ -1,6 +1,8 @@
 :navigation: header
 :order: 1
+:type: book
 :nav_title: {{ book_title }}
+:breadcrumb_title: {{ book_title }}
 :layout: book
 :book_title: {{ book_title }}
 :author: {{ book_author }}
@@ -11,19 +13,12 @@
 {{ book_title }}
 {{ '=' * (book_title | length) }}
 
-.. rubric:: Digital Scriptorium Codex — {{ book_author }}
+.. rubric:: {{ book_author }}
 
 .. container:: title-page
 
    | **Author:** {{ book_author }}
    | **Treatise:** *{{ book_title }}*
-   | **Digital Edition:** {{ org_title }} Scriptorium (``{{ github_id }}/{{ github_repo_id }}``)
 
-{{ description }}
-
-Structure & Apparatus
----------------------
-
-- **Edition Structure Map**: ``resources/{{ edition_slug }}/structure_map.json``
-- **People**: :ref:`persons`
-- **Bibliography**: :ref:`bibliography`
+.. collection:: {{ edition_slug }}
+   :sort: order

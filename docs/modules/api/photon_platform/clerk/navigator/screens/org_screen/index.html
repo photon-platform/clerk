@@ -6,12 +6,21 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>photon_platform.clerk.navigator.screens.org_screen &mdash; photon-platform • clerk</title>
+
+  <title>photon_platform.clerk.navigator.screens.org_screen — photon-platform • clerk</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta property="og:title" content="photon_platform.clerk.navigator.screens.org_screen" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="modules/api/photon_platform/clerk/navigator/screens/org_screen/index.html" />
+<meta property="og:site_name" content="photon-platform • clerk" />
+<meta property="og:description" content="Screen for organization-level navigation. Classes: Module Contents:" />
+<meta name="description" content="Screen for organization-level navigation. Classes: Module Contents:" />
+
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..700;1,400..700&family=Fira+Sans+Condensed:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600;1,700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" type="text/css" href="../../../../../../../_static/pygments.css?v=ea5fcf70" />
-  <link rel="stylesheet" type="text/css" href="../../../../../../../_static/css/styles.css?v=ec8980ef" />
+  <link rel="stylesheet" type="text/css" href="../../../../../../../_static/css/styles.css?v=81e79cc0" />
   <link rel="stylesheet" type="text/css" href="../../../../../../../_static/graphviz.css?v=4ae1632d" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" />
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
@@ -23,14 +32,14 @@
 <body class="book-theme-classical-serif">
   <header>
     <div class="logo">
-      <a href="../../../../../../../index.html">
-        <img src="../../../../../../../_static/logo.png" class="logo" alt="Logo"/>
+      <a href="../../../../../../../index.html" title="Home">
+        <img src="../../../../../../../_static/logo.png" class="logo" alt="PHOTON-PLATFORM clerk"/>
+        <div class="org-repo">
+          <span class="org">PHOTON-PLATFORM</span>
+          <span class="sep" aria-hidden="true">&bull;</span>
+          <span class="repo">clerk</span>
+        </div>
       </a>
-      <div class="org-repo">
-        <span class="org">photon-platform</span>
-        •
-        <span class="repo">clerk</span>
-      </div>
     </div>
     <nav aria-label="Header">
       <input type="checkbox" id="nav-Header-toggle" >
@@ -55,13 +64,6 @@
   <main class="book-main">
     <article class="book-layout book-reading-pane">
       <header class="book-header">
-        <div class="book-header-bar">
-          <div class="book-header-identity">
-            <a class="book-portal-link" href="../../../../../../../index.html" title="Return to Project Portal">&larr; clerk</a>
-            <span class="book-header-sep">/</span>
-            <a class="book-title-link" href="../../../../../../../index.html">photon-platform • clerk</a>
-          </div>
-        </div>
       </header>
       <div class="content body book-content" role="main">
         <section class="level-1" id="module-photon_platform.clerk.navigator.screens.org_screen">
@@ -81,7 +83,7 @@
         <h2>Module Contents<a class="headerlink" href="#module-contents" title="Link to this heading">¶</a></h2>
         <dl class="py class">
         <dt class="sig sig-object py" id="photon_platform.clerk.navigator.screens.org_screen.OrgScreen">
-        <span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">photon_platform.clerk.navigator.screens.org_screen.</span></span><span class="sig-name descname"><span class="pre">OrgScreen</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">org_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">pathlib.Path</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#photon_platform.clerk.navigator.screens.org_screen.OrgScreen" title="Link to this definition">¶</a></dt>
+        <span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">photon_platform.clerk.navigator.screens.org_screen.</span></span><span class="sig-name descname"><span class="pre">OrgScreen</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">org_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3.13/library/pathlib.html#pathlib.Path" title="(in Python v3.13)"><span class="pre">pathlib.Path</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#photon_platform.clerk.navigator.screens.org_screen.OrgScreen" title="Link to this definition">¶</a></dt>
         <dd><p>Bases: <code class="xref py py-obj docutils literal notranslate"><span class="pre">textual.screen.Screen</span></code></p>
         <p>Lists repositories within an organization.</p>
         <dl class="py attribute">
@@ -106,17 +108,17 @@
 
         <dl class="py method">
         <dt class="sig sig-object py" id="photon_platform.clerk.navigator.screens.org_screen.OrgScreen.on_mount">
-        <span class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">on_mount</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#photon_platform.clerk.navigator.screens.org_screen.OrgScreen.on_mount" title="Link to this definition">¶</a></dt>
+        <span class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">on_mount</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3.13/builtins/constants.html#None" title="(in Python v3.13)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#photon_platform.clerk.navigator.screens.org_screen.OrgScreen.on_mount" title="Link to this definition">¶</a></dt>
         <dd></dd></dl>
 
         <dl class="py method">
         <dt class="sig sig-object py" id="photon_platform.clerk.navigator.screens.org_screen.OrgScreen.on_screen_resume">
-        <span class="sig-name descname"><span class="pre">on_screen_resume</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#photon_platform.clerk.navigator.screens.org_screen.OrgScreen.on_screen_resume" title="Link to this definition">¶</a></dt>
+        <span class="sig-name descname"><span class="pre">on_screen_resume</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3.13/builtins/constants.html#None" title="(in Python v3.13)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#photon_platform.clerk.navigator.screens.org_screen.OrgScreen.on_screen_resume" title="Link to this definition">¶</a></dt>
         <dd></dd></dl>
 
         <dl class="py method">
         <dt class="sig sig-object py" id="photon_platform.clerk.navigator.screens.org_screen.OrgScreen.refresh_view">
-        <span class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">refresh_view</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#photon_platform.clerk.navigator.screens.org_screen.OrgScreen.refresh_view" title="Link to this definition">¶</a></dt>
+        <span class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">refresh_view</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3.13/builtins/constants.html#None" title="(in Python v3.13)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#photon_platform.clerk.navigator.screens.org_screen.OrgScreen.refresh_view" title="Link to this definition">¶</a></dt>
         <dd><p>Refresh the view when view_mode or show_hidden changes.</p>
         </dd></dl>
 
@@ -132,27 +134,27 @@
 
         <dl class="py method">
         <dt class="sig sig-object py" id="photon_platform.clerk.navigator.screens.org_screen.OrgScreen.on_data_table_row_highlighted">
-        <span class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">on_data_table_row_highlighted</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">event</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">textual.widgets.DataTable.RowHighlighted</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#photon_platform.clerk.navigator.screens.org_screen.OrgScreen.on_data_table_row_highlighted" title="Link to this definition">¶</a></dt>
+        <span class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">on_data_table_row_highlighted</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">event</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">textual.widgets.DataTable.RowHighlighted</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3.13/builtins/constants.html#None" title="(in Python v3.13)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#photon_platform.clerk.navigator.screens.org_screen.OrgScreen.on_data_table_row_highlighted" title="Link to this definition">¶</a></dt>
         <dd></dd></dl>
 
         <dl class="py method">
         <dt class="sig sig-object py" id="photon_platform.clerk.navigator.screens.org_screen.OrgScreen.action_move_up">
-        <span class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">action_move_up</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#photon_platform.clerk.navigator.screens.org_screen.OrgScreen.action_move_up" title="Link to this definition">¶</a></dt>
+        <span class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">action_move_up</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3.13/builtins/constants.html#None" title="(in Python v3.13)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#photon_platform.clerk.navigator.screens.org_screen.OrgScreen.action_move_up" title="Link to this definition">¶</a></dt>
         <dd></dd></dl>
 
         <dl class="py method">
         <dt class="sig sig-object py" id="photon_platform.clerk.navigator.screens.org_screen.OrgScreen.action_move_down">
-        <span class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">action_move_down</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#photon_platform.clerk.navigator.screens.org_screen.OrgScreen.action_move_down" title="Link to this definition">¶</a></dt>
+        <span class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">action_move_down</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3.13/builtins/constants.html#None" title="(in Python v3.13)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#photon_platform.clerk.navigator.screens.org_screen.OrgScreen.action_move_down" title="Link to this definition">¶</a></dt>
         <dd></dd></dl>
 
         <dl class="py method">
         <dt class="sig sig-object py" id="photon_platform.clerk.navigator.screens.org_screen.OrgScreen.action_select_repo">
-        <span class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">action_select_repo</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#photon_platform.clerk.navigator.screens.org_screen.OrgScreen.action_select_repo" title="Link to this definition">¶</a></dt>
+        <span class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">action_select_repo</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3.13/builtins/constants.html#None" title="(in Python v3.13)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#photon_platform.clerk.navigator.screens.org_screen.OrgScreen.action_select_repo" title="Link to this definition">¶</a></dt>
         <dd></dd></dl>
 
         <dl class="py method">
         <dt class="sig sig-object py" id="photon_platform.clerk.navigator.screens.org_screen.OrgScreen.action_navigate_back">
-        <span class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">action_navigate_back</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#photon_platform.clerk.navigator.screens.org_screen.OrgScreen.action_navigate_back" title="Link to this definition">¶</a></dt>
+        <span class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">action_navigate_back</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3.13/builtins/constants.html#None" title="(in Python v3.13)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#photon_platform.clerk.navigator.screens.org_screen.OrgScreen.action_navigate_back" title="Link to this definition">¶</a></dt>
         <dd></dd></dl>
 
         </dd></dl>
@@ -211,7 +213,7 @@
 
   <script src="../../../../../../../_static/jquery.js?v=5d32c60e"></script>
   <script src="../../../../../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-  <script src="../../../../../../../_static/documentation_options.js?v=938c9ccc"></script>
+  <script src="../../../../../../../_static/documentation_options.js?v=37f418d5"></script>
   <script src="../../../../../../../_static/doctools.js?v=fd6eb6e6"></script>
   <script src="../../../../../../../_static/sphinx_highlight.js?v=6ffebe34"></script>
   <script src="../../../../../../../_static/js/collection_controls.js?v=b6b5297a"></script>
